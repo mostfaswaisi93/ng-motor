@@ -11,13 +11,19 @@ import { ToastrModule } from 'ngx-toastr';
 import { CoreModule } from './core/core.module';
 import { ChangePasswordComponent } from './views/pages/change-password/change-password.component';
 import { ProfileComponent } from './views/pages/profile/profile.component';
+import { SettingsComponent } from './views/pages/settings/settings.component';
+import { ContactUsComponent } from './views/pages/settings/contact-us/contact-us.component';
+import { SocialMediaComponent } from './views/pages/settings/social-media/social-media.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BaseComponent,
     ChangePasswordComponent,
-    ProfileComponent
+    ProfileComponent,
+    SettingsComponent,
+    ContactUsComponent,
+    SocialMediaComponent
   ],
   imports: [
     BrowserModule,

@@ -53,6 +53,7 @@ export class RegisterComponent implements OnInit {
 
   setLang() {
     this.translatationService.setLanguage(this.translateService.currentLang === 'ar' ? 'en' : 'ar');
+    window.location.reload();
   }
 
 }

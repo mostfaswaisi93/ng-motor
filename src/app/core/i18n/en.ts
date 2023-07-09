@@ -4,8 +4,8 @@ export const locale = {
 		'ENGLISH': 'عربي',
 		TRANSLATABLE: {
 			NAME_EN: 'nameEn',
-			TITLE_EN: 'titleEn',
-			descriptionAr: 'descriptionEn'
+			TITLE_EN: 'title_en',
+			descriptionAr: 'description_en'
 		},
 		LOGIN: {
 			'LOGIN': 'Login',
@@ -47,6 +47,7 @@ export const locale = {
 			'INACTIVE': 'InActive',
 			'ADD': 'Add',
 			'EDIT': 'Edit',
+			'DELETE': 'Delete',
 			'FILL_REQUIRED_FIELDS': 'Please, fill all required fields correctly',
 			'SEARCH': 'Search'
 		},
@@ -59,9 +60,13 @@ export const locale = {
 			'MANAGEMENT': 'Management',
 			'MANAGEMENTS': 'Managements',
 			'SECTIONS': 'Sections/Services',
+			'SECTION': 'Section/Service',
+			'SETTINGS': 'Settings',
 			'FORM': 'Form',
 			'ARABICNAME': 'Arabic name',
 			'ENGLISHNAME': 'English name',
+			'ARABICTITLE': 'Arabic title',
+			'ENGLISHTITLE': 'English title',
 			'JOBNAME': 'Job title',
 			'EMAIL': 'Email',
 			'PHONENAME': 'Phone number',
@@ -69,8 +74,6 @@ export const locale = {
 			'PASSWORD': 'Password',
 			'EFFECTIVE': 'Active?',
 			'ERRORMESSAGE': 'This field is required',
-			'PASSWORDERROR': 'Password must be at least 6 characters, contains small and upper letters, numbers and symbols',
-			'EMAILERROR': 'This field must be a valid email',
 			'PHONEERROR': 'This field must be a phone number and only accept 8 digits',
 			'VERSIONERROR': 'This field must be a version number and should not accept 0 or negative numbers',
 			'ARNAMEERROR': 'This field must accept only arabic letters',

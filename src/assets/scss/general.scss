@@ -354,7 +354,7 @@ body .mat-checkbox-frame {
     cursor: pointer;
 }
 
-.users {
+.title-info {
     font-size: 20px;
     color: $color-blue;
     margin-top: 0px;
@@ -659,7 +659,7 @@ body tr.mat-footer-row {
 }
 
 body tr.mat-header-row {
-    height: 61px;
+    height: 3rem;
 }
 
 body .table-responsive table .mat-form-field-appearance-outline .mat-form-field-infix {
@@ -832,12 +832,13 @@ input.mat-input-element.mat-form-field-autofill-control.dynamic-search {
     box-shadow: 0px 0px 6px $box-shadow;
     border-radius: 8px;
     border: 0px solid;
-    padding: 19px 20px 35px 20px;
-    margin-bottom: 15px;
+    padding: 20px 20px 35px 20px;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
 }
 
 .section-sep:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 3rem;
 }
 
 .text-muted {

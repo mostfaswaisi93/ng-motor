@@ -4,8 +4,8 @@ export const locale = {
     'ENGLISH': 'English',
     TRANSLATABLE: {
       NAME_EN: 'nameAr',
-      TITLE_EN: 'titleAr',
-      descriptionAr: 'descriptionAr'
+      TITLE_EN: 'title_ar',
+      descriptionAr: 'description_ar'
     },
     LOGIN: {
       'LOGIN': 'تسجيل الدخول',
@@ -47,6 +47,7 @@ export const locale = {
       'INACTIVE': 'غير فعال',
       'ADD': 'إضافة',
       'EDIT': 'تعديل',
+      'DELETE': 'حذف',
       'FILL_REQUIRED_FIELDS': 'الرجاء ملء جميع الحقول المطلوبة بشكل صحيح',
       'SEARCH': 'بحث'
     },
@@ -58,10 +59,14 @@ export const locale = {
     ADMIN: {
       'MANAGEMENT': 'إدارة',
       'MANAGEMENTS': 'الإدارات',
-      'SECTIONS': 'الأقسام/الخدمات',
+      'SECTIONS': 'الأقسام/ الخدمات',
+      'SECTION': ' قسم/ خدمة',
+      'SETTINGS': 'الإعدادات',
       'FORM': 'نموذج',
       'ARABICNAME': 'الاسم العربي',
       'ENGLISHNAME': 'الاسم بالإنجليزي',
+      'ARABICTITLE': 'العنوان بالعربي',
+      'ENGLISHTITLE': 'العنوان بالإنجليزي',
       'JOBNAME': 'الوظيفة',
       'EMAIL': 'البريد الإلكتروني',
       'PHONENAME': 'رقم الهاتف',
@@ -69,8 +74,6 @@ export const locale = {
       'PASSWORD': 'كلمة المرور',
       'EFFECTIVE': 'فعال؟',
       'ERRORMESSAGE': 'هذا الحقل مطلوب',
-      'PASSWORDERROR': 'يجب أن تتكون كلمة المرور من 6 خانات على الأقل تتضمن أحرف كبيرة وصغيرة وأرقام ورموز',
-      'EMAILERROR': 'يجب أن يكون هذا الحقل بريدًا إلكترونيًا صالحًا',
       'PHONEERROR': 'يجب أن يكون هذا الحقل رقم هاتف ولا يقبل سوى 8 أرقام',
       'VERSIONERROR': 'يجب أن يكون هذا الحقل رقم إصدار ويجب ألا يقبل 0 أو الأرقام السالبة',
       'ARNAMEERROR': 'يجب أن يقبل هذا الحقل الحروف العربية فقط',

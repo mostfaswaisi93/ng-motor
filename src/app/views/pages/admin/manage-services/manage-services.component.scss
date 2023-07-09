@@ -32,9 +32,14 @@
 
 	.edit {
 		.material-icons {
-			color: $color-green;
+			color: $color-primary;
 			cursor: pointer;
 		}
+	}
+
+	.actions {
+		display: inline-flex;
+		gap: 1rem;
 	}
 }
 

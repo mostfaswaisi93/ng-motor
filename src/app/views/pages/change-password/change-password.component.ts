@@ -57,8 +57,4 @@ export class ChangePasswordComponent implements OnInit {
     });
   }
 
-  setLang() {
-    this.translatationService.setLanguage(this.translateService.currentLang === 'en' ? 'ar' : 'en');
-  }
-
 }

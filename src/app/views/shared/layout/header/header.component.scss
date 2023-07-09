@@ -5,6 +5,8 @@
   background-color: $color-primary;
   padding-left: 50px;
   padding-right: 50px;
+  position: fixed;
+  z-index: 1;
 
   &__logo {
     width: 111px;

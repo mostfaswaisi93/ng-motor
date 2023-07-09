@@ -15,10 +15,12 @@ export class ManageServicesFormComponent implements OnInit {
   serviceForm: FormGroup;
 
   constructor(
-    private toastNotificationsService: ToastNotificationsService,
+    private fb: FormBuilder,
+    public route: ActivatedRoute,
     public translate: TranslateService,
-    public route: ActivatedRoute, private fb: FormBuilder
+    private toastNotificationsService: ToastNotificationsService
   ) { }
+
   ngOnInit(): void {
     this.initForm();
   }
@@ -26,12 +28,14 @@ export class ManageServicesFormComponent implements OnInit {
   initForm() {
     this.serviceForm = this.fb.group({
       id: new FormControl(null),
-      nameAr: new FormControl(null, { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
-      nameEn: new FormControl(null, { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
-      active: new FormControl(1, { validators: [Validators.required] }),
-      phone: new FormControl(null, { validators: [Validators.required, Validators.pattern('^.{8}$')] })
+      logo: new FormControl(null),
+      media: new FormControl(null),
+      title_ar: new FormControl(null, { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      title_en: new FormControl(null, { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      description_ar: new FormControl(null, { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      description_en: new FormControl(null, { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      whatsappLink: new FormControl(null, { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] })
     });
-
   }
 
   onSave() {

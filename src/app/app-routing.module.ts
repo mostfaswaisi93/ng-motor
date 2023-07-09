@@ -8,6 +8,7 @@ import { ChangePasswordComponent } from './views/pages/change-password/change-pa
 import { ErrorPageComponent } from './views/shared/error-page/error-page.component';
 import { USER_HOME_PAGE } from './core/enum/constant';
 import { ProfileComponent } from './views/pages/profile/profile.component';
+import { SettingsComponent } from './views/pages/settings/settings.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
       {
         path: 'user-profile',
         component: ProfileComponent
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent
       },
       { path: 'error/:type', component: ErrorPageComponent },
       { path: '', redirectTo: USER_HOME_PAGE, pathMatch: 'full' },

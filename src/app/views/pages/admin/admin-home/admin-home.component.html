@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <div class="menu-item">
+            <!-- <div class="menu-item">
                 <span class="material-icons">date_range</span>
                 <p class="menu-item__p">{{'ADMIN.MANAGEMENT' | translate}}</p>
             </div>
@@ -16,11 +16,7 @@
             <div class="menu-item">
                 <span class="material-icons">people</span>
                 <p class="menu-item__p">{{'ADMIN.MANAGEMENT' | translate}}</p>
-            </div>
-            <div class="menu-item">
-                <span class="material-icons">view_list</span>
-                <p class="menu-item__p">{{'ADMIN.MANAGEMENT' | translate}}</p>
-            </div>
+            </div> -->
             <div [routerLink]="'/admin/manage-services'" class="menu-item">
                 <span class="material-icons">view_list</span>
                 <p class="menu-item__p">{{'ADMIN.SECTIONS' | translate}}</p>
@@ -28,6 +24,10 @@
             <div [routerLink]="'/admin/managements'" class="menu-item">
                 <span class="material-icons">dynamic_feed</span>
                 <p class="menu-item__p">{{'ADMIN.MANAGEMENTS' | translate}}</p>
+            </div>
+            <div [routerLink]="'/settings'" class="menu-item">
+                <span class="material-icons">settings</span>
+                <p class="menu-item__p">{{'ADMIN.SETTINGS' | translate}}</p>
             </div>
         </div>
     </div>
