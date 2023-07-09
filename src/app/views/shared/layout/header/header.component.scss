@@ -1,0 +1,148 @@
+@import "../../../../../assets/scss/global/variables";
+
+.header {
+  height: 60px;
+  background-color: $color-primary;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  &__logo {
+    width: 111px;
+    height: auto;
+    float: left;
+    position: relative;
+    top: 10px;
+    cursor: pointer;
+  }
+
+  &__separator {
+    float: left;
+    height: 40px;
+    border-left: 1px solid $color-white;
+    margin: 0px 21px 0px 21px;
+    position: relative;
+    top: 10px;
+  }
+
+  &__pragraph {
+    cursor: pointer;
+    float: left;
+    position: relative;
+    top: 5px;
+
+    p {
+      font-size: 21px;
+      color: $color-white;
+      margin-bottom: 0px !important;
+    }
+
+    &--firstparagraph {
+      font-size: 16px;
+      position: relative;
+      top: 10px;
+    }
+  }
+
+  &__menu {
+    float: right;
+    font-size: 14px;
+    color: $color-white;
+    position: relative;
+    top: 10px;
+
+    &--lang,
+    &--separator,
+    &--logout {
+      display: inline-block;
+    }
+
+    &--lang,
+    &--logout {
+      cursor: pointer;
+    }
+
+    &--lang .mat-icon,
+    &--logout .mat-icon {
+      color: $color-white;
+      font-size: 14px;
+      position: relative;
+      top: 3px;
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+
+    &--logout .mat-icon.dropdown-icon {
+      font-size: 22px;
+      top: 7px;
+      right: 3px;
+    }
+
+    &--separator {
+      border-left: 1px solid $color-white;
+      height: 26px;
+      position: relative;
+      top: 8px;
+      margin-left: 6px;
+      margin-right: 15px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header {
+    height: unset;
+
+    &__logo {
+      float: none;
+      margin-left: 0px;
+      position: relative;
+      top: 5px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 14px;
+    }
+
+    &__separator {
+      display: none;
+    }
+
+    &__pragraph {
+      float: none;
+      top: 0px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    &__menu {
+      top: 0px;
+      margin-right: 0px;
+      float: none;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and(min-width: 768px) and (max-width: 823px) {
+  .header {
+    &__separator {
+      margin: 0px 4px 0px 4px;
+    }
+  }
+}
+
+.container-fluid {
+  .row {
+    .col-md-6 {
+      .font-weight-bold.header {
+        &__pragraph {
+          &--firstparagraph {
+            font-size: 16px;
+            top: 10px;
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}

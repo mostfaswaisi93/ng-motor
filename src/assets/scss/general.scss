@@ -1,0 +1,1045 @@
+@import '../scss/global/variables';
+
+*,
+body [class^='mat-'],
+body [class*=' mat-'] {
+    font-family: PF Din Text Universal;
+    scrollbar-width: thin;
+    scrollbar-color: $color-blue;
+}
+
+body {
+    color: $color-black;
+    font-size: 14px;
+    // background-color: $color-body;
+}
+
+body .material-icons {
+    font-family: 'Material Icons';
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: $color-grey;
+    border-radius: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $color-blue;
+    border-radius: 4px;
+    border: 1px solid $color-grey;
+}
+
+button {
+    width: 330px;
+    height: 45px;
+    color: $color-white;
+    text-align: center;
+    border: 0px solid;
+    border-radius: 6px;
+    margin: 0 auto;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    font-size: 15px;
+}
+
+body .add {
+    font-size: 14px;
+}
+
+table {
+    width: 100%;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+body .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 7px 0 7px 0;
+}
+
+input.mat-input-element {
+    position: relative;
+    bottom: 2px;
+    height: 20px;
+}
+
+.mat-form-field-label mat-label {
+    color: $color-grey;
+    position: relative;
+    bottom: 2px;
+}
+
+.green-background {
+    background-color: $color-green;
+}
+
+.red-background {
+    background-color: $color-primary;
+
+    &:hover,
+    &:focus {
+        background-color: #a22011;
+    }
+}
+
+.green-text {
+    color: $color-green;
+}
+
+.red-text {
+    color: $color-primary;
+}
+
+button:hover {
+    background-color: $color-blue;
+}
+
+.mat-error {
+    color: $color-red;
+    font-size: 11px;
+    position: relative;
+    bottom: -1px;
+    font-weight: bold;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-label {
+    top: 1.64375em;
+}
+
+.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon,
+.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon {
+    color: $color-grey;
+    position: relative;
+    bottom: 2px;
+}
+
+body .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+body .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap,
+body .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start {
+    border-width: 1px;
+}
+
+body .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick,
+body .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid mat-label {
+    color: $color-red;
+}
+
+body .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-prefix .mat-icon,
+body .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-suffix .mat-icon {
+    color: $color-red;
+}
+
+body .mat-form-field-appearance-outline:hover .mat-form-field-outline-thick .mat-form-field-outline-end,
+body .mat-form-field-appearance-outline:hover .mat-form-field-outline-thick .mat-form-field-outline-gap,
+body .mat-form-field-appearance-outline:hover .mat-form-field-outline-thick .mat-form-field-outline-start,
+body .mat-form-field-appearance-outline:hover .mat-form-field-outline {
+    color: $color-green;
+}
+
+body .mat-form-field-appearance-outline .mat-form-field-outline-start {
+    border-radius: 4px 0px 0px 4px;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-1.25375em) scale(0.75);
+}
+
+.mat-form-field.mat-focused mat-label {
+    color: $color-blue
+}
+
+.mat-form-field:hover mat-label {
+    color: $color-green;
+}
+
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field-empty.mat-form-field-label {
+    height: 24px;
+}
+
+.mat-form-field:hover .mat-form-field-prefix .mat-icon,
+.mat-form-field:hover .mat-form-field-suffix .mat-icon {
+    color: $color-green;
+}
+
+.mat-form-field.mat-focused .mat-form-field-prefix .mat-icon,
+.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-suffix .mat-icon,
+.mat-form-field.mat-focused .mat-form-field-suffix .mat-icon {
+    color: $color-blue;
+}
+
+.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button .mat-datepicker-toggle-default-icon {
+    position: relative;
+    top: 9px;
+    color: $color-prefix;
+}
+
+.mat-form-field.mat-focused:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button .mat-datepicker-toggle-default-icon,
+.mat-form-field:hover:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button .mat-datepicker-toggle-default-icon {
+    color: $color-blue;
+}
+
+.mat-form-field.not-empty:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon,
+.mat-form-field.not-empty:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon,
+.mat-form-field.not-empty .mat-form-field-outline,
+.mat-form-field.not-empty .mat-form-field-label mat-label {
+    color: $color-blue;
+}
+
+body .mat-form-field-appearance-outline .mat-form-field-subscript-wrapper {
+    padding: 0 0em;
+}
+
+body .mat-form-field-subscript-wrapper {
+    font-size: inherit;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $color-grey;
+}
+
+.mat-select-value {
+    color: $color-black;
+    position: relative;
+    bottom: 0px;
+}
+
+.mat-select-arrow {
+    color: $color-black;
+    position: relative;
+    top: 4px;
+}
+
+body .mat-select {
+    position: relative;
+    bottom: 0px;
+    height: 19px;
+}
+
+body .mat-form-field-type-mat-select .mat-form-field-label mat-label {
+    bottom: 2px;
+}
+
+.mat-form-field-type-mat-select .mat-form-field-label {
+    top: 1.64375em;
+}
+
+.mat-radio-outer-circle {
+    border-color: $color-grey;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: $color-green;
+}
+
+body .mat-paginator-container {
+    justify-content: flex-start;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: $color-green;
+}
+
+th.mat-header-cell {
+    color: $color-white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.mat-cell,
+.mat-footer-cell {
+    color: $color-black;
+    font-size: 16px;
+}
+
+body .mat-form-field-disabled:hover .mat-form-field-outline-thick .mat-form-field-outline-end,
+body .mat-form-field-disabled:hover .mat-form-field-outline-thick .mat-form-field-outline-gap,
+body .mat-form-field-disabled:hover .mat-form-field-outline-thick .mat-form-field-outline-start,
+body .mat-form-field-disabled:hover .mat-form-field-outline {
+    color: $color-disabled-light;
+    background-color: $color-disabled-light;
+}
+
+.mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after,
+.mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+    color: $color-disabled-light;
+    background-color: $color-disabled-light;
+    border-radius: 4px;
+}
+
+body .mat-form-field-disabled:hover mat-label,
+body .mat-form-field-disabled .mat-select-placeholder,
+body .mat-form-field-disabled .mat-form-field-label mat-label,
+body .mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
+    color: $color-disabled-dark;
+}
+
+body .mat-input-element:disabled,
+body .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-label {
+    color: $color-disabled-dark;
+}
+
+.mat-select-disabled .mat-select-value {
+    color: $color-disabled-dark;
+}
+
+textarea {
+    height: 294px;
+}
+
+.paginator-custom .mat-select {
+    position: relative;
+    bottom: -1px;
+}
+
+.paginator-custom .mat-select-arrow {
+    top: 4px;
+}
+
+.paginator-custom button:hover {
+    background-color: transparent;
+}
+
+.paginator-custom .mat-paginator-range-actions {
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 4px;
+}
+
+.manage-emails .mat-form-field {
+    width: 100%;
+}
+
+.save-data {
+    margin-left: 70px;
+}
+
+body .mat-checkbox-frame {
+    border-color: $color-checkbox-frame;
+}
+
+body .mat-checkbox-background,
+body .mat-checkbox-frame {
+    border-radius: 3px;
+}
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: $color-green;
+}
+
+.table-link {
+    font-size: 16px;
+    color: $color-link;
+    text-decoration: underline;
+    cursor: pointer;
+    padding-top: 13px;
+}
+
+.table-link-no-padding {
+    font-size: 12px;
+    color: $color-link;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.users {
+    font-size: 20px;
+    color: $color-blue;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+body .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float.mat-form-field-type-mat-select .mat-form-field-label,
+body .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-type-mat-select .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-1.34375em) scale(0.75);
+}
+
+.arrow-down {
+    top: 6px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.mat-menu-container {
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.mat-menu-container p {
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+.mat-menu-container p:not(:first-child) {
+    margin-top: 10px;
+}
+
+body .mat-paginator-container .mat-form-field-appearance-outline .mat-form-field-outline,
+body .mat-paginator-container:hover .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $color-white;
+}
+
+body .mat-paginator-page-size {
+    margin-right: 0px;
+    position: relative;
+    top: 4px;
+}
+
+body .mat-paginator-range-label {
+    margin: 4px 0px 0 0px;
+}
+
+body .toast-top-right.toast-container {
+    top: 12px;
+    right: 12px;
+
+    .ngx-toastr,
+    .ngx-toastr:hover {
+        box-shadow: 0 0 4px $color-grey;
+        border-radius: 4px;
+        background-position: right 15px center;
+        padding: 15px 15px 18px 15px;
+        width: 335px;
+    }
+
+    button.toast-close-button {
+        width: unset;
+        height: unset;
+        text-align: unset;
+        border-radius: unset;
+        margin: unset;
+        top: 0px;
+        float: left;
+        left: 0;
+        right: unset;
+    }
+
+    button.toast-close-button:hover {
+        background-color: transparent;
+        color: $color-white;
+        opacity: 1;
+    }
+
+    .toast-title {
+        padding-top: 5px;
+        padding-left: 20px;
+    }
+
+    .toast-error {
+        background-color: $color-red;
+    }
+
+    .toast-info {
+        background-color: $color-blue;
+    }
+
+    .toast-success {
+        background-color: $color-green;
+    }
+
+    .toast-warning {
+        background-color: $color-disabled-dark;
+    }
+}
+
+body .reset-password .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0em 0;
+}
+
+.menu-pragraph {
+    display: block;
+    color: $color-blue;
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin: 10px 10px 0px 10px;
+    cursor: pointer;
+
+    .mat-icon {
+        color: $color-primary;
+        font-size: 14px;
+        height: 20px;
+        width: 20px;
+        position: relative;
+        top: 3px;
+        margin: 0px 2px;
+    }
+}
+
+.menu-pragraph:not(:first-child) {
+    margin-top: 10px
+}
+
+.menu-pragraph:last-child {
+    margin-bottom: 4px;
+}
+
+.container-fluid {
+    .row {
+        .col-md-12 {
+            p.font-weight-bold.mb-3 {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.container-fluid {
+    .row {
+        .col-md-6 {
+            p.font-weight-bold {
+                font-size: 20px;
+                color: $color-blue;
+                margin-bottom: 10px;
+
+            }
+        }
+    }
+}
+
+.table-provider {
+    color: $color-green;
+    cursor: pointer;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+body .mat-expansion-panel-body {
+    padding: 0 0px 0px;
+    margin-top: 60px;
+}
+
+body .filter-calender.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 11px 0 11px 0;
+}
+
+body .filter-calender button:hover {
+    background-color: transparent;
+}
+
+body .search-field {
+    text-align: right;
+
+    .mat-form-field {
+        width: 330px;
+        z-index: 999;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+        margin: 0em 0;
+    }
+
+    .mat-form-field-wrapper {
+        padding-bottom: 0em;
+    }
+
+    .material-icons {
+        margin-left: 10px;
+        color: $color-green;
+        cursor: pointer;
+        z-index: 9999999999999999999999999999;
+    }
+}
+
+body mat-accordion {
+    position: relative;
+    top: -34px;
+
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+        margin: 0em 0;
+    }
+
+    .mat-form-field-wrapper {
+        padding-bottom: 0em;
+    }
+}
+
+.mat-expansion-panel-header {
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+
+.mat-expansion-panel {
+    background: transparent;
+    position: relative;
+    top: 2px;
+}
+
+.mat-expansion-panel-header {
+    width: 20px;
+    height: 20px;
+    float: right;
+    left: 7px;
+    top: 0px;
+}
+
+.mat-expansion-panel-header:hover {
+    background-color: transparent;
+}
+
+.mat-expansion-indicator::after {
+    opacity: 0;
+}
+
+.mat-expansion-panel .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]),
+.mat-expansion-panel .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]),
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {
+    background: rgba(0, 0, 0, .0);
+}
+
+.red-text {
+    color: $color-red;
+}
+
+th.mat-header-cell:first-of-type,
+td.mat-cell:first-of-type,
+td.mat-footer-cell:first-of-type {
+    min-width: 75px;
+    max-width: 75px;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float.mat-form-field-disabled .mat-form-field-label,
+.mat-form-field-appearance-outline.mat-form-field-can-floatmat-form-field-disabled .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-0.69375em) scale(0.75);
+}
+
+body .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float.mat-form-field-type-mat-select.mat-form-field-disabled .mat-form-field-label,
+body .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-type-mat-select .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-1.00375em) scale(0.75);
+}
+
+.table-responsive.manage-report-table th.mat-header-cell,
+.table-responsive.manage-report-table td.mat-cell,
+.table-responsive.manage-report-table td.mat-footer-cell {
+    padding-right: 20px;
+}
+
+body .table-responsive table .mat-form-field {
+    width: 80%;
+    top: 10px;
+}
+
+table .mat-form-field .mat-form-field-infix {
+    width: 100px;
+}
+
+body mat-row,
+body mat-header-row,
+body mat-footer-row,
+body th.mat-header-cell,
+body td.mat-cell,
+body td.mat-footer-cell {
+    line-height: 24px;
+}
+
+body tr.mat-row,
+body tr.mat-footer-row {
+    height: 54px;
+
+    &:hover {
+        background-color: $row-hover;
+    }
+}
+
+body tr.mat-header-row {
+    height: 61px;
+}
+
+body .table-responsive table .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 2px 0 2px 0;
+}
+
+body .table-responsive table input.mat-input-element {
+    bottom: 3px;
+}
+
+body .table-responsive table .mat-select {
+    bottom: 3px;
+}
+
+body .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: $color-green;
+}
+
+body .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: $color-toggle;
+}
+
+body .mat-slide-toggle-bar {
+    background-color: $color-toggle;
+}
+
+.validation-rule .mat-checkbox-layout {
+    margin-top: 10px;
+}
+
+body .mat-divider {
+    border-top-color: $color-grey;
+}
+
+.validation-rule .mat-radio-button {
+    margin-top: 14px;
+    font-weight: bold;
+}
+
+body .container-fluid .row .col-md-6 .font-weight-bold.header-title-add {
+    top: 0;
+}
+
+body table th.mat-header-cell:first-of-type,
+body table td.mat-cell:first-of-type,
+body table td.mat-footer-cell:first-of-type {
+    padding-left: 20px;
+}
+
+body table th.mat-header-cell:last-of-type,
+body table td.mat-cell:last-of-type,
+body table td.mat-footer-cell:last-of-type {
+    padding-right: 20px;
+}
+
+.table-responsive table .mat-form-field-type-mat-select .mat-form-field-label {
+    top: 1.25000em;
+}
+
+body .table-responsive table .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float.mat-form-field-type-mat-select .mat-form-field-label,
+body .table-responsive table .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-type-mat-select .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-0.98000em) scale(0.75);
+}
+
+body .mat-form-field-appearance-outline.mat-form-field-disabled input.mat-input-element {
+    bottom: unset;
+    top: 2px;
+}
+
+body .table-responsive table .mat-form-field.mat-form-field-type-mat-select.mat-form-field-disabled.mat-form-field-should-float .mat-form-field-label,
+body .table-responsive table .mat-form-field.mat-form-field-type-mat-select.mat-form-field-disabled.mat-form-field-should-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-0.47em) scale(0.75);
+}
+
+body .table-responsive table .mat-form-field.mat-form-field-type-mat-select.mat-form-field-disabled.mat-form-field-should-float .mat-select {
+    bottom: unset;
+    top: 3px;
+}
+
+body .padding-rule-field {
+    padding-right: calc(var(--bs-gutter-x)/ 2);
+    padding-left: 0;
+}
+
+.data-entry-table mat-header-cell:first-of-type {
+    padding-right: 14px;
+}
+
+body .col-md-6 {
+    ngx-awesome-uploader {
+        height: unset;
+        max-width: unset;
+    }
+
+    file-drop {
+        padding: unset;
+    }
+
+    .file-drop-wrapper {
+        width: unset;
+        padding-top: unset;
+    }
+
+    #dropZone {
+        padding: unset;
+        border: unset;
+    }
+
+    file-preview-container {
+        background: unset;
+        width: unset;
+        text-align: center;
+        flex-direction: unset;
+        justify-content: center;
+        top: 45px;
+        right: 115px;
+    }
+
+    file-preview-item {
+        border-bottom: unset;
+        padding: unset;
+    }
+}
+
+body .col-md-12.data-entry-table.table-responsive mat-cell:last-of-type,
+body .col-md-12.data-entry-table.table-responsive mat-header-cell:last-of-type,
+body .col-md-12.data-entry-table.table-responsive mat-footer-cell:last-of-type,
+body .col-md-12.data-entry-table.table-responsive mat-cell:first-of-type,
+body .col-md-12.data-entry-table.table-responsive mat-header-cell:first-of-type,
+body .col-md-12.data-entry-table.table-responsive mat-footer-cell:first-of-type {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+body .col-md-12.data-entry-table.table-responsive mat-row,
+body .col-md-12.data-entry-table.table-responsive mat-header-row,
+body .col-md-12.data-entry-table.table-responsive mat-footer-row,
+body .col-md-12.data-entry-table.table-responsive th.mat-header-cell,
+body .col-md-12.data-entry-table.table-responsive td.mat-cell,
+body .col-md-12.data-entry-table.table-responsive td.mat-footer-cell {
+    line-height: 20px;
+}
+
+body .col-md-12.data-entry-table.table-responsive th.mat-header-cell {
+    font-size: 13px;
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px 0px 0px 0px;
+    background-color: $color-white;
+}
+
+input.mat-input-element.mat-form-field-autofill-control.dynamic-search {
+    position: relative;
+    bottom: 0px;
+    height: 50px;
+    padding-left: 17px;
+    padding-right: 17px;
+    border-bottom: 1px solid $color-green;
+}
+
+.audit-table .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0em 0;
+    padding: 0;
+}
+
+.section-sep {
+    background-color: $color-white;
+    box-shadow: 0px 0px 6px $box-shadow;
+    border-radius: 8px;
+    border: 0px solid;
+    padding: 19px 20px 35px 20px;
+    margin-bottom: 15px;
+}
+
+.section-sep:last-child {
+    margin-bottom: 0px;
+}
+
+.text-muted {
+    color: $color-black !important;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+body .mat-form-field-wrapper {
+    padding-bottom: 30px;
+}
+
+.add {
+    width: 80px;
+    height: 32px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 4px;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    background-color: $color-white;
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-primary;
+    }
+
+    span {
+        position: relative;
+        bottom: 3px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .material-icons {
+        position: relative;
+        top: 2px;
+        font-size: 20px;
+        margin-left: -8px;
+    }
+}
+
+.table-responsive {
+    border: 1px solid $color-blue;
+    border-radius: 6px;
+    margin: 10px 0px 0px 0px;
+    padding-left: 0;
+    padding-right: 0;
+    flex: unset;
+    background-color: $color-blue;
+}
+
+.mat-table thead {
+    background-color: $color-blue;
+}
+
+.paginator-custom {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.mat-paginator {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+        margin: 0em 0;
+    }
+
+    .mat-form-field-wrapper {
+        padding-bottom: 0px;
+    }
+
+    .mat-paginator-page-size-select {
+        margin: -6px 4px 0 4px;
+    }
+
+    .mat-paginator-container {
+        min-height: 40px;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 0px 0 7px 0;
+    }
+}
+
+.mat-paginator-outer-container {
+    margin-right: 7px;
+    margin-left: 7px;
+}
+
+.mat-row:nth-child(even) {
+    background-color: $row-even;
+}
+
+.mat-row:nth-child(odd) {
+    background-color: $color-white;
+}
+
+body .mat-paginator-container {
+
+    .mat-form-field-appearance-outline:hover .mat-form-field-outline-thick .mat-form-field-outline-end,
+    .mat-form-field-appearance-outline:hover .mat-form-field-outline-thick .mat-form-field-outline-gap,
+    .mat-form-field-appearance-outline:hover .mat-form-field-outline-thick .mat-form-field-outline-start,
+    .mat-form-field-appearance-outline:hover .mat-form-field-outline {
+        color: rgba(0, 0, 0, 0);
+    }
+}
+
+.twelve-font-size {
+    font-size: 12px;
+}
+
+body:lang(en) .header__menu--logout .mat-icon.dropdown-icon {
+    right: 0px;
+    margin-right: -10px;
+}
+
+.edit-icon {
+    border-radius: 5px;
+    border: 1px solid $color-primary;
+    background-color: $color-white;
+    padding: 0px;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    padding-top: 4px;
+    transition: all .3s;
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-primary;
+
+        .material-icons {
+            color: $color-white !important;
+        }
+    }
+}
+
+.green-background.action {
+    margin-top: 7px;
+}
+
+body .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0em 0;
+}
+
+body:lang(en) .menu-pragraph {
+    margin: 10px 15px 0px 17px;
+}
+
+body:lang(en) .menu-pragraph .mat-icon {
+    margin: 0px -4px;
+}
+
+body .zero-padding-field .mat-form-field-wrapper {
+    padding-bottom: 0px;
+}
+
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+    max-width: 100px;
+}
+
+body:lang(en) th.mat-header-cell:not(:first-child),
+body:lang(en) td.mat-cell:not(:first-child),
+body:lang(en) td.mat-footer-cell:not(:first-child) {
+    padding-right: 5px;
+}
+
+th.mat-header-cell.big-title-custom,
+td.mat-cell.big-title-custom,
+td.mat-footer-cell.big-title-custom {
+    max-width: 190px;
+}
+
+.table-responsive .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+body .table-responsive .mat-error {
+    height: 0px;
+    bottom: 12px;
+}
+
+body .table-responsive table .mat-form-field-label mat-label {
+    display: none;
+}
+
+
+body tr.mat-row.active,
+body tr.mat-footer-row.active {
+    background-color: $row-hover;
+}
+
+body .transform-div .mat-error {
+    bottom: 2px;
+}
+
+body .mat-form-field-subscript-wrapper {
+    top: calc(100% - 2.4516666667em);
+}

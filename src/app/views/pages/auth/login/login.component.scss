@@ -1,0 +1,117 @@
+@import "../../../../../assets/scss/global/variables";
+
+.login-pic {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 45%;
+  height: 100vh;
+}
+
+.login-info {
+  height: 100vh;
+
+  img {
+    width: 211px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  p {
+    font-size: 21px;
+    margin-bottom: 0px;
+    line-height: 1;
+  }
+}
+
+.login-info {
+  .lang-icon {
+    font-size: 14px;
+    cursor: pointer;
+    color: $color-blue;
+
+    .mat-icon {
+      font-size: 14px;
+      cursor: pointer;
+      color: $color-primary;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+.lang-div {
+  width: 330px;
+  margin: 0 auto;
+  text-align: right;
+  margin-bottom: 42px;
+  direction: rtl;
+}
+
+.login-info {
+  p.forget-password {
+    font-size: 12px;
+    text-transform: none;
+    font-weight: bold;
+    color: $color-green;
+    cursor: pointer;
+    text-decoration: underline;
+    position: relative;
+    bottom: 13px;
+    width: 330px;
+    margin: 0 auto;
+    text-align: right;
+  }
+}
+
+.login-first {
+  margin-top: 46px;
+}
+
+.login-second {
+  margin-top: 2px;
+}
+
+button {
+  width: 330px;
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  width: 330px;
+  margin-top: 30px;
+  margin-bottom: 4px;
+}
+
+.transform-div {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.green-background:hover {
+  background-color: #05afa8;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .mat-form-field,
+  button {
+    width: 90%;
+  }
+
+  .login-pic {
+    display: none;
+  }
+
+  .login-info p.forget-password {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+  .login-pic {
+    height: 69vh;
+  }
+}

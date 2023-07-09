@@ -1,0 +1,310 @@
+@import '../scss/global/variables';
+
+.keep-login-dir:lang(ar) {
+    direction: ltr;
+}
+
+body .login-second:lang(ar) {
+    margin-top: 8px;
+}
+
+body .mat-form-field:lang(ar) {
+    direction: rtl;
+}
+
+body input.mat-input-element:lang(ar) {
+    bottom: 3px;
+}
+
+body .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon:lang(ar),
+body .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon:lang(ar) {
+    margin-right: 0px;
+    margin-left: 10px;
+}
+
+body .mat-form-field-appearance-outline .mat-form-field-outline-start:lang(ar) {
+    border-radius: 0px 4px 4px 0px;
+}
+
+body .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label:lang(ar) {
+    transform: translateY(-1.37375em) scale(0.73);
+}
+
+body .mat-form-field-appearance-outline .mat-form-field-infix:lang(ar) {
+    text-align: right;
+}
+
+body .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float.mat-form-field-disabled .mat-form-field-label:lang(ar) {
+    transform: translateY(-0.76375em) scale(0.73);
+}
+
+body .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-outline-gap:lang(ar) {
+    border-top-color: currentColor;
+}
+
+body .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label mat-label:lang(ar) {
+    background-color: $color-white;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+body .mat-error:lang(ar) {
+    bottom: 1px;
+}
+
+body .lang-div:lang(ar) {
+    text-align: left;
+    direction: ltr;
+}
+
+body .login-info .lang-icon .mat-icon:lang(ar) {
+    top: 1px;
+}
+
+.download-button:lang(ar) {
+    margin-left: 48px;
+    margin-right: 0px;
+}
+
+body:lang(ar) .header {
+    &__logo {
+        float: right;
+    }
+
+    &__pragraph {
+        float: right;
+    }
+
+    &__separator {
+        float: right;
+    }
+
+    &__menu {
+        float: left;
+
+        &--lang:lang(ar),
+        &--separator:lang(ar),
+        &--logout:lang(ar) {
+            direction: ltr;
+        }
+    }
+}
+
+body .save-data:lang(ar) {
+    margin-left: 0px;
+    margin-right: 70px;
+}
+
+body:lang(ar) .container-fluid form .row div.col-md-4.effective {
+    mat-radio-group {
+        top: 17px;
+
+        .mat-radio-button:nth-child(1) {
+            margin-left: 14px;
+            margin-right: 0px
+        }
+    }
+
+    span {
+        top: 18px;
+        margin-left: 3px;
+        margin-right: 0px;
+    }
+}
+
+body:lang(ar) .green-background {
+    span {
+        margin-right: 8px;
+    }
+
+    .material-icons {
+        margin-left: -7px;
+    }
+}
+
+body:lang(ar) .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float.mat-form-field-type-mat-select .mat-form-field-label,
+body:lang(ar) .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-type-mat-select .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-1.40375em) scale(0.75);
+}
+
+.arrow-down:lang(ar) {
+    top: 8px;
+}
+
+body:lang(ar) .mat-menu-container p {
+    text-align: right;
+}
+
+body:lang(ar) .mat-paginator-range-label {
+    margin: 3px 0px 0 0px;
+    direction: rtl;
+}
+
+body:lang(ar) .toast-top-right.toast-container {
+    right: 1014px;
+
+    .ngx-toastr,
+    .ngx-toastr:hover {
+        background-position: 15px center;
+        padding: 15px 15px 15px 50px;
+    }
+
+    .toast-title {
+        padding-left: 0px;
+        padding-right: 20px;
+    }
+
+    button.toast-close-button {
+        float: right;
+        left: unset;
+        right: 0;
+    }
+}
+
+body .login-info.position-relative p.forget-password:lang(ar) {
+    bottom: 13px;
+    text-align: left;
+}
+
+body .menu-pragraph:lang(ar) {
+    direction: rtl;
+    padding-left: 10px;
+}
+
+body .custom-table:lang(ar) {
+
+    tr td:first-child,
+    tr th:first-child {
+        padding-right: 24px;
+        padding-left: 0px;
+    }
+}
+
+body .search-field:lang(ar) {
+    text-align: left;
+
+    .material-icons {
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+}
+
+body .mat-expansion-panel-header:lang(ar) {
+    float: left;
+}
+
+body .mat-expansion-panel-header:lang(ar) {
+    float: left;
+    left: unset;
+    right: 7px;
+}
+
+.ql-toolbar.ql-snow:lang(ar) {
+    direction: ltr;
+}
+
+body .margin-title-custom:lang(ar) {
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+body .mat-dialog-container:lang(ar) {
+    direction: rtl;
+}
+
+body .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float.mat-form-field-disabled .mat-form-field-label mat-label:lang(ar) {
+    background-color: transparent;
+}
+
+body .search-field-icon.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon:lang(ar),
+body .search-field-icon.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon:lang(ar) {
+    margin-left: 0px;
+}
+
+body .value-label:lang(ar) {
+    margin-left: 0px;
+    margin-right: 8px;
+}
+
+body .title-for-field:lang(ar) {
+    margin-right: 0px;
+    margin-left: 15px;
+}
+
+body .slide-toggle-custom:lang(ar) {
+    float: left;
+}
+
+body:lang(ar) .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float.mat-form-field-type-mat-select.mat-form-field-disabled .mat-form-field-label,
+body:lang(ar) .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-type-mat-select .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-1.01375em) scale(0.75);
+}
+
+body:lang(ar) .table-responsive table .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float.mat-form-field-type-mat-select.mat-form-field-disabled .mat-form-field-label,
+body:lang(ar) .table-responsive table .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-type-mat-select .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-0.59375em) scale(0.75);
+}
+
+body:lang(ar) mat-cell:first-of-type,
+body:lang(ar) mat-header-cell:first-of-type,
+body:lang(ar) mat-footer-cell:first-of-type {
+    padding-left: 24px;
+}
+
+body:lang(ar) .validation-rule .col-md-12.text-center.mb-3 button:nth-child(2) {
+    margin-left: 0px;
+    margin-right: 55px;
+}
+
+body:lang(ar) .padding-rule-field {
+    padding-right: 0;
+    padding-left: calc(var(--bs-gutter-x)/ 2);
+}
+
+.container-fluid.manage-emails:lang(ar) .action {
+    margin-right: 55px;
+    margin-left: 0px;
+}
+
+body:lang(ar) .month-type span.type-span {
+    position: relative;
+    right: 13px;
+    left: unset;
+}
+
+body:lang(ar) .day-type span.type-span {
+    position: relative;
+    right: 7px;
+    left: unset;
+}
+
+body:lang(ar) .value-input-ar input,
+body:lang(ar) input.mat-input-element.mat-form-field-autofill-control.dynamic-search,
+body:lang(ar) .ar-direction {
+    direction: rtl;
+}
+
+body:lang(ar) .add span {
+    margin-left: 2px;
+    margin-right: 0px;
+}
+
+body:lang(ar) .add .material-icons {
+    margin-left: 0px;
+}
+
+body:lang(ar) .mat-filter-input {
+    text-align: right;
+}
+
+body:lang(ar) th.mat-header-cell:not(:first-child),
+body:lang(ar) td.mat-cell:not(:first-child),
+body:lang(ar) td.mat-footer-cell:not(:first-child) {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+body:lang(ar) .table-responsive .mat-error {
+    height: 0px;
+    bottom: 12px;
+}

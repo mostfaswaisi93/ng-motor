@@ -1,0 +1,10 @@
+body.ltr {
+    @import '~bootstrap/scss/bootstrap';
+}
+
+@import 'fonts.css';
+@import 'general.scss';
+@import 'general_ar.scss';
+@import 'responsive.scss';
+@import 'global/variables.scss';
+@import '~ngx-toastr/toastr';

@@ -1,0 +1,65 @@
+<div class="container-fluid manage-emails">
+  <form [formGroup]="serviceForm">
+    <div class="section-sep">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="font-weight-bold users">{{ 'ADMIN.FORM' | translate }}</p>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field [class.not-empty]="serviceForm.get('nameAr').value">
+            <mat-label>{{ 'ADMIN.ARABICNAME' | translate }}</mat-label>
+            <input type="text" matInput formControlName="nameAr" placeholder="{{ 'ADMIN.ARABICNAME' | translate }}">
+            <mat-error *ngIf="serviceForm.get('nameAr').errors?.required">
+              {{ 'ADMIN.ERRORMESSAGE' | translate }}
+            </mat-error>
+            <mat-error *ngIf="serviceForm.get('nameAr').errors?.pattern">
+              {{ 'ADMIN.ARNAMEERROR' | translate }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field [class.not-empty]="serviceForm.get('nameEn').value">
+            <mat-label>{{ 'ADMIN.ENGLISHNAME' | translate }}</mat-label>
+            <input type="text" matInput formControlName="nameEn" placeholder="{{ 'ADMIN.ENGLISHNAME' | translate }}">
+            <mat-error *ngIf="serviceForm.get('nameEn').errors?.required">
+              {{ 'ADMIN.ERRORMESSAGE' | translate }}
+            </mat-error>
+            <mat-error *ngIf="serviceForm.get('nameEn').errors?.pattern">
+              {{ 'ADMIN.ENNAMEERROR' | translate }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field [class.not-empty]="serviceForm.get('phone').value">
+            <mat-label>{{ 'ADMIN.PHONENAME' | translate }}</mat-label>
+            <input type="text" matInput formControlName="phone" placeholder="{{ 'ADMIN.PHONENAME' | translate }}">
+            <mat-error *ngIf="serviceForm.get('phone').errors?.required">
+              {{ 'ADMIN.ERRORMESSAGE' | translate }}
+            </mat-error>
+            <mat-error *ngIf=" serviceForm.get('phone').errors?.pattern">
+              {{ 'ADMIN.PHONEERROR' | translate }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6 effective">
+          <span>{{ 'ADMIN.EFFECTIVE' | translate }}</span>
+          <mat-radio-group class="mt-5" aria-label="Select an option" formControlName="active">
+            <mat-radio-button [value]="1">{{ 'GENERAL.YES' | translate }}</mat-radio-button>
+            <mat-radio-button [value]="2">{{ 'GENERAL.NO' | translate }}</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="col-md-6"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <button (click)="onSave()" class="red-background font-weight-bold">
+          {{ 'GENERAL.SAVE' | translate }}
+        </button>
+        <button (click)="onBack()" class="red-background save-data font-weight-bold">
+          {{ 'GENERAL.BACK' | translate }}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

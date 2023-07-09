@@ -1,0 +1,4 @@
+<app-splash-screen></app-splash-screen>
+<ng-http-loader [hidden]="!splashScreenService.spinnerEnabled" [entryComponent]="customLoaderComponent">
+</ng-http-loader>
+<router-outlet></router-outlet>

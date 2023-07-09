@@ -1,0 +1,4 @@
+<div [hidden]="!message" class="alert alert-{{type}}" role="alert" #alertNotice>
+	<button type="button" class="close" (click)="closeMessage()">&times;</button>
+	<div class="alert-text" [innerHTML]="message"></div>
+</div>
