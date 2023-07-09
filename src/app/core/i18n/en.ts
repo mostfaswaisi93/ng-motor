@@ -9,6 +9,7 @@ export const locale = {
 		},
 		LOGIN: {
 			'LOGIN': 'Login',
+			'REGISTER': 'Register new user',
 			'EMAIL': 'Email',
 			'USERNAME': 'Username',
 			'PASSWORD': 'Password',

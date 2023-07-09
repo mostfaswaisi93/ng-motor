@@ -7,32 +7,36 @@
                         <mat-icon>language</mat-icon>{{ 'ENGLISH' | translate }}
                     </p>
                 </div>
-                <img class="logo-pic" src="assets/images/lg-logo.svg" alt="{{ 'GENERAL.MOTOR' | translate }}"
+                <img class="logo-pic" src="assets/images/black-logo.svg" alt="{{ 'GENERAL.MOTOR' | translate }}"
                     title="{{ 'GENERAL.MOTOR' | translate }}">
-                <form [formGroup]="loginForm" (submit)="login()">
-                    <mat-form-field [class.not-empty]="loginForm.get('email').value">
+                <p class="red-text login-second">{{ 'LOGIN.REGISTER' | translate }}</p>
+                <form [formGroup]="registerForm" (submit)="login()">
+                    <mat-form-field [class.not-empty]="registerForm.get('email').value">
                         <mat-label>{{ 'LOGIN.EMAIL' | translate }}</mat-label>
                         <input type="text" required formControlName="email" matInput
                             placeholder="{{ 'LOGIN.EMAIL' | translate }}">
                         <mat-icon matPrefix>account_circle</mat-icon>
-                        <mat-error *ngIf="loginForm.get('email').errors?.required">
+                        <mat-error *ngIf="registerForm.get('email').errors?.required">
                             {{ 'LOGIN.CUSTOMERROR' | translate }}
                         </mat-error>
-                        <mat-error *ngIf="loginForm.get('email').errors?.pattern">
+                        <mat-error *ngIf="registerForm.get('email').errors?.pattern">
                             {{ 'LOGIN.EMAILERROR' | translate }}
                         </mat-error>
                     </mat-form-field>
-                    <mat-form-field [class.not-empty]="loginForm.get('password').value" class="mt-0 mb-0">
+                    <mat-form-field [class.not-empty]="registerForm.get('password').value" class="mt-0 mb-0">
                         <mat-label>{{ 'LOGIN.PASSWORD' | translate }}</mat-label>
                         <input matInput placeholder="{{ 'LOGIN.PASSWORD' | translate }}"
                             [type]="hide ? 'password' : 'text'" formControlName="password" required>
                         <mat-icon matSuffix (click)="hide = !hide">
                             {{ hide ? 'visibility_off' : 'visibility' }}
                         </mat-icon>
-                        <mat-error *ngIf="loginForm.get('password').errors?.required">
+                        <mat-error *ngIf="registerForm.get('password').errors?.required">
                             {{ 'LOGIN.CUSTOMERROR' | translate }}
                         </mat-error>
                     </mat-form-field>
+                    <p [routerLink]="'/auth/login'" class="forget-password">
+                        {{ 'LOGIN.LOGIN' | translate }}
+                    </p>
                     <button type="submit" class="red-background font-weight-bold">
                         {{ 'LOGIN.LOGIN' | translate }}
                     </button>

@@ -51,9 +51,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  forget(email) {
+    this.router.navigate(['/auth/forget'], { queryParams: { email: `${email}` } });
+  }
+
   setLang() {
     this.translatationService.setLanguage(this.translateService.currentLang === 'ar' ? 'en' : 'ar');
-    // window.location.reload();
   }
 
 }

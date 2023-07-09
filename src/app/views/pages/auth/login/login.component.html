@@ -7,8 +7,9 @@
                         <mat-icon>language</mat-icon>{{ 'ENGLISH' | translate }}
                     </p>
                 </div>
-                <img class="logo-pic" src="assets/images/lg-logo.svg" alt="{{ 'GENERAL.MOTOR' | translate }}"
+                <img class="logo-pic" src="assets/images/black-logo.svg" alt="{{ 'GENERAL.MOTOR' | translate }}"
                     title="{{ 'GENERAL.MOTOR' | translate }}">
+                <p class="red-text login-second">{{ 'LOGIN.LOGIN' | translate }}</p>
                 <form [formGroup]="loginForm" (submit)="login()">
                     <mat-form-field [class.not-empty]="loginForm.get('email').value">
                         <mat-label>{{ 'LOGIN.EMAIL' | translate }}</mat-label>
@@ -33,13 +34,16 @@
                             {{ 'LOGIN.CUSTOMERROR' | translate }}
                         </mat-error>
                     </mat-form-field>
+                    <p [routerLink]="'/auth/register'" class="forget-password">
+                        {{ 'LOGIN.REGISTER' | translate }}
+                    </p>
                     <button type="submit" class="red-background font-weight-bold">
                         {{ 'LOGIN.LOGIN' | translate }}
                     </button>
                 </form>
             </div>
         </div>
-        <div class="col-md 6">
+        <div class="col-md-6">
             <img class="login-pic" src="assets/images/img-login.svg" alt="{{ 'GENERAL.MOTOR' | translate }}"
                 title="{{ 'GENERAL.MOTOR' | translate }}">
         </div>

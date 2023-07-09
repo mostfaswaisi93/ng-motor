@@ -1,1 +1,77 @@
-<p>management-form works!</p>
+<div class="container-fluid manage-emails">
+    <form [formGroup]="serviceForm">
+        <div class="section-sep">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="font-weight-bold title-info">
+                        <span>{{ 'GENERAL.ADD' | translate }}</span>
+                        <span>{{ 'ADMIN.SECTION' | translate }}</span>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field [class.not-empty]="serviceForm.get('title_ar').value">
+                        <mat-label>{{ 'ADMIN.ARABICTITLE' | translate }}</mat-label>
+                        <input type="text" matInput formControlName="title_ar"
+                            placeholder="{{ 'ADMIN.ARABICTITLE' | translate }}">
+                        <mat-error *ngIf="serviceForm.get('title_ar').errors?.required">
+                            {{ 'ADMIN.ERRORMESSAGE' | translate }}
+                        </mat-error>
+                        <mat-error *ngIf="serviceForm.get('title_ar').errors?.pattern">
+                            {{ 'ADMIN.ARNAMEERROR' | translate }}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field [class.not-empty]="serviceForm.get('title_en').value">
+                        <mat-label>{{ 'ADMIN.ENGLISHTITLE' | translate }}</mat-label>
+                        <input type="text" matInput formControlName="title_en"
+                            placeholder="{{ 'ADMIN.ENGLISHTITLE' | translate }}">
+                        <mat-error *ngIf="serviceForm.get('title_en').errors?.required">
+                            {{ 'ADMIN.ERRORMESSAGE' | translate }}
+                        </mat-error>
+                        <mat-error *ngIf="serviceForm.get('title_en').errors?.pattern">
+                            {{ 'ADMIN.ENNAMEERROR' | translate }}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field [class.not-empty]="serviceForm.get('description_ar').value">
+                        <mat-label>{{ 'ADMIN.PHONENAME' | translate }}</mat-label>
+                        <textarea matInput formControlName="description_ar"
+                            placeholder="{{'GENERAL.REJECTRESONFIELD' | translate}}"></textarea>
+                        <mat-error *ngIf="serviceForm.get('description_ar').errors?.required">
+                            {{ 'ADMIN.ERRORMESSAGE' | translate }}
+                        </mat-error>
+                        <mat-error *ngIf=" serviceForm.get('description_ar').errors?.pattern">
+                            {{ 'ADMIN.PHONEERROR' | translate }}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field [class.not-empty]="serviceForm.get('description_ar').value">
+                        <mat-label>{{ 'ADMIN.PHONENAME' | translate }}</mat-label>
+                        <textarea matInput formControlName="description_ar"
+                            placeholder="{{'GENERAL.REJECTRESONFIELD' | translate}}"></textarea>
+                        <mat-error *ngIf="serviceForm.get('description_ar').errors?.required">
+                            {{ 'ADMIN.ERRORMESSAGE' | translate }}
+                        </mat-error>
+                        <mat-error *ngIf=" serviceForm.get('description_ar').errors?.pattern">
+                            {{ 'ADMIN.PHONEERROR' | translate }}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <!-- <div class="col-md-6"></div> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <button (click)="onSave()" class="red-background font-weight-bold">
+                    {{ 'GENERAL.SAVE' | translate }}
+                </button>
+                <button (click)="onBack()" class="red-background save-data font-weight-bold">
+                    {{ 'GENERAL.BACK' | translate }}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

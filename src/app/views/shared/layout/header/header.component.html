@@ -2,21 +2,22 @@
     <div class="row">
         <div class="col-md-6">
             <img (click)="goToHome()" *ngIf="translateService.currentLang == 'ar'" class="header__logo"
-                src="assets/images/lg-logo.svg" alt="{{'GENERAL.MOTOR' | translate}}"
+                src="assets/images/white-logo.svg" alt="{{'GENERAL.MOTOR' | translate}}"
                 title="{{'GENERAL.MOTOR' | translate}}">
             <img (click)="goToHome()" *ngIf="translateService.currentLang == 'en'" class="header__logo"
-                src="assets/images/lg-logo.svg" alt="{{'GENERAL.MOTOR' | translate}}"
+                src="assets/images/white-logo.svg" alt="{{'GENERAL.MOTOR' | translate}}"
                 title="{{'GENERAL.MOTOR' | translate}}">
             <div class="header__separator"></div>
             <div (click)="goToHome()" class="header__pragraph">
                 <span [hidden]="header">
                     <p class="font-weight-bold header__pragraph--firstparagraph">
-                        {{'GENERAL.MOTOR' | translate}}</p>
-                    <!-- <p>{{'GENERAL.MOTOR' | translate}}</p> -->
+                        {{'GENERAL.MOTOR' | translate}}
+                    </p>
                 </span>
                 <span [hidden]="!header">
                     <p class="font-weight-bold header__pragraph--firstparagraph header-title-add">
-                        {{'GENERAL.MOTOR' | translate}} {{'GENERAL.MOTOR' | translate}}</p>
+                        {{'GENERAL.MOTOR' | translate}} {{'GENERAL.MOTOR' | translate}}
+                    </p>
                     <p class="font-weight-bold text-dark header-title-add">{{header}}</p>
                 </span>
             </div>
