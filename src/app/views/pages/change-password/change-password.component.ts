@@ -26,8 +26,8 @@ export class ChangePasswordComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.initForm();
     this.userId = this.authService.user.data._id;
+    this.initForm();
   }
 
   initForm() {
@@ -48,13 +48,7 @@ export class ChangePasswordComponent implements OnInit {
       this.toastNotificationsService.showError(message);
       return;
     }
-    let data = {
-      'id': this.userId,
-      'password': this.changeForm.value.password,
-      'newPassword': this.changeForm.value.newPassword,
-      'confirmNewPassword': this.changeForm.value.confirmNewPassword
-    }
-    // let data = this.changeForm.getRawValue();
+    let data = this.changeForm.getRawValue();
     this.authService.changePassword(data).subscribe(data => {
       this.router.navigateByUrl(`/admin/home`);
       this.toastNotificationsService.showSuccess(this.translateService.instant('LOGIN.SUCCESS_MSG'));

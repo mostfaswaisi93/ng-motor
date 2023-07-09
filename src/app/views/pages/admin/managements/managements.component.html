@@ -15,7 +15,7 @@
                         <mat-icon matSuffix>search</mat-icon>
                     </mat-form-field>
                 </div>
-                <!-- <div class="col-md-3">
+                <div class="col-md-3">
                     <mat-form-field>
                         <mat-label>{{ 'ADMIN.EFFECTIVE' | translate }}</mat-label>
                         <mat-select [formControl]="effectiveFormControl" [class.not-empty]="">
@@ -24,7 +24,7 @@
                             <mat-option [value]="2">{{ 'GENERAL.INACTIVE' | translate }}</mat-option>
                         </mat-select>
                     </mat-form-field>
-                </div> -->
+                </div>
             </div>
         </div>
 
@@ -38,26 +38,30 @@
             <div class="col-md-12 table-responsive">
                 <table mat-table [dataSource]="dataSource">
 
-                    <ng-container matColumnDef="logo">
+                    <ng-container matColumnDef="nameAr">
                         <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.ARABICNAME' | translate }}</th>
-                        <td mat-cell *matCellDef="let service"> {{ service.logo }} </td>
-                    </ng-container>
-                    <ng-container matColumnDef="title_ar">
-                        <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.ARABICNAME' | translate }}</th>
-                        <td mat-cell *matCellDef="let service"> {{ service.title_ar }} </td>
-                    </ng-container>
-                    <ng-container matColumnDef="title_en">
-                        <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.ARABICNAME' | translate }}</th>
-                        <td mat-cell *matCellDef="let service"> {{ service.title_en }} </td>
-                    </ng-container>
-                    <ng-container matColumnDef="description_en">
-                        <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.ARABICNAME' | translate }}</th>
-                        <td mat-cell *matCellDef="let service"> {{ service.description_en }} </td>
+                        <td mat-cell *matCellDef="let service"> {{ service.nameAr }} </td>
                     </ng-container>
 
-                    <ng-container matColumnDef="description_ar">
+                    <ng-container matColumnDef="nameEn">
                         <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.ENGLISHNAME' | translate }}</th>
-                        <td mat-cell *matCellDef="let service"> {{ service.description_ar }} </td>
+                        <td mat-cell *matCellDef="let service"> {{ service.nameEn }} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="phone">
+                        <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.PHONENAME' | translate }}</th>
+                        <td mat-cell *matCellDef="let service"> {{ service.phone }} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="active">
+                        <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.EFFECTIVE' | translate }}</th>
+                        <td mat-cell *matCellDef="let service">
+                            <span [ngSwitch]="service.active">
+                                <span *ngSwitchCase="1"> {{ 'GENERAL.YES' | translate }} </span>
+                                <span *ngSwitchCase="2"> {{ 'GENERAL.NO' | translate }} </span>
+                                <span *ngSwitchDefault> N/A </span>
+                            </span>
+                        </td>
                     </ng-container>
 
                     <ng-container matColumnDef="edit">

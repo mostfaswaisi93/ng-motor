@@ -7,8 +7,8 @@ import { RouterModule } from '@angular/router';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ManageServicesComponent } from './manage-services/manage-services.component';
 import { ManageServicesFormComponent } from './manage-services/manage-services-form/manage-services-form.component';
-import { ManageManagementComponent } from './manage-management/manage-management.component';
-import { ManageManagementFormComponent } from './manage-management/manage-management-form/manage-management-form.component';
+import { ManagementsComponent } from './managements/managements.component';
+import { ManagementFormComponent } from './managements/management-form/management-form.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +16,8 @@ import { ManageManagementFormComponent } from './manage-management/manage-manage
     AdminHomeComponent,
     ManageServicesComponent,
     ManageServicesFormComponent,
-    ManageManagementComponent,
-    ManageManagementFormComponent
+    ManagementsComponent,
+    ManagementFormComponent
   ],
   imports: [
     CommonModule,
@@ -42,8 +42,8 @@ import { ManageManagementFormComponent } from './manage-management/manage-manage
             component: ManageServicesComponent
           },
           {
-            path: 'manage-management',
-            component: ManageManagementComponent
+            path: 'managements',
+            component: ManagementsComponent
           }
         ]
       }

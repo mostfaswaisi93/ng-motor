@@ -3,8 +3,9 @@
         <div class="col-md-12 text-center login-info position-relative">
             <div class="login-info__transform">
                 <p class="red-text font-weight-bold login-info__login-first">
-                    {{ 'LOGIN.CHANGEYOURPASSWORD' | translate }}</p>
-                <p class="red-text">{{ 'LOGIN.ENTERYOURPASSWORD' | translate }}</p>
+                    {{ 'USERPROFILE.TITLE' | translate }}
+                </p>
+                <p class="red-text">{{ 'USERPROFILE.CHANGEUSERPROFILE' | translate }}</p>
                 <form [formGroup]="profileForm">
                     <mat-form-field [class.not-empty]="profileForm.get('email').value">
                         <mat-label>{{ 'LOGIN.EMAIL' | translate }}</mat-label>
@@ -52,7 +53,7 @@
                         </mat-error>
                     </mat-form-field>
                     <button (click)="updateProfile()" class="red-background font-weight-bold">
-                        {{ 'LOGIN.RESETYOURPASSWORD' | translate }}
+                        {{ 'USERPROFILE.UPDATEUSERPROFILE' | translate }}
                     </button>
                 </form>
             </div>

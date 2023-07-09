@@ -27,9 +27,15 @@ export const locale = {
       'ENTERYOURPASSWORD': 'أدخِل كلمة المرور الجديدة',
       'SUCCESS_MSG': 'تم تغيير كلمة المرور بنجاح'
     },
+    USERPROFILE: {
+      'TITLE': 'بيانات ملفك الشخصي',
+      'CHANGEUSERPROFILE': 'أدخِل بيانات ملفك الشخصي لتحديثها',
+      'UPDATEUSERPROFILE': 'تحديث بيانات ملفك الشخصي',
+      'SUCCESS_MSG': 'تم تحديث بيانات ملفك الشخصي بنجاح'
+    },
     GENERAL: {
-      'MOTOR': 'شركة موتر ستار',
-      'FOOTER': '© جميع الحقوق محفوظة لدى شركة موتر ستار',
+      'MOTOR': 'شركة موتر ستار للصيانة',
+      'FOOTER': '© جميع الحقوق محفوظة لدى شركة موتر ستار للصيانة',
       'SAVE': 'حفظ',
       'CLOSE': 'إغلاق',
       'CANCEL': 'إلغاء',
@@ -40,14 +46,8 @@ export const locale = {
       'ACTIVE': 'فعال',
       'INACTIVE': 'غير فعال',
       'ADD': 'إضافة',
-      'ADDNEWEMAIL': 'بريد إلكتروني جديد',
       'EDIT': 'تعديل',
-      'DUPLICATE': 'كرر القاعدة',
       'FILL_REQUIRED_FIELDS': 'الرجاء ملء جميع الحقول المطلوبة بشكل صحيح',
-      'DAY': 'اليوم',
-      'MONTHLY': 'شهري',
-      'YEARLY': 'سنوي',
-      'OPEN': 'فتح',
       'SEARCH': 'بحث'
     },
     DIALOG: {
@@ -56,11 +56,9 @@ export const locale = {
       SUCCESS_MESSAGE: 'نجاح'
     },
     ADMIN: {
-      'HOMEEMAIL': 'التعديل على المراسلات',
-      'HOMEUSERS': 'إضافة وتعديل بيانات المستخدمين',
-      'HOMEDATA': 'إضافة وتعديل مصادر البيانات',
-      'HOMEREPORT': 'إضافة وتعديل الجداول التابعة للنشرات',
       'MANAGEMENT': 'إدارة',
+      'MANAGEMENTS': 'الإدارات',
+      'SECTIONS': 'الأقسام/الخدمات',
       'FORM': 'نموذج',
       'ARABICNAME': 'الاسم العربي',
       'ENGLISHNAME': 'الاسم بالإنجليزي',

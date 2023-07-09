@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastNotificationsService, TranslationService } from 'src/app/core/services';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -14,11 +13,10 @@ import { UsersService } from 'src/app/core/services/users.service';
 export class ProfileComponent implements OnInit {
 
   profileForm: FormGroup;
-  userId: any;
   userData: any;
+  userId: any;
 
   constructor(
-    private router: Router,
     private fb: FormBuilder,
     private authService: AuthService,
     private usersService: UsersService,
@@ -28,8 +26,8 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.initForm();
     this.userId = this.authService.user.data._id;
+    this.initForm();
     this.getUser();
   }
 
@@ -46,7 +44,13 @@ export class ProfileComponent implements OnInit {
   getUser() {
     this.usersService.getUser(this.userId).subscribe(data => {
       this.userData = data.data;
-      console.log('user data', this.userData);
+      this.profileForm.patchValue({
+        id: this.userData?._id,
+        email: this.userData?.email,
+        firstName: this.userData?.firstName,
+        lastName: this.userData?.lastName,
+        userName: this.userData?.userName,
+      });
     }, error => {
       this.toastNotificationsService.showError(error.error.message);
     });
@@ -59,19 +63,11 @@ export class ProfileComponent implements OnInit {
       this.toastNotificationsService.showError(message);
       return;
     }
-    let data = {
-      'id': this.userId,
-      'email': this.profileForm.value.email,
-      'firstName': this.profileForm.value.firstName,
-      'lastName': this.profileForm.value.lastName,
-      'userName': this.profileForm.value.userName
-    }
-    // let data = this.profileForm.getRawValue();
-    console.log(data);
+    let data = this.profileForm.getRawValue();
     this.usersService.updateUser(data).subscribe(data => {
-      console.log(data, 'profile');
-      // this.router.navigateByUrl(`/admin/home`);
-      this.toastNotificationsService.showSuccess(this.translateService.instant('LOGIN.SUCCESS_MSG'));
+      this.authService.setAuth(data, localStorage.getItem('accessToken'), localStorage.getItem('userId'));
+      this.authService.checkLogin();
+      this.toastNotificationsService.showSuccess(this.translateService.instant('USERPROFILE.SUCCESS_MSG'));
     }, error => {
       this.toastNotificationsService.showError(error.error.message);
     });

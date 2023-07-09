@@ -27,9 +27,15 @@ export const locale = {
 			'ENTERYOURPASSWORD': 'Enter your new password',
 			'SUCCESS_MSG': 'Password changed successfully'
 		},
+		USERPROFILE: {
+			'TITLE': 'Your profile data',
+			'CHANGEUSERPROFILE': 'Enter your profile information to update it',
+			'UPDATEUSERPROFILE': 'Update your profile information',
+			'SUCCESS_MSG': 'Your profile information has been updated successfully'
+		},
 		GENERAL: {
-			'MOTOR': 'Motor Star',
-			'FOOTER': '© All rights reserved to Motor Star',
+			'MOTOR': 'Motor Star Maintenance Company',
+			'FOOTER': '© All rights reserved to Motor Star Maintenance Company',
 			'SAVE': 'Save',
 			'CLOSE': 'Close',
 			'CANCEL': 'Cancel',
@@ -40,14 +46,8 @@ export const locale = {
 			'ACTIVE': 'Active',
 			'INACTIVE': 'InActive',
 			'ADD': 'Add',
-			'ADDNEWEMAIL': 'New email',
 			'EDIT': 'Edit',
-			'DUPLICATE': 'Duplicate',
 			'FILL_REQUIRED_FIELDS': 'Please, fill all required fields correctly',
-			'DAY': 'Day',
-			'MONTHLY': 'Monthly',
-			'YEARLY': 'Yearly',
-			'OPEN': 'Open',
 			'SEARCH': 'Search'
 		},
 		DIALOG: {
@@ -56,11 +56,9 @@ export const locale = {
 			SUCCESS_MESSAGE: 'Success'
 		},
 		ADMIN: {
-			'HOMEEMAIL': 'Edit emails',
-			'HOMEUSERS': 'Add or edit users',
-			'HOMEDATA': 'Add or edit data source agencies',
-			'HOMEREPORT': 'Add or edit table information',
 			'MANAGEMENT': 'Management',
+			'MANAGEMENTS': 'Managements',
+			'SECTIONS': 'Sections/Services',
 			'FORM': 'Form',
 			'ARABICNAME': 'Arabic name',
 			'ENGLISHNAME': 'English name',
