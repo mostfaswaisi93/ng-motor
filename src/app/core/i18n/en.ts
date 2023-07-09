@@ -11,6 +11,8 @@ export const locale = {
 			'LOGIN': 'Login',
 			'REGISTER': 'Register new user',
 			'EMAIL': 'Email',
+			'FIRSTNAME': 'First name',
+			'LASTNAME': 'Last name',
 			'USERNAME': 'Username',
 			'PASSWORD': 'Password',
 			'LOGOUT': 'Logout',
@@ -24,9 +26,11 @@ export const locale = {
 			'CHANGEYOURPASSWORD': 'Change your password',
 			'OLDPASSWORD': 'Old password',
 			'NEWPASSWORD': 'New password',
+			'CONFIRMPASSWORD': 'Confirm your password',
 			'CONFIRMNEWPASSWORD': 'Confirm your new password',
 			'ENTERYOURPASSWORD': 'Enter your new password',
-			'SUCCESS_MSG': 'Password changed successfully'
+			'SUCCESS_MSG': 'Password changed successfully',
+			'REGISTER_SUCCESS_MSG': 'A new user has been created successfully'
 		},
 		USERPROFILE: {
 			'TITLE': 'Your profile data',

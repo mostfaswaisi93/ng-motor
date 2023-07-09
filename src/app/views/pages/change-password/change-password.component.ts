@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { ToastNotificationsService, TranslationService } from 'src/app/core/services';
+import { ToastNotificationsService } from 'src/app/core/services';
 import { MustMatch } from '../../shared/must-match/must-match';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -13,15 +13,15 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class ChangePasswordComponent implements OnInit {
 
-  changeForm: FormGroup;
   userId: any;
+  hide = true;
+  changeForm: FormGroup;
 
   constructor(
     private router: Router,
     private fb: FormBuilder,
     private authService: AuthService,
     public translateService: TranslateService,
-    private translatationService: TranslationService,
     private toastNotificationsService: ToastNotificationsService
   ) { }
 
@@ -49,7 +49,7 @@ export class ChangePasswordComponent implements OnInit {
       return;
     }
     let data = this.changeForm.getRawValue();
-    this.authService.changePassword(data).subscribe(data => {
+    this.authService.changePassword(data).subscribe((data: any) => {
       this.router.navigateByUrl(`/admin/home`);
       this.toastNotificationsService.showSuccess(this.translateService.instant('LOGIN.SUCCESS_MSG'));
     }, error => {

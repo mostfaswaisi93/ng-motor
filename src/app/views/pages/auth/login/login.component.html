@@ -26,17 +26,17 @@
                     <mat-form-field [class.not-empty]="loginForm.get('password').value" class="mt-0 mb-0">
                         <mat-label>{{ 'LOGIN.PASSWORD' | translate }}</mat-label>
                         <input matInput placeholder="{{ 'LOGIN.PASSWORD' | translate }}"
-                            [type]="hide ? 'password' : 'text'" formControlName="password" required>
-                        <mat-icon matSuffix (click)="hide = !hide">
-                            {{ hide ? 'visibility_off' : 'visibility' }}
+                            [type]="hidePassword ? 'password' : 'text'" formControlName="password" required>
+                        <mat-icon matSuffix (click)="hidePassword = !hidePassword">
+                            {{ hidePassword ? 'visibility_off' : 'visibility' }}
                         </mat-icon>
                         <mat-error *ngIf="loginForm.get('password').errors?.required">
                             {{ 'LOGIN.CUSTOMERROR' | translate }}
                         </mat-error>
                     </mat-form-field>
-                    <p [routerLink]="'/auth/register'" class="forget-password">
+                    <!-- <p [routerLink]="'/auth/register'" class="forget-password">
                         {{ 'LOGIN.REGISTER' | translate }}
-                    </p>
+                    </p> -->
                     <button type="submit" class="red-background font-weight-bold">
                         {{ 'LOGIN.LOGIN' | translate }}
                     </button>

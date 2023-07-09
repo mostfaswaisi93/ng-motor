@@ -13,7 +13,7 @@ import { AuthService } from '../../../../core/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  hide = true;
+  hidePassword = true;
   loginForm: FormGroup;
 
   constructor(
@@ -49,10 +49,6 @@ export class LoginComponent implements OnInit {
     }, error => {
       this.toastNotificationsService.showError(error.error.message);
     });
-  }
-
-  forget(email) {
-    this.router.navigate(['/auth/forget'], { queryParams: { email: `${email}` } });
   }
 
   setLang() {

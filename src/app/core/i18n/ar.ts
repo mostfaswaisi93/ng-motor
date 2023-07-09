@@ -11,6 +11,8 @@ export const locale = {
       'LOGIN': 'تسجيل الدخول',
       'REGISTER': 'تسجيل مستخدم جديد',
       'EMAIL': 'البريد الإلكتروني',
+      'FIRSTNAME': 'الاسم الأول',
+      'LASTNAME': 'الاسم الأخير',
       'USERNAME': 'اسم المستخدم',
       'PASSWORD': 'كلمة المرور',
       'LOGOUT': 'تسجيل خروج',
@@ -24,9 +26,11 @@ export const locale = {
       'CHANGEYOURPASSWORD': 'تغيير كلمة المرور',
       'OLDPASSWORD': 'كلمة المرور القديمة',
       'NEWPASSWORD': 'كلمة المرور الجديدة',
+      'CONFIRMPASSWORD': 'تأكيد كلمة المرور',
       'CONFIRMNEWPASSWORD': 'تأكيد كلمة المرور الجديدة',
       'ENTERYOURPASSWORD': 'أدخِل كلمة المرور الجديدة',
-      'SUCCESS_MSG': 'تم تغيير كلمة المرور بنجاح'
+      'SUCCESS_MSG': 'تم تغيير كلمة المرور بنجاح',
+      'REGISTER_SUCCESS_MSG': 'تم انشاء مستخدم جديد بنجاح'
     },
     USERPROFILE: {
       'TITLE': 'بيانات ملفك الشخصي',
