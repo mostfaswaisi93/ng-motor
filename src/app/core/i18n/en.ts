@@ -33,6 +33,14 @@ export const locale = {
 			'UPDATEUSERPROFILE': 'Update your profile information',
 			'SUCCESS_MSG': 'Your profile information has been updated successfully'
 		},
+		SOCIALMEDIA: {
+			'SNAPCHAT': 'Snapchat link',
+			'INSTAGRAM': 'Instagram link',
+			'TIKTOK': 'Tiktok link',
+			'YOUTUBE': 'Youtube link',
+			'FACEBOOK': 'Facebook link',
+			'TWITTER': 'Twitter link',
+		},
 		GENERAL: {
 			'MOTOR': 'Motor Star Maintenance Company',
 			'FOOTER': '© All rights reserved to Motor Star Maintenance Company',
@@ -62,6 +70,8 @@ export const locale = {
 			'SECTIONS': 'Sections/Services',
 			'SECTION': 'Section/Service',
 			'SETTINGS': 'Settings',
+			'SOCIALMEDIA': 'Social media',
+			'CONTACTUS': 'Contact us',
 			'FORM': 'Form',
 			'ARABICNAME': 'Arabic name',
 			'ENGLISHNAME': 'English name',

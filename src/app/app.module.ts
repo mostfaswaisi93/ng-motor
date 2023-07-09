@@ -12,8 +12,10 @@ import { CoreModule } from './core/core.module';
 import { ChangePasswordComponent } from './views/pages/change-password/change-password.component';
 import { ProfileComponent } from './views/pages/profile/profile.component';
 import { SettingsComponent } from './views/pages/settings/settings.component';
-import { ContactUsComponent } from './views/pages/settings/contact-us/contact-us.component';
-import { SocialMediaComponent } from './views/pages/settings/social-media/social-media.component';
+import { ManageOurCommitmentsComponent } from './views/pages/settings/manage-our-commitments/manage-our-commitments.component';
+import { ManageOurGoalsComponent } from './views/pages/settings/manage-our-goals/manage-our-goals.component';
+import { ManageContactUsComponent } from './views/pages/settings/manage-contact-us/manage-contact-us.component';
+import { ManageSocialMediaComponent } from './views/pages/settings/manage-social-media/manage-social-media.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,10 @@ import { SocialMediaComponent } from './views/pages/settings/social-media/social
     ChangePasswordComponent,
     ProfileComponent,
     SettingsComponent,
-    ContactUsComponent,
-    SocialMediaComponent
+    ManageOurCommitmentsComponent,
+    ManageOurGoalsComponent,
+    ManageContactUsComponent,
+    ManageSocialMediaComponent
   ],
   imports: [
     BrowserModule,

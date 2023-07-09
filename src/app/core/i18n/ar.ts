@@ -33,6 +33,14 @@ export const locale = {
       'UPDATEUSERPROFILE': 'تحديث بيانات ملفك الشخصي',
       'SUCCESS_MSG': 'تم تحديث بيانات ملفك الشخصي بنجاح'
     },
+    SOCIALMEDIA: {
+			'SNAPCHAT': 'رابط سناب شات',
+			'INSTAGRAM': 'رابط الانستغرام',
+			'TIKTOK': 'رابط تيكتوك',
+			'YOUTUBE': 'رابط يوتيوب',
+			'FACEBOOK': 'رابط الفيسبوك',
+			'TWITTER': 'رابط تويتر',
+		},
     GENERAL: {
       'MOTOR': 'شركة موتر ستار للصيانة',
       'FOOTER': '© جميع الحقوق محفوظة لدى شركة موتر ستار للصيانة',
@@ -62,6 +70,8 @@ export const locale = {
       'SECTIONS': 'الأقسام/ الخدمات',
       'SECTION': ' قسم/ خدمة',
       'SETTINGS': 'الإعدادات',
+      'SOCIALMEDIA': 'السوشيال ميديا',
+      'CONTACTUS': 'اتصل بنا',
       'FORM': 'نموذج',
       'ARABICNAME': 'الاسم العربي',
       'ENGLISHNAME': 'الاسم بالإنجليزي',

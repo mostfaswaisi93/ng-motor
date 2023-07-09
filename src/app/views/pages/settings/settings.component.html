@@ -6,13 +6,21 @@
             </p>
         </div>
         <div class="col-md-12">
-            <div class="menu-item">
-                <span class="material-icons">date_range</span>
-                <p class="menu-item__p">{{'ADMIN.MANAGEMENT' | translate}}</p>
+            <div [routerLink]="'/settings/social-media'" class="menu-item">
+                <span class="material-icons">thumb_up</span>
+                <p class="menu-item__p">{{'ADMIN.SOCIALMEDIA' | translate}}</p>
             </div>
-            <div class="menu-item">
-                <span class="material-icons">view_list</span>
-                <p class="menu-item__p">{{'ADMIN.MANAGEMENT' | translate}}</p>
+            <div [routerLink]="'/settings/contact-us'" class="menu-item">
+                <span class="material-icons">contact_support</span>
+                <p class="menu-item__p">{{'ADMIN.CONTACTUS' | translate}}</p>
+            </div>
+            <div [routerLink]="'/settings/contact-us'" class="menu-item">
+                <span class="material-icons">contact_support</span>
+                <p class="menu-item__p">{{'ADMIN.CONTACTUS' | translate}}</p>
+            </div>
+            <div [routerLink]="'/settings/contact-us'" class="menu-item">
+                <span class="material-icons">contact_support</span>
+                <p class="menu-item__p">{{'ADMIN.CONTACTUS' | translate}}</p>
             </div>
         </div>
     </div>

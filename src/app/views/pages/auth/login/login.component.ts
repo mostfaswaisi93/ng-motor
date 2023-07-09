@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
 
   setLang() {
     this.translatationService.setLanguage(this.translateService.currentLang === 'ar' ? 'en' : 'ar');
-    window.location.reload();
+    // window.location.reload();
   }
 
 }

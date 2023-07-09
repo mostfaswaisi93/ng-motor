@@ -9,6 +9,8 @@ import { ErrorPageComponent } from './views/shared/error-page/error-page.compone
 import { USER_HOME_PAGE } from './core/enum/constant';
 import { ProfileComponent } from './views/pages/profile/profile.component';
 import { SettingsComponent } from './views/pages/settings/settings.component';
+import { ManageSocialMediaComponent } from './views/pages/settings/manage-social-media/manage-social-media.component';
+import { ManageContactUsComponent } from './views/pages/settings/manage-contact-us/manage-contact-us.component';
 
 const routes: Routes = [
   {
@@ -56,6 +58,14 @@ const routes: Routes = [
       {
         path: 'settings',
         component: SettingsComponent
+      },
+      {
+        path: 'settings/social-media',
+        component: ManageSocialMediaComponent
+      },
+      {
+        path: 'settings/contact-us',
+        component: ManageContactUsComponent
       },
       { path: 'error/:type', component: ErrorPageComponent },
       { path: '', redirectTo: USER_HOME_PAGE, pathMatch: 'full' },
