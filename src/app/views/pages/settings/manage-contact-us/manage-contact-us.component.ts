@@ -12,8 +12,8 @@ import { GeneralService } from 'src/app/core/services/general.service';
 })
 export class ManageContactUsComponent implements OnInit {
 
-  socialMediaForm: FormGroup;
-  socialMediaData: any;
+  contactUsForm: FormGroup;
+  contactUsData: any;
 
   constructor(
     private fb: FormBuilder,
@@ -29,43 +29,44 @@ export class ManageContactUsComponent implements OnInit {
   }
 
   initForm() {
-    this.socialMediaForm = this.fb.group({
-      snapChat: new FormControl(null, { validators: [Validators.required, Validators.pattern("^(http[s]?:\/\/)?([www\.])?([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$")] }),
-      instagram: new FormControl(null, { validators: [Validators.required, Validators.pattern("^(http[s]?:\/\/)?([www\.])?([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$")] }),
-      tiktok: new FormControl(null, { validators: [Validators.required, Validators.pattern("^(http[s]?:\/\/)?([www\.])?([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$")] }),
-      youtube: new FormControl(null, { validators: [Validators.required, Validators.pattern("^(http[s]?:\/\/)?([www\.])?([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$")] }),
-      facebook: new FormControl(null, { validators: [Validators.required, Validators.pattern("^(http[s]?:\/\/)?([www\.])?([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$")] }),
-      twitter: new FormControl(null, { validators: [Validators.required, Validators.pattern("^(http[s]?:\/\/)?([www\.])?([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$")] }),
+    this.contactUsForm = this.fb.group({
+      id: new FormControl(null),
+      logo: new FormControl(null),
+      media: new FormControl(null),
+      title_ar: new FormControl(null, { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      title_en: new FormControl(null, { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      description_ar: new FormControl(null, { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      description_en: new FormControl(null, { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      whatsappLink: new FormControl(null, { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] })
     });
   }
 
   getData() {
-    this.generalService.getGeneralSocialMedia().subscribe(data => {
-      this.socialMediaData = data.data.socialMedia;
-      console.log(this.socialMediaData, 'ss');
-      this.socialMediaForm.patchValue({
-        snapChat: this.socialMediaData?.snapChat,
-        instagram: this.socialMediaData?.instagram,
-        tiktok: this.socialMediaData?.tiktok,
-        youtube: this.socialMediaData?.youtube,
-        facebook: this.socialMediaData?.facebook,
-        twitter: this.socialMediaData?.twitter
-      });
+    this.generalService.getGeneralContactUs().subscribe(data => {
+      this.contactUsData = data.data.socialMedia;
+      // this.contactUsForm.patchValue({
+      //   snapChat: this.contactUsData?.snapChat,
+      //   instagram: this.contactUsData?.instagram,
+      //   tiktok: this.contactUsData?.tiktok,
+      //   youtube: this.contactUsData?.youtube,
+      //   facebook: this.contactUsData?.facebook,
+      //   twitter: this.contactUsData?.twitter
+      // });
     }, error => {
       this.toastNotificationsService.showError(error.error.message);
     });
   }
 
   onSave() {
-    if (this.socialMediaForm.invalid) {
+    if (this.contactUsForm.invalid) {
       let message = this.translateService.instant('GENERAL.FILL_REQUIRED_FIELDS');
       this.toastNotificationsService.showError(message);
       return;
     }
-    let data = this.socialMediaForm.getRawValue();
-    this.generalService.generalSocialMedia(data).subscribe(data => {
-      console.log('update', 'data');
-      // this.toastNotificationsService.showSuccess(this.translateService.instant('USERPROFILE.SUCCESS_MSG'));
+    let data = this.contactUsForm.getRawValue();
+    this.generalService.generalContactUs(data).subscribe((data) => {
+      this.getData();
+      this.toastNotificationsService.showSuccess(this.translateService.instant('SOCIALMEDIA.SUCCESS_MSG'));
     }, error => {
       this.toastNotificationsService.showError(error.error.message);
     });

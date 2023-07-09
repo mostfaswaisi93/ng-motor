@@ -42,7 +42,6 @@ export class ManageSocialMediaComponent implements OnInit {
   getData() {
     this.generalService.getGeneralSocialMedia().subscribe(data => {
       this.socialMediaData = data.data.socialMedia;
-      console.log(this.socialMediaData, 'ss');
       this.socialMediaForm.patchValue({
         snapChat: this.socialMediaData?.snapChat,
         instagram: this.socialMediaData?.instagram,
@@ -63,10 +62,9 @@ export class ManageSocialMediaComponent implements OnInit {
       return;
     }
     let data = this.socialMediaForm.getRawValue();
-    this.generalService.generalSocialMedia(data).subscribe(data => {
-      console.log('update', 'data');
+    this.generalService.generalSocialMedia(data).subscribe((data) => {
       this.getData();
-      // this.toastNotificationsService.showSuccess(this.translateService.instant('USERPROFILE.SUCCESS_MSG'));
+      this.toastNotificationsService.showSuccess(this.translateService.instant('SOCIALMEDIA.SUCCESS_MSG'));
     }, error => {
       this.toastNotificationsService.showError(error.error.message);
     });

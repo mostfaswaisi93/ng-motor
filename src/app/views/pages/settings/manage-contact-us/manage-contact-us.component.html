@@ -1,86 +1,34 @@
 <div class="container-fluid manage-emails">
-    <form [formGroup]="socialMediaForm">
+    <form [formGroup]="contactUsForm">
         <div class="section-sep">
             <div class="row">
                 <div class="col-md-12">
                     <p class="font-weight-bold title-info">
-                        <span>{{ 'ADMIN.SOCIALMEDIA' | translate }}</span>
+                        <span>{{ 'ADMIN.CONTACTUS' | translate }}</span>
                     </p>
                 </div>
-                <div class="col-md-9">
-                    <mat-form-field [class.not-empty]="socialMediaForm.get('snapChat').value">
-                        <mat-label>{{ 'SOCIALMEDIA.SNAPCHAT' | translate }}</mat-label>
-                        <input type="url" matInput formControlName="snapChat"
-                            placeholder="{{ 'SOCIALMEDIA.SNAPCHAT' | translate }}">
-                        <mat-error *ngIf="socialMediaForm.get('snapChat').errors?.required">
+                <div class="col-md-6">
+                    <mat-form-field [class.not-empty]="contactUsForm.get('title_ar').value">
+                        <mat-label>{{ 'ADMIN.ARABICTITLE' | translate }}</mat-label>
+                        <input type="text" matInput formControlName="title_ar"
+                            placeholder="{{ 'ADMIN.ARABICTITLE' | translate }}">
+                        <mat-error *ngIf="contactUsForm.get('title_ar').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>
-                        <mat-error *ngIf="socialMediaForm.get('snapChat').errors?.pattern">
+                        <mat-error *ngIf="contactUsForm.get('title_ar').errors?.pattern">
                             {{ 'ADMIN.ARNAMEERROR' | translate }}
                         </mat-error>
                     </mat-form-field>
                 </div>
-                <div class="col-md-9">
-                    <mat-form-field [class.not-empty]="socialMediaForm.get('instagram').value">
-                        <mat-label>{{ 'SOCIALMEDIA.INSTAGRAM' | translate }}</mat-label>
-                        <input type="url" matInput formControlName="instagram"
-                            placeholder="{{ 'SOCIALMEDIA.INSTAGRAM' | translate }}">
-                        <mat-error *ngIf="socialMediaForm.get('instagram').errors?.required">
+                <div class="col-md-6">
+                    <mat-form-field [class.not-empty]="contactUsForm.get('title_en').value">
+                        <mat-label>{{ 'ADMIN.ENGLISHTITLE' | translate }}</mat-label>
+                        <input type="text" matInput formControlName="title_en"
+                            placeholder="{{ 'ADMIN.ENGLISHTITLE' | translate }}">
+                        <mat-error *ngIf="contactUsForm.get('title_en').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>
-                        <mat-error *ngIf="socialMediaForm.get('instagram').errors?.pattern">
-                            {{ 'ADMIN.ENNAMEERROR' | translate }}
-                        </mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-9">
-                    <mat-form-field [class.not-empty]="socialMediaForm.get('tiktok').value">
-                        <mat-label>{{ 'SOCIALMEDIA.TIKTOK' | translate }}</mat-label>
-                        <input type="url" matInput formControlName="tiktok"
-                            placeholder="{{ 'SOCIALMEDIA.TIKTOK' | translate }}">
-                        <mat-error *ngIf="socialMediaForm.get('tiktok').errors?.required">
-                            {{ 'ADMIN.ERRORMESSAGE' | translate }}
-                        </mat-error>
-                        <mat-error *ngIf="socialMediaForm.get('tiktok').errors?.pattern">
-                            {{ 'ADMIN.ENNAMEERROR' | translate }}
-                        </mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-9">
-                    <mat-form-field [class.not-empty]="socialMediaForm.get('youtube').value">
-                        <mat-label>{{ 'SOCIALMEDIA.YOUTUBE' | translate }}</mat-label>
-                        <input type="url" matInput formControlName="youtube"
-                            placeholder="{{ 'SOCIALMEDIA.YOUTUBE' | translate }}">
-                        <mat-error *ngIf="socialMediaForm.get('youtube').errors?.required">
-                            {{ 'ADMIN.ERRORMESSAGE' | translate }}
-                        </mat-error>
-                        <mat-error *ngIf="socialMediaForm.get('youtube').errors?.pattern">
-                            {{ 'ADMIN.ENNAMEERROR' | translate }}
-                        </mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-9">
-                    <mat-form-field [class.not-empty]="socialMediaForm.get('facebook').value">
-                        <mat-label>{{ 'SOCIALMEDIA.FACEBOOK' | translate }}</mat-label>
-                        <input type="url" matInput formControlName="facebook"
-                            placeholder="{{ 'SOCIALMEDIA.FACEBOOK' | translate }}">
-                        <mat-error *ngIf="socialMediaForm.get('facebook').errors?.required">
-                            {{ 'ADMIN.ERRORMESSAGE' | translate }}
-                        </mat-error>
-                        <mat-error *ngIf="socialMediaForm.get('facebook').errors?.pattern">
-                            {{ 'ADMIN.ENNAMEERROR' | translate }}
-                        </mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="col-md-9">
-                    <mat-form-field [class.not-empty]="socialMediaForm.get('twitter').value">
-                        <mat-label>{{ 'SOCIALMEDIA.TWITTER' | translate }}</mat-label>
-                        <input type="url" matInput formControlName="twitter"
-                            placeholder="{{ 'SOCIALMEDIA.TWITTER' | translate }}">
-                        <mat-error *ngIf="socialMediaForm.get('twitter').errors?.required">
-                            {{ 'ADMIN.ERRORMESSAGE' | translate }}
-                        </mat-error>
-                        <mat-error *ngIf="socialMediaForm.get('twitter').errors?.pattern">
+                        <mat-error *ngIf="contactUsForm.get('title_en').errors?.pattern">
                             {{ 'ADMIN.ENNAMEERROR' | translate }}
                         </mat-error>
                     </mat-form-field>

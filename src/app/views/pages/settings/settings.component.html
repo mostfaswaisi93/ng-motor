@@ -2,25 +2,25 @@
     <div class="row">
         <div>
             <p class="font-weight-bold title-info">
-                <span>{{ 'ADMIN.SETTINGS' | translate }}</span>
+                <span>{{ 'ADMIN.SETTINGS' | translate }}:</span>
             </p>
         </div>
         <div class="col-md-12">
-            <div [routerLink]="'/settings/social-media'" class="menu-item">
+            <div [routerLink]="'/settings/manage-social-media'" class="menu-item">
                 <span class="material-icons">thumb_up</span>
                 <p class="menu-item__p">{{'ADMIN.SOCIALMEDIA' | translate}}</p>
             </div>
-            <div [routerLink]="'/settings/contact-us'" class="menu-item">
+            <div [routerLink]="'/settings/manage-contact-us'" class="menu-item">
                 <span class="material-icons">contact_support</span>
                 <p class="menu-item__p">{{'ADMIN.CONTACTUS' | translate}}</p>
             </div>
-            <div [routerLink]="'/settings/contact-us'" class="menu-item">
-                <span class="material-icons">contact_support</span>
-                <p class="menu-item__p">{{'ADMIN.CONTACTUS' | translate}}</p>
+            <div [routerLink]="'/settings/manage-our-commitments'" class="menu-item">
+                <span class="material-icons">verified</span>
+                <p class="menu-item__p">{{'ADMIN.OURCOMMITMENTS' | translate}}</p>
             </div>
-            <div [routerLink]="'/settings/contact-us'" class="menu-item">
-                <span class="material-icons">contact_support</span>
-                <p class="menu-item__p">{{'ADMIN.CONTACTUS' | translate}}</p>
+            <div [routerLink]="'/settings/manage-our-goals'" class="menu-item">
+                <span class="material-icons">lightbulb</span>
+                <p class="menu-item__p">{{'ADMIN.OURGOALS' | translate}}</p>
             </div>
         </div>
     </div>

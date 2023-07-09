@@ -11,6 +11,8 @@ import { ProfileComponent } from './views/pages/profile/profile.component';
 import { SettingsComponent } from './views/pages/settings/settings.component';
 import { ManageSocialMediaComponent } from './views/pages/settings/manage-social-media/manage-social-media.component';
 import { ManageContactUsComponent } from './views/pages/settings/manage-contact-us/manage-contact-us.component';
+import { ManageOurGoalsComponent } from './views/pages/settings/manage-our-goals/manage-our-goals.component';
+import { ManageOurCommitmentsComponent } from './views/pages/settings/manage-our-commitments/manage-our-commitments.component';
 
 const routes: Routes = [
   {
@@ -60,12 +62,20 @@ const routes: Routes = [
         component: SettingsComponent
       },
       {
-        path: 'settings/social-media',
+        path: 'settings/manage-social-media',
         component: ManageSocialMediaComponent
       },
       {
-        path: 'settings/contact-us',
+        path: 'settings/manage-contact-us',
         component: ManageContactUsComponent
+      },
+      {
+        path: 'settings/manage-our-commitments',
+        component: ManageOurCommitmentsComponent
+      },
+      {
+        path: 'settings/manage-our-goals',
+        component: ManageOurGoalsComponent
       },
       { path: 'error/:type', component: ErrorPageComponent },
       { path: '', redirectTo: USER_HOME_PAGE, pathMatch: 'full' },
