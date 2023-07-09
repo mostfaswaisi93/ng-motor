@@ -69,7 +69,6 @@ export class ManageServicesComponent implements OnInit {
   onDelete(service): any {
     this.service = service;
     console.log(this.service);
-    // this.showForm = !this.showForm;
     this.servicesService.deleteService(this.service?._id).subscribe((data: any) => {
       console.log(data, 'delete');
       this.getData();

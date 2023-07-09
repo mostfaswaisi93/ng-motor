@@ -12,8 +12,8 @@ import { GeneralService } from 'src/app/core/services/general.service';
 })
 export class ManageOurGoalsComponent implements OnInit {
 
-  contactUsForm: FormGroup;
-  contactUsData: any;
+  ourGoalsData: any;
+  ourGoalsForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -29,7 +29,7 @@ export class ManageOurGoalsComponent implements OnInit {
   }
 
   initForm() {
-    this.contactUsForm = this.fb.group({
+    this.ourGoalsForm = this.fb.group({
       city_ar: new FormControl(null, { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
       city_en: new FormControl(null, { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
       country_ar: new FormControl(null, { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
@@ -47,14 +47,9 @@ export class ManageOurGoalsComponent implements OnInit {
 
   getData() {
     this.generalService.getGeneralContactUs().subscribe(data => {
-      this.contactUsData = data.data.socialMedia;
-      // this.contactUsForm.patchValue({
-      //   snapChat: this.contactUsData?.snapChat,
-      //   instagram: this.contactUsData?.instagram,
-      //   tiktok: this.contactUsData?.tiktok,
-      //   youtube: this.contactUsData?.youtube,
-      //   facebook: this.contactUsData?.facebook,
-      //   twitter: this.contactUsData?.twitter
+      this.ourGoalsData = data.data.socialMedia;
+      // this.ourGoalsForm.patchValue({
+      //   snapChat: this.ourGoalsData?.snapChat
       // });
     }, error => {
       this.toastNotificationsService.showError(error.error.message);
@@ -62,12 +57,12 @@ export class ManageOurGoalsComponent implements OnInit {
   }
 
   onSave() {
-    if (this.contactUsForm.invalid) {
+    if (this.ourGoalsForm.invalid) {
       let message = this.translateService.instant('GENERAL.FILL_REQUIRED_FIELDS');
       this.toastNotificationsService.showError(message);
       return;
     }
-    let data = this.contactUsForm.getRawValue();
+    let data = this.ourGoalsForm.getRawValue();
     this.generalService.generalContactUs(data).subscribe((data) => {
       this.getData();
       this.toastNotificationsService.showSuccess(this.translateService.instant('SOCIALMEDIA.SUCCESS_MSG'));

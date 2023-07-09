@@ -45,7 +45,12 @@ export const locale = {
       'YOUTUBE': 'رابط يوتيوب',
       'FACEBOOK': 'رابط الفيسبوك',
       'TWITTER': 'رابط تويتر',
-      'SUCCESS_MSG': 'تم تحديث أسماء مستخدمي الوسائط الاجتماعية الخاصة بك بنجاح'
+      'SUCCESS_MSG': 'تم تحديث الروابط الإلكترونية لوسائل التواصل الاجتماعية الخاصة بك بنجاح'
+    },
+    CONTACTUS: {
+      'ARABICCITY': 'المدينة بالعربي',
+      'ENGLISHCITY': 'المدينة بالإنجليزي',
+      'SUCCESS_MSG': 'تم تحديث الروابط الإلكترونية لوسائل التواصل الاجتماعية الخاصة بك بنجاح'
     },
     GENERAL: {
       'MOTOR': 'شركة موتر ستار للصيانة',
@@ -54,6 +59,7 @@ export const locale = {
       'CLOSE': 'إغلاق',
       'CANCEL': 'إلغاء',
       'BACK': 'رجوع',
+      'BACKTOHOME': 'رجوع للرئيسية',
       'YES': 'نعم',
       'NO': 'لا',
       'ALL': 'الكل',
@@ -80,7 +86,7 @@ export const locale = {
       'CONTACTUS': 'اتصل بنا',
       'OURCOMMITMENTS': 'التزاماتنا',
       'OURGOALS': 'أهدافنا',
-      'ARABICNAME': 'الاسم العربي',
+      'ARABICNAME': 'الاسم بالعربي',
       'ENGLISHNAME': 'الاسم بالإنجليزي',
       'ARABICTITLE': 'العنوان بالعربي',
       'ENGLISHTITLE': 'العنوان بالإنجليزي',

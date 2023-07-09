@@ -45,7 +45,12 @@ export const locale = {
 			'YOUTUBE': 'Youtube link',
 			'FACEBOOK': 'Facebook link',
 			'TWITTER': 'Twitter link',
-			'SUCCESS_MSG': 'Your social media usernames has been updated successfully'
+			'SUCCESS_MSG': 'Your social media links have been updated successfully'
+		},
+		CONTACTUS: {
+			'ARABICCITY': 'Arabic city',
+			'ENGLISHCITY': 'English city',
+			'SUCCESS_MSG': 'Your social media links have been updated successfully'
 		},
 		GENERAL: {
 			'MOTOR': 'Motor Star Maintenance Company',
@@ -54,6 +59,7 @@ export const locale = {
 			'CLOSE': 'Close',
 			'CANCEL': 'Cancel',
 			'BACK': 'Back',
+			'BACKTOHOME': 'Back to home',
 			'YES': 'Yes',
 			'NO': 'No',
 			'ALL': 'All',

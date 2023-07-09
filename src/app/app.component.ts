@@ -31,7 +31,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    const routerSubscription = this.router.events.subscribe(event => {
+    const routerSubscription = this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
         this.splashScreenService.hide();
         window.scrollTo(0, 0);

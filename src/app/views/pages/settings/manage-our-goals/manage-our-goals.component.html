@@ -1,34 +1,34 @@
 <div class="container-fluid manage-emails">
-    <form [formGroup]="contactUsForm">
+    <form [formGroup]="ourGoalsForm">
         <div class="section-sep">
             <div class="row">
                 <div class="col-md-12">
                     <p class="font-weight-bold title-info">
-                        <span>{{ 'ADMIN.CONTACTUS' | translate }}</span>
+                        <span>{{ 'ADMIN.OURGOALS' | translate }}</span>
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <mat-form-field [class.not-empty]="contactUsForm.get('title_ar').value">
+                    <mat-form-field [class.not-empty]="ourGoalsForm.get('title_ar').value">
                         <mat-label>{{ 'ADMIN.ARABICTITLE' | translate }}</mat-label>
                         <input type="text" matInput formControlName="title_ar"
                             placeholder="{{ 'ADMIN.ARABICTITLE' | translate }}">
-                        <mat-error *ngIf="contactUsForm.get('title_ar').errors?.required">
+                        <mat-error *ngIf="ourGoalsForm.get('title_ar').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>
-                        <mat-error *ngIf="contactUsForm.get('title_ar').errors?.pattern">
+                        <mat-error *ngIf="ourGoalsForm.get('title_ar').errors?.pattern">
                             {{ 'ADMIN.ARNAMEERROR' | translate }}
                         </mat-error>
                     </mat-form-field>
                 </div>
                 <div class="col-md-6">
-                    <mat-form-field [class.not-empty]="contactUsForm.get('title_en').value">
+                    <mat-form-field [class.not-empty]="ourGoalsForm.get('title_en').value">
                         <mat-label>{{ 'ADMIN.ENGLISHTITLE' | translate }}</mat-label>
                         <input type="text" matInput formControlName="title_en"
                             placeholder="{{ 'ADMIN.ENGLISHTITLE' | translate }}">
-                        <mat-error *ngIf="contactUsForm.get('title_en').errors?.required">
+                        <mat-error *ngIf="ourGoalsForm.get('title_en').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>
-                        <mat-error *ngIf="contactUsForm.get('title_en').errors?.pattern">
+                        <mat-error *ngIf="ourGoalsForm.get('title_en').errors?.pattern">
                             {{ 'ADMIN.ENNAMEERROR' | translate }}
                         </mat-error>
                     </mat-form-field>

@@ -14,7 +14,9 @@ import { AuthService } from 'src/app/core/services/auth.service';
 export class ChangePasswordComponent implements OnInit {
 
   userId: any;
-  hide = true;
+  hidePassword = true;
+  hideNewPassword = true;
+  hideConPassword = true;
   changeForm: FormGroup;
 
   constructor(

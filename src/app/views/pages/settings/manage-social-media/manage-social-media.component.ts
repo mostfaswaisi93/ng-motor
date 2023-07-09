@@ -12,8 +12,8 @@ import { GeneralService } from 'src/app/core/services/general.service';
 })
 export class ManageSocialMediaComponent implements OnInit {
 
-  socialMediaForm: FormGroup;
   socialMediaData: any;
+  socialMediaForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -40,7 +40,7 @@ export class ManageSocialMediaComponent implements OnInit {
   }
 
   getData() {
-    this.generalService.getGeneralSocialMedia().subscribe(data => {
+    this.generalService.getGeneralSocialMedia().subscribe((data: any) => {
       this.socialMediaData = data.data.socialMedia;
       this.socialMediaForm.patchValue({
         snapChat: this.socialMediaData?.snapChat,
@@ -62,7 +62,7 @@ export class ManageSocialMediaComponent implements OnInit {
       return;
     }
     let data = this.socialMediaForm.getRawValue();
-    this.generalService.generalSocialMedia(data).subscribe((data) => {
+    this.generalService.generalSocialMedia(data).subscribe((data: any) => {
       this.getData();
       this.toastNotificationsService.showSuccess(this.translateService.instant('SOCIALMEDIA.SUCCESS_MSG'));
     }, error => {
