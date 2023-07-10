@@ -45,15 +45,19 @@ export class ManageContactUsComponent implements OnInit {
 
   getData() {
     this.generalService.getGeneralContactUs().subscribe(data => {
-      this.contactUsData = data.data.socialMedia;
-      // this.contactUsForm.patchValue({
-      //   snapChat: this.contactUsData?.snapChat,
-      //   instagram: this.contactUsData?.instagram,
-      //   tiktok: this.contactUsData?.tiktok,
-      //   youtube: this.contactUsData?.youtube,
-      //   facebook: this.contactUsData?.facebook,
-      //   twitter: this.contactUsData?.twitter
-      // });
+      this.contactUsData = data.data.contactUs;
+      this.contactUsForm.patchValue({
+        city_ar: this.contactUsData?.city?.ar,
+        city_en: this.contactUsData?.city?.en,
+        country_ar: this.contactUsData?.country?.ar,
+        country_en: this.contactUsData?.country?.en,
+        address_ar: this.contactUsData?.address?.ar,
+        address_en: this.contactUsData?.address?.en,
+        primaryEmail: this.contactUsData?.email?.primary,
+        secondaryEmail: this.contactUsData?.email?.secondary,
+        primaryPhoneNumber: this.contactUsData?.phoneNumber?.primary,
+        secondaryPhoneNumber: this.contactUsData?.phoneNumber?.secondary
+      });
     }, error => {
       this.toastNotificationsService.showError(error.error.message);
     });
@@ -66,9 +70,9 @@ export class ManageContactUsComponent implements OnInit {
       return;
     }
     let data = this.contactUsForm.getRawValue();
-    this.generalService.generalContactUs(data).subscribe((data) => {
+    this.generalService.generalContactUs(data).subscribe((data: any) => {
       this.getData();
-      this.toastNotificationsService.showSuccess(this.translateService.instant('SOCIALMEDIA.SUCCESS_MSG'));
+      this.toastNotificationsService.showSuccess(this.translateService.instant('CONTACTUS.SUCCESS_MSG'));
     }, error => {
       this.toastNotificationsService.showError(error.error.message);
     });

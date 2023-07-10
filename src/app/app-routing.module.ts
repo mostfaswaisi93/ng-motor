@@ -54,7 +54,7 @@ const routes: Routes = [
         component: ChangePasswordComponent
       },
       {
-        path: 'user-profile',
+        path: 'admin-profile',
         component: ProfileComponent
       },
       {

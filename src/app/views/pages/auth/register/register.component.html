@@ -15,7 +15,7 @@
                         <mat-label>{{ 'LOGIN.EMAIL' | translate }}</mat-label>
                         <input type="text" required formControlName="email" matInput
                             placeholder="{{ 'LOGIN.EMAIL' | translate }}">
-                        <mat-icon matPrefix>account_circle</mat-icon>
+                        <!-- <mat-icon matPrefix>account_circle</mat-icon> -->
                         <mat-error *ngIf="registerForm.get('email').errors?.required">
                             {{ 'LOGIN.CUSTOMERROR' | translate }}
                         </mat-error>
@@ -27,7 +27,7 @@
                         <mat-label>{{ 'LOGIN.FIRSTNAME' | translate }}</mat-label>
                         <input type="text" required formControlName="firstName" matInput
                             placeholder="{{ 'LOGIN.FIRSTNAME' | translate }}">
-                        <mat-icon matPrefix>account_circle</mat-icon>
+                        <!-- <mat-icon matPrefix>account_circle</mat-icon> -->
                         <mat-error *ngIf="registerForm.get('firstName').errors?.required">
                             {{ 'LOGIN.CUSTOMERROR' | translate }}
                         </mat-error>
@@ -39,7 +39,7 @@
                         <mat-label>{{ 'LOGIN.LASTNAME' | translate }}</mat-label>
                         <input type="text" required formControlName="lastName" matInput
                             placeholder="{{ 'LOGIN.LASTNAME' | translate }}">
-                        <mat-icon matPrefix>account_circle</mat-icon>
+                        <!-- <mat-icon matPrefix>account_circle</mat-icon> -->
                         <mat-error *ngIf="registerForm.get('lastName').errors?.required">
                             {{ 'LOGIN.CUSTOMERROR' | translate }}
                         </mat-error>
@@ -51,7 +51,7 @@
                         <mat-label>{{ 'LOGIN.USERNAME' | translate }}</mat-label>
                         <input type="text" required formControlName="userName" matInput
                             placeholder="{{ 'LOGIN.USERNAME' | translate }}">
-                        <mat-icon matPrefix>account_circle</mat-icon>
+                        <!-- <mat-icon matPrefix>account_circle</mat-icon> -->
                         <mat-error *ngIf="registerForm.get('userName').errors?.required">
                             {{ 'LOGIN.CUSTOMERROR' | translate }}
                         </mat-error>

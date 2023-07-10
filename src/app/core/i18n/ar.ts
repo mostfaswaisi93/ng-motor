@@ -50,7 +50,15 @@ export const locale = {
     CONTACTUS: {
       'ARABICCITY': 'المدينة بالعربي',
       'ENGLISHCITY': 'المدينة بالإنجليزي',
-      'SUCCESS_MSG': 'تم تحديث الروابط الإلكترونية لوسائل التواصل الاجتماعية الخاصة بك بنجاح'
+      'ARABICCOUNTRY': 'الدولة بالعربي',
+      'ENGLISHCOUNTRY': 'الدولة بالإنجليزي',
+      'ARABICADDRESS': 'العنوان بالعربي',
+      'ENGLISHADDRESS': 'العنوان بالإنجليزي',
+      'PRIMARYEMAIL': 'البريد الإلكتروني الرئيسي',
+      'SECONDARYEMAIL': 'البريد الإلكتروني الثانوي',
+      'PRIMARYPHONENUMBER': 'رقم الهاتف الرئيسي',
+      'SECONDARYPHONENUMBER': 'رقم الهاتف الثانوي',
+      'SUCCESS_MSG': 'تم تحديث بيانات اتصل بنا بنجاح'
     },
     GENERAL: {
       'MOTOR': 'شركة موتر ستار للصيانة',
@@ -58,8 +66,9 @@ export const locale = {
       'SAVE': 'حفظ',
       'CLOSE': 'إغلاق',
       'CANCEL': 'إلغاء',
+      'HOME': 'الرئيسية',
       'BACK': 'رجوع',
-      'BACKTOHOME': 'رجوع للرئيسية',
+      'BACKTOHOME': 'رجوع للقائمة الرئيسية',
       'YES': 'نعم',
       'NO': 'لا',
       'ALL': 'الكل',
@@ -86,6 +95,7 @@ export const locale = {
       'CONTACTUS': 'اتصل بنا',
       'OURCOMMITMENTS': 'التزاماتنا',
       'OURGOALS': 'أهدافنا',
+      'HEADER': 'الهيدر',
       'ARABICNAME': 'الاسم بالعربي',
       'ENGLISHNAME': 'الاسم بالإنجليزي',
       'ARABICTITLE': 'العنوان بالعربي',
@@ -94,15 +104,11 @@ export const locale = {
       'EFFECTIVE': 'فعال؟',
       'ERRORMESSAGE': 'هذا الحقل مطلوب',
       'PHONEERROR': 'يجب أن يكون هذا الحقل رقم هاتف ولا يقبل سوى 8 أرقام',
-      'VERSIONERROR': 'يجب أن يكون هذا الحقل رقم إصدار ويجب ألا يقبل 0 أو الأرقام السالبة',
       'ARNAMEERROR': 'يجب أن يقبل هذا الحقل الحروف العربية فقط',
       'ENNAMEERROR': 'يجب أن يقبل هذا الحقل الحروف الإنجليزية فقط',
       'URLERROR': 'يجب أن يقبل هذا الحقل رابط إلكتروني فقط',
       'ADDED_MSG': 'تم إضافة البيانات بنجاح',
-      'USER': 'مستخدم',
-      'ADMIN': 'مدير النظام',
-      'USERS': 'فئة المستخدمين',
-      'USER_PROFILE': 'الملف الشخصي'
+      'ADMIN_PROFILE': 'الملف الشخصي'
     }
   }
 };

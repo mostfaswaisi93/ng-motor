@@ -9,6 +9,10 @@ import { ManageServicesComponent } from './manage-services/manage-services.compo
 import { ManageServicesFormComponent } from './manage-services/manage-services-form/manage-services-form.component';
 import { ManagementsComponent } from './managements/managements.component';
 import { ManagementFormComponent } from './managements/management-form/management-form.component';
+import { ManageHomeComponent } from './manage-home/manage-home.component';
+import { HeaderComponent } from './manage-home/header/header.component';
+import { WhoWeAreComponent } from './manage-home/who-we-are/who-we-are.component';
+import { WhatDoWeApplyComponent } from './manage-home/what-do-we-apply/what-do-we-apply.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { ManagementFormComponent } from './managements/management-form/managemen
     ManageServicesComponent,
     ManageServicesFormComponent,
     ManagementsComponent,
-    ManagementFormComponent
+    ManagementFormComponent,
+    ManageHomeComponent,
+    HeaderComponent,
+    WhoWeAreComponent,
+    WhatDoWeApplyComponent
   ],
   imports: [
     CommonModule,
@@ -36,6 +44,22 @@ import { ManagementFormComponent } from './managements/management-form/managemen
           {
             path: 'home',
             component: AdminHomeComponent
+          },
+          {
+            path: 'manage-home',
+            component: ManageHomeComponent
+          },
+          {
+            path: 'manage-home/header',
+            component: HeaderComponent
+          },
+          {
+            path: 'manage-home/what-do-we-apply',
+            component: WhatDoWeApplyComponent
+          },
+          {
+            path: 'manage-home/who-we-are',
+            component: WhoWeAreComponent
           },
           {
             path: 'manage-services',

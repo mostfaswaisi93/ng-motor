@@ -50,7 +50,15 @@ export const locale = {
 		CONTACTUS: {
 			'ARABICCITY': 'Arabic city',
 			'ENGLISHCITY': 'English city',
-			'SUCCESS_MSG': 'Your social media links have been updated successfully'
+			'ARABICCOUNTRY': 'Arabic country',
+			'ENGLISHCOUNTRY': 'English country',
+			'ARABICADDRESS': 'Arabic address',
+			'ENGLISHADDRESS': 'English address',
+			'PRIMARYEMAIL': 'Primary email',
+			'SECONDARYEMAIL': 'Secondary email',
+			'PRIMARYPHONENUMBER': 'Primary phone number',
+			'SECONDARYPHONENUMBER': 'Secondary phone number',
+			'SUCCESS_MSG': 'Your contact information has been updated successfully'
 		},
 		GENERAL: {
 			'MOTOR': 'Motor Star Maintenance Company',
@@ -58,8 +66,9 @@ export const locale = {
 			'SAVE': 'Save',
 			'CLOSE': 'Close',
 			'CANCEL': 'Cancel',
+			'HOME': 'Home',
 			'BACK': 'Back',
-			'BACKTOHOME': 'Back to home',
+			'BACKTOHOME': 'Back to home list',
 			'YES': 'Yes',
 			'NO': 'No',
 			'ALL': 'All',
@@ -86,6 +95,7 @@ export const locale = {
 			'CONTACTUS': 'Contact us',
 			'OURCOMMITMENTS': 'Our commitments',
 			'OURGOALS': 'Our goals',
+			'HEADER': 'Header',
 			'ARABICNAME': 'Arabic name',
 			'ENGLISHNAME': 'English name',
 			'ARABICTITLE': 'Arabic title',
@@ -94,15 +104,11 @@ export const locale = {
 			'EFFECTIVE': 'Active?',
 			'ERRORMESSAGE': 'This field is required',
 			'PHONEERROR': 'This field must be a phone number and only accept 8 digits',
-			'VERSIONERROR': 'This field must be a version number and should not accept 0 or negative numbers',
 			'ARNAMEERROR': 'This field must accept only arabic letters',
 			'ENNAMEERROR': 'This field must accept only english letters',
 			'URLERROR': 'This field must accept only URL link',
 			'ADDED_MSG': 'Data has been added successfully',
-			'USER': 'User',
-			'ADMIN': 'Admin',
-			'USERS': 'Users list',
-			'USER_PROFILE': 'User profile'
+			'ADMIN_PROFILE': 'User profile'
 		}
 	}
 };

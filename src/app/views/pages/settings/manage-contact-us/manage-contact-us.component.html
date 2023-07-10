@@ -4,13 +4,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <p class="font-weight-bold title-info">
-                        <span>{{ 'ADMIN.CONTACTUS' | translate }}</span>
+                        <span>{{ 'ADMIN.CONTACTUS' | translate }}:</span>
                     </p>
                 </div>
                 <div class="col-md-6">
                     <mat-form-field [class.not-empty]="contactUsForm.get('city_ar').value">
                         <mat-label>{{ 'CONTACTUS.ARABICCITY' | translate }}</mat-label>
-                        <input type="text" matInput formControlName="city_ar"
+                        <input type="text" matInput required formControlName="city_ar"
                             placeholder="{{ 'CONTACTUS.ARABICCITY' | translate }}">
                         <mat-error *ngIf="contactUsForm.get('city_ar').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
@@ -23,7 +23,7 @@
                 <div class="col-md-6">
                     <mat-form-field [class.not-empty]="contactUsForm.get('city_en').value">
                         <mat-label>{{ 'CONTACTUS.ENGLISHCITY' | translate }}</mat-label>
-                        <input type="text" matInput formControlName="city_en"
+                        <input type="text" matInput required formControlName="city_en"
                             placeholder="{{ 'CONTACTUS.ENGLISHCITY' | translate }}">
                         <mat-error *ngIf="contactUsForm.get('city_en').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
@@ -35,9 +35,9 @@
                 </div>
                 <div class="col-md-6">
                     <mat-form-field [class.not-empty]="contactUsForm.get('country_ar').value">
-                        <mat-label>{{ 'ADMIN.ARABICTITLE' | translate }}</mat-label>
-                        <input type="text" matInput formControlName="country_ar"
-                            placeholder="{{ 'ADMIN.ARABICTITLE' | translate }}">
+                        <mat-label>{{ 'CONTACTUS.ARABICCOUNTRY' | translate }}</mat-label>
+                        <input type="text" matInput required formControlName="country_ar"
+                            placeholder="{{ 'CONTACTUS.ARABICCOUNTRY' | translate }}">
                         <mat-error *ngIf="contactUsForm.get('country_ar').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>
@@ -48,9 +48,9 @@
                 </div>
                 <div class="col-md-6">
                     <mat-form-field [class.not-empty]="contactUsForm.get('country_en').value">
-                        <mat-label>{{ 'ADMIN.ENGLISHTITLE' | translate }}</mat-label>
-                        <input type="text" matInput formControlName="country_en"
-                            placeholder="{{ 'ADMIN.ENGLISHTITLE' | translate }}">
+                        <mat-label>{{ 'CONTACTUS.ENGLISHCOUNTRY' | translate }}</mat-label>
+                        <input type="text" matInput required formControlName="country_en"
+                            placeholder="{{ 'CONTACTUS.ENGLISHCOUNTRY' | translate }}">
                         <mat-error *ngIf="contactUsForm.get('country_en').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>
@@ -61,9 +61,9 @@
                 </div>
                 <div class="col-md-6">
                     <mat-form-field [class.not-empty]="contactUsForm.get('address_ar').value">
-                        <mat-label>{{ 'ADMIN.ARABICTITLE' | translate }}</mat-label>
-                        <input type="text" matInput formControlName="address_ar"
-                            placeholder="{{ 'ADMIN.ARABICTITLE' | translate }}">
+                        <mat-label>{{ 'CONTACTUS.ARABICADDRESS' | translate }}</mat-label>
+                        <input type="text" matInput required formControlName="address_ar"
+                            placeholder="{{ 'CONTACTUS.ARABICADDRESS' | translate }}">
                         <mat-error *ngIf="contactUsForm.get('address_ar').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>
@@ -74,9 +74,9 @@
                 </div>
                 <div class="col-md-6">
                     <mat-form-field [class.not-empty]="contactUsForm.get('address_en').value">
-                        <mat-label>{{ 'ADMIN.ENGLISHTITLE' | translate }}</mat-label>
-                        <input type="text" matInput formControlName="address_en"
-                            placeholder="{{ 'ADMIN.ENGLISHTITLE' | translate }}">
+                        <mat-label>{{ 'CONTACTUS.ENGLISHADDRESS' | translate }}</mat-label>
+                        <input type="text" matInput required formControlName="address_en"
+                            placeholder="{{ 'CONTACTUS.ENGLISHADDRESS' | translate }}">
                         <mat-error *ngIf="contactUsForm.get('address_en').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>
@@ -87,10 +87,10 @@
                 </div>
                 <div class="col-md-6">
                     <mat-form-field [class.not-empty]="contactUsForm.get('primaryEmail').value">
-                        <mat-label>{{ 'LOGIN.EMAIL' | translate }}</mat-label>
+                        <mat-label>{{ 'CONTACTUS.PRIMARYEMAIL' | translate }}</mat-label>
                         <input type="text" required formControlName="primaryEmail" matInput
-                            placeholder="{{ 'LOGIN.EMAIL' | translate }}">
-                        <mat-icon matPrefix>account_circle</mat-icon>
+                            placeholder="{{ 'CONTACTUS.PRIMARYEMAIL' | translate }}">
+                        <!-- <mat-icon matPrefix>account_circle</mat-icon> -->
                         <mat-error *ngIf="contactUsForm.get('primaryEmail').errors?.required">
                             {{ 'LOGIN.CUSTOMERROR' | translate }}
                         </mat-error>
@@ -101,10 +101,10 @@
                 </div>
                 <div class="col-md-6">
                     <mat-form-field [class.not-empty]="contactUsForm.get('secondaryEmail').value">
-                        <mat-label>{{ 'LOGIN.EMAIL' | translate }}</mat-label>
+                        <mat-label>{{ 'CONTACTUS.SECONDARYEMAIL' | translate }}</mat-label>
                         <input type="text" required formControlName="secondaryEmail" matInput
-                            placeholder="{{ 'LOGIN.EMAIL' | translate }}">
-                        <mat-icon matPrefix>account_circle</mat-icon>
+                            placeholder="{{ 'CONTACTUS.SECONDARYEMAIL' | translate }}">
+                        <!-- <mat-icon matPrefix>account_circle</mat-icon> -->
                         <mat-error *ngIf="contactUsForm.get('secondaryEmail').errors?.required">
                             {{ 'LOGIN.CUSTOMERROR' | translate }}
                         </mat-error>
@@ -115,9 +115,9 @@
                 </div>
                 <div class="col-md-6">
                     <mat-form-field [class.not-empty]="contactUsForm.get('primaryPhoneNumber').value">
-                        <mat-label>{{ 'ADMIN.PHONENAME' | translate }}</mat-label>
-                        <input type="text" matInput formControlName="primaryPhoneNumber"
-                            placeholder="{{ 'ADMIN.PHONENAME' | translate }}">
+                        <mat-label>{{ 'CONTACTUS.PRIMARYPHONENUMBER' | translate }}</mat-label>
+                        <input type="text" matInput required formControlName="primaryPhoneNumber"
+                            placeholder="{{ 'CONTACTUS.PRIMARYPHONENUMBER' | translate }}">
                         <mat-error *ngIf="contactUsForm.get('primaryPhoneNumber').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>
@@ -128,9 +128,9 @@
                 </div>
                 <div class="col-md-6">
                     <mat-form-field [class.not-empty]="contactUsForm.get('secondaryPhoneNumber').value">
-                        <mat-label>{{ 'ADMIN.PHONENAME' | translate }}</mat-label>
-                        <input type="text" matInput formControlName="secondaryPhoneNumber"
-                            placeholder="{{ 'ADMIN.PHONENAME' | translate }}">
+                        <mat-label>{{ 'CONTACTUS.SECONDARYPHONENUMBER' | translate }}</mat-label>
+                        <input type="text" matInput required formControlName="secondaryPhoneNumber"
+                            placeholder="{{ 'CONTACTUS.SECONDARYPHONENUMBER' | translate }}">
                         <mat-error *ngIf="contactUsForm.get('secondaryPhoneNumber').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>

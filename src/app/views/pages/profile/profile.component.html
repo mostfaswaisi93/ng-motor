@@ -11,7 +11,7 @@
                         <mat-label>{{ 'LOGIN.EMAIL' | translate }}</mat-label>
                         <input type="text" required formControlName="email" matInput
                             placeholder="{{ 'LOGIN.EMAIL' | translate }}">
-                        <mat-icon matPrefix>account_circle</mat-icon>
+                        <!-- <mat-icon matPrefix>account_circle</mat-icon> -->
                         <mat-error *ngIf="profileForm.get('email').errors?.required">
                             {{ 'LOGIN.CUSTOMERROR' | translate }}
                         </mat-error>
