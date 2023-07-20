@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastNotificationsService } from 'src/app/core/services';
+import { ServicesService } from 'src/app/core/services/services.service';
 
 @Component({
   selector: 'app-manage-services-form',
@@ -18,7 +19,9 @@ export class ManageServicesFormComponent implements OnInit {
     private fb: FormBuilder,
     public route: ActivatedRoute,
     public translate: TranslateService,
-    private toastNotificationsService: ToastNotificationsService
+    private toastNotificationsService: ToastNotificationsService,
+    private servicesService: ServicesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -44,6 +47,13 @@ export class ManageServicesFormComponent implements OnInit {
       this.toastNotificationsService.showError(message);
       return;
     }
+
+    this.servicesService.createService(this.serviceForm.value).subscribe((data: any)=>{
+      if(data.success){
+        this.onBack(true);
+      }
+    })
+
   }
 
   update() {
@@ -53,4 +63,8 @@ export class ManageServicesFormComponent implements OnInit {
     this.back.emit({ reloadData });
   }
 
+  onFileSelected(event) {
+    let selectedFile = event.target.files[0] ?? null;  
+    console.log(selectedFile)
+  }
 }
