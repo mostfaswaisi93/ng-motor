@@ -38,25 +38,25 @@
             <div class="col-md-12 table-responsive">
                 <table mat-table [dataSource]="dataSource">
 
-                    <ng-container matColumnDef="nameAr">
+                    <ng-container matColumnDef="title_ar">
                         <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.ARABICNAME' | translate }}</th>
-                        <td mat-cell *matCellDef="let service"> {{ service.nameAr }} </td>
+                        <td mat-cell *matCellDef="let management"> {{ management.title.ar }} </td>
                     </ng-container>
 
-                    <ng-container matColumnDef="nameEn">
+                    <ng-container matColumnDef="title_en">
                         <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.ENGLISHNAME' | translate }}</th>
-                        <td mat-cell *matCellDef="let service"> {{ service.nameEn }} </td>
+                        <td mat-cell *matCellDef="let management"> {{ management.title.en }} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="phone">
                         <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.PHONENAME' | translate }}</th>
-                        <td mat-cell *matCellDef="let service"> {{ service.phone }} </td>
+                        <td mat-cell *matCellDef="let management"> {{ management.phoneNumber }} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="active">
                         <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.EFFECTIVE' | translate }}</th>
-                        <td mat-cell *matCellDef="let service">
-                            <span [ngSwitch]="service.active">
+                        <td mat-cell *matCellDef="let management">
+                            <span [ngSwitch]="management.active">
                                 <span *ngSwitchCase="1"> {{ 'GENERAL.YES' | translate }} </span>
                                 <span *ngSwitchCase="2"> {{ 'GENERAL.NO' | translate }} </span>
                                 <span *ngSwitchDefault> N/A </span>
@@ -67,9 +67,15 @@
                     <ng-container matColumnDef="edit">
                         <th class="text-center" mat-header-cell *matHeaderCellDef>
                             {{ 'GENERAL.EDIT' | translate }}</th>
-                        <td class="edit text-center" mat-cell *matCellDef="let service">
-                            <div (click)="onEdit(service)" title="{{ 'GENERAL.EDIT' | translate }}"
-                                class="cursor-pointer green-text edit-icon"><mat-icon>edit</mat-icon></div>
+                        <td class="edit text-center" mat-cell *matCellDef="let management">
+                            <div (click)="onEdit(management)" title="{{ 'GENERAL.EDIT' | translate }}"
+                                class="cursor-pointer green-text edit-icon"><mat-icon>edit</mat-icon>
+                            </div>
+                            <div (click)="onDelete(management._id)" title="{{ 'GENERAL.Delete' | translate }}"
+                            class="cursor-pointer green-text edit-icon">
+                            <mat-icon>delete</mat-icon>
+                        </div>
+
                         </td>
                     </ng-container>
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -82,4 +88,4 @@
         </div>
     </div>
 </div>
-<app-manage-services-form (back)="onback($event)" [service]="service" *ngIf="showForm"></app-manage-services-form>
+<app-management-form (back)="onback($event)" [management]="management" *ngIf="showForm"></app-management-form>

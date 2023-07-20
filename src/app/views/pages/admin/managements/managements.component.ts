@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { merge, Subscription } from 'rxjs';
+import { ManagementService } from 'src/app/core/services/management.service';
 
 @Component({
   selector: 'app-managements',
@@ -13,17 +14,19 @@ export class ManagementsComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   showForm = false;
+  managementData: []
   totalData = 0;
   dataPerPage = 5;
   pageSizeOptions = [5, 10, 25, 100];
-  displayedColumns: string[] = ['nameAr', 'nameEn', 'phone', 'active', 'edit'];
+  displayedColumns: string[] = [ 'title_ar', 'title_en', 'phone', 'active', 'edit'];
   dataSource = new MatTableDataSource();
 
   filterFormControl = new FormControl('');
   effectiveFormControl = new FormControl(1);
   subscriptionList: Subscription[] = [];
 
-  constructor() {
+  constructor(private managementService: ManagementService) {
+    this.getData()
   }
 
   ngOnInit(): void {
@@ -51,6 +54,15 @@ export class ManagementsComponent implements OnInit {
     this.showForm = !this.showForm;
   }
 
+  getData() {
+    this.managementService.getGeneralManagement().subscribe((data: any) => {
+      this.managementData = data?.data;
+      this.dataSource.data = data?.data;
+      this.dataSource.paginator = this.paginator;
+    });
+  }
+
+
   onEdit(service): any {
     this.showForm = !this.showForm;
   }
@@ -58,7 +70,16 @@ export class ManagementsComponent implements OnInit {
   onback(e) {
     this.showForm = !this.showForm;
     if (e && e.reloadData) {
+      this.getData();
     }
+  }
+
+  onDelete(managementId){
+    this.managementService.deleteManagement(managementId).subscribe((data)=>{
+      if(data.success){
+        this.getData();
+      }
+    })
   }
 
   ngOnDestroy() {

@@ -8,6 +8,15 @@
                         <span>{{ 'ADMIN.SECTION' | translate }}</span>
                     </p>
                 </div>
+
+                <!-- <div class="col-md-6">
+                    <mat-form-field [class.not-empty]="serviceForm.get('image').value">
+                        <mat-label>{{ 'ADMIN.ARABICTITLE' | translate }}</mat-label>
+                        <button type="button" mat-raised-button (click)="fileInput.click()">Choose Image</button>
+                        <input hidden #fileInput type="file" id="file">
+                    </mat-form-field>
+                </div> -->
+
                 <div class="col-md-6">
                     <mat-form-field [class.not-empty]="serviceForm.get('title_ar').value">
                         <mat-label>{{ 'ADMIN.ARABICTITLE' | translate }}</mat-label>
@@ -36,32 +45,58 @@
                 </div>
                 <div class="col-md-6">
                     <mat-form-field [class.not-empty]="serviceForm.get('description_ar').value">
-                        <mat-label>{{ 'ADMIN.PHONENAME' | translate }}</mat-label>
-                        <textarea matInput formControlName="description_ar"
-                            placeholder="{{'GENERAL.REJECTRESONFIELD' | translate}}"></textarea>
-                        <mat-error *ngIf="serviceForm.get('description_ar').errors?.required">
+                      <mat-label>{{ 'ADMIN.ARABICDESCRIPTION' | translate }}</mat-label>
+                      <textarea rows="3" matInput formControlName="description_ar" placeholder="{{'ADMIN.ARABICDESCRIPTION' | translate}}"></textarea>
+                      <mat-error *ngIf="serviceForm.get('description_ar').errors?.required">
+                        {{ 'ADMIN.ERRORMESSAGE' | translate }}
+                      </mat-error>
+                      <mat-error *ngIf="serviceForm.get('description_ar').errors?.pattern">
+                        {{ 'ADMIN.ARNAMEERROR' | translate }}
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field [class.not-empty]="serviceForm.get('description_en').value">
+                      <mat-label>{{ 'ADMIN.ENGLISHDESCRIPTION' | translate }}</mat-label>
+                      <textarea rows="3" matInput formControlName="description_en" placeholder="{{'ADMIN.ENGLISHDESCRIPTION' | translate}}"></textarea>
+                      <mat-error *ngIf="serviceForm.get('description_en').errors?.required">
+                        {{ 'ADMIN.ERRORMESSAGE' | translate }}
+                      </mat-error>
+                      <mat-error *ngIf="serviceForm.get('description_en').errors?.pattern">
+                        {{ 'ADMIN.ENNAMEERROR' | translate }}
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <div class="col-md-6">
+                    <mat-form-field [class.not-empty]="serviceForm.get('email').value">
+                        <mat-label>{{ 'LOGIN.EMAIL' | translate }}</mat-label>
+                        <input type="text" matInput formControlName="email"
+                            placeholder="{{ 'LOGIN.EMAIL' | translate }}">
+                        <mat-error *ngIf="serviceForm.get('email').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>
-                        <mat-error *ngIf=" serviceForm.get('description_ar').errors?.pattern">
-                            {{ 'ADMIN.PHONEERROR' | translate }}
+                        <mat-error *ngIf="serviceForm.get('email').errors?.pattern">
+                            {{ 'LOGIN.EMAILERROR' | translate }}
                         </mat-error>
                     </mat-form-field>
                 </div>
                 <div class="col-md-6">
-                    <mat-form-field [class.not-empty]="serviceForm.get('description_ar').value">
+                    <mat-form-field [class.not-empty]="serviceForm.get('phoneNumber').value">
                         <mat-label>{{ 'ADMIN.PHONENAME' | translate }}</mat-label>
-                        <textarea matInput formControlName="description_ar"
-                            placeholder="{{'GENERAL.REJECTRESONFIELD' | translate}}"></textarea>
-                        <mat-error *ngIf="serviceForm.get('description_ar').errors?.required">
+                        <input type="number" matInput formControlName="phoneNumber"
+                            placeholder="{{ 'ADMIN.PHONENAME' | translate }}">
+                        <mat-error *ngIf="serviceForm.get('phoneNumber').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>
-                        <mat-error *ngIf=" serviceForm.get('description_ar').errors?.pattern">
+                        <mat-error *ngIf="serviceForm.get('phoneNumber').errors?.pattern">
                             {{ 'ADMIN.PHONEERROR' | translate }}
                         </mat-error>
                     </mat-form-field>
                 </div>
-                <!-- <div class="col-md-6"></div> -->
-            </div>
+
+
+                </div>
         </div>
         <div class="row">
             <div class="col-md-12 text-center">

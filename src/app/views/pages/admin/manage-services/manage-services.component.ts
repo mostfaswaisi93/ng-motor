@@ -86,7 +86,6 @@ export class ManageServicesComponent implements OnInit {
   getData() {
     this.servicesService.getServices().subscribe((data: any) => {
       this.serviceData = data?.data;
-      console.log(this.serviceData, 'serv');
       this.dataSource.data = data?.data;
       this.dataSource.paginator = this.paginator;
       // this.applyFilter();
