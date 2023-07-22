@@ -4,12 +4,24 @@
       <div class="row">
         <div class="col-md-12">
           <p class="font-weight-bold title-info">
-            <span>{{ 'GENERAL.ADD' | translate }}</span> 
+            <span>{{ 'GENERAL.ADD' | translate }} </span> 
             <span>{{ 'ADMIN.SECTION' | translate }}</span>
           </p>
         </div>
 
         <div class="col-md-6 mb-4">
+          
+            <span *ngIf="logoReader" class="mx-2" style="position: relative;">
+              <img 
+                    [src]="logoReader" 
+                    alt="Logo" 
+                    height="50px" 
+                    width="50px"
+                    style="position: relative;"
+                >
+                <mat-icon (click)="removeLogoReader()" style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
+            </span>
+          
             <span *ngIf="logo" class="mx-2" style="position: relative;">
               <img 
                     [src]="url + 'images/' + logo" 
@@ -34,6 +46,17 @@
                   style="position: relative;"
               >
               <mat-icon (click)="removeMedia(item)" style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
+          </span>
+
+          <span *ngFor="let item of mediaReader; let i = index" class="mx-2" style="position: relative;">
+            <img 
+                  [src]="item" 
+                  alt="Logo" 
+                  height="50px" 
+                  width="50px"
+                  style="position: relative;"
+              >
+              <mat-icon (click)="removeMediaReader(item, i)" style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
           </span>
           <button type="button" mat-raised-button (click)="mediaFileInput.click()">{{ 'ADMIN.ADDMEDIA' | translate }}</button>
           <input formControlName="media" hidden (change)="onMediaSelected($event)" #mediaFileInput multiple type="file">

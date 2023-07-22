@@ -105,6 +105,7 @@ export const locale = {
 			'LOGO': "Logo",
 			'CHOOSELOGO': "Choose Logo",
 			'ADDMEDIA': "Add Media",
+			'CHOOSEIMAGE': "Choose Image",
 			'WHATSAPPLINK': "Whatsapp Link",
 			'PHONENAME': 'Phone number',
 			'EFFECTIVE': 'Active?',

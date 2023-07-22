@@ -21,9 +21,11 @@ export class ManageServicesFormComponent implements OnInit {
   media:any
 
   selectedLogo: any
-  selectedMedia: any
+  selectedMedia: any[]
   
   logoReader: any
+  mediaReader: string[] = []
+  
   url = environment.apiUrl;
 
   constructor(
@@ -89,21 +91,28 @@ export class ManageServicesFormComponent implements OnInit {
     formData.append('whatsappLink', this.serviceForm.value.whatsappLink);
 
     if(this.service){
-      formData.append('oldMedia', this.media);
-      formData.append('serviceId', this.serviceForm.value.serviceId);
-
-      this.servicesService.editService(formData).subscribe((data: any)=>{
-        if(data.success){
-          this.onBack(true);
-        }
-      })
+      this.updateServie(formData)
     }else{
-      this.servicesService.createService(formData).subscribe((data: any)=>{
-        if(data.success){
-          this.onBack(true);
-        }
-      })
+      this.addServie(formData)    
     }
+  }
+
+  addServie(formData){
+    this.servicesService.createService(formData).subscribe((data: any)=>{
+      if(data.success){
+        this.onBack(true);
+      }
+    })
+  }
+
+  updateServie(formData){
+    formData.append('oldMedia', this.media);
+    formData.append('serviceId', this.serviceForm.value.serviceId);
+    this.servicesService.editService(formData).subscribe((data: any)=>{
+      if(data.success){
+        this.onBack(true);
+      }
+    })
   }
 
   onBack(reloadData = false) {
@@ -116,22 +125,30 @@ export class ManageServicesFormComponent implements OnInit {
 
   onLogoSelected(event) {
     this.selectedLogo = event.target.files[0] ?? null;  
-    this.readLogo(event.target.files[0]);
+    this.readSelectedLogo(event.target.files[0])
   }
 
   onMediaSelected(event) {
-    this.selectedMedia = event.target.files ?? null;  
+    this.selectedMedia = [...event.target.files] ?? null;
+    this.readSelectedMedia(event.target.files)  
   }
 
-  readLogo(inputValue: any) : void {
-    let file:File = inputValue; 
-    let myReader:any = new FileReader();
+  readSelectedLogo(img) {
+      let reader = new FileReader();
+      reader.readAsDataURL(img); 
+      reader.onload = (event) => { 
+        this.logoReader = event.target.result;
+      }
+  }
 
-    myReader.onloadend = function(e){
-      this.logoReader = myReader.result
+  readSelectedMedia(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        let reader = new FileReader();
+        reader.readAsDataURL(arr[i]);
+        reader.onload = (event:any) => {
+          this.mediaReader.push(event.target.result) 
+        }
     }
-
-    myReader.readAsText(file);
   }
 
   removeLogo(){
@@ -139,10 +156,22 @@ export class ManageServicesFormComponent implements OnInit {
     this.logo = ""
   }
 
+  removeLogoReader(){
+    this.selectedLogo = ""
+    this.logo = ""
+    this.logoReader = ''
+  }
+  
   removeMedia(img){
     this.media = this.media.filter((item)=>{
       return item != img
     })
+  }
+
+  removeMediaReader(img, i){
+    this.mediaReader = this.mediaReader.filter((item)=> item != img)
+    this.selectedMedia.splice(i, 1)  
+    console.log(this.selectedMedia)
   }
 
 }

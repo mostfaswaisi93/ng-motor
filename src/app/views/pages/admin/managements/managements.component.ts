@@ -15,6 +15,7 @@ export class ManagementsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   showForm = false;
   managementData: []
+  management: any
   totalData = 0;
   dataPerPage = 5;
   pageSizeOptions = [5, 10, 25, 100];
@@ -63,8 +64,9 @@ export class ManagementsComponent implements OnInit {
   }
 
 
-  onEdit(service): any {
+  onEdit(management): any {
     this.showForm = !this.showForm;
+    this.management = management
   }
 
   onback(e) {

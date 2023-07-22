@@ -104,6 +104,7 @@ export const locale = {
       'ENGLISHDESCRIPTION': 'الوصف بالإنجليزي',
       'LOGO': "شعار",
       'CHOOSELOGO': "اختار الشعار",
+      'CHOOSEIMAGE': "اختار الصوره",
       'ADDMEDIA': "اضف الوسائط",
       'WHATSAPPLINK': "رابط الواتس اب",
       'PHONENAME': 'رقم الهاتف',
