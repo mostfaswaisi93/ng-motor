@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
-import { ADMIN_HOME_PAGE } from '../enum/constant';
+import { ADMIN_HOME_PAGE, USER_HOME_PAGE } from '../enum/constant';
 import { AuthService } from '../services/auth.service';
 
 @Injectable()
@@ -16,6 +16,7 @@ export class LoginGuard implements CanActivate {
                         reslove(true);
                     } else {
                         this.router.navigateByUrl(ADMIN_HOME_PAGE);
+                        // this.router.navigateByUrl(USER_HOME_PAGE);
                     }
                 })
             } else {
@@ -23,6 +24,7 @@ export class LoginGuard implements CanActivate {
                     reslove(true);
                 } else {
                     this.router.navigateByUrl(ADMIN_HOME_PAGE);
+                    // this.router.navigateByUrl(USER_HOME_PAGE);
                 }
             }
         });

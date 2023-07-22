@@ -16,6 +16,7 @@ import { ManageOurCommitmentsComponent } from './views/pages/settings/manage-our
 import { ManageOurGoalsComponent } from './views/pages/settings/manage-our-goals/manage-our-goals.component';
 import { ManageContactUsComponent } from './views/pages/settings/manage-contact-us/manage-contact-us.component';
 import { ManageSocialMediaComponent } from './views/pages/settings/manage-social-media/manage-social-media.component';
+import { BaseUserComponent } from './views/base-user/base-user.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ManageSocialMediaComponent } from './views/pages/settings/manage-social
     ManageOurCommitmentsComponent,
     ManageOurGoalsComponent,
     ManageContactUsComponent,
-    ManageSocialMediaComponent
+    ManageSocialMediaComponent,
+    BaseUserComponent
   ],
   imports: [
     BrowserModule,
