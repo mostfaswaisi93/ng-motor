@@ -103,6 +103,8 @@ export const locale = {
       'ARABICDESCRIPTION': 'الوصف بالعربي',
       'ENGLISHDESCRIPTION': 'الوصف بالإنجليزي',
       'LOGO': "شعار",
+      'CHOOSELOGO': "اختار الشعار",
+      'ADDMEDIA': "اضف الوسائط",
       'WHATSAPPLINK': "رابط الواتس اب",
       'PHONENAME': 'رقم الهاتف',
       'EFFECTIVE': 'فعال؟',

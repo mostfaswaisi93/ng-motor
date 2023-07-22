@@ -9,13 +9,36 @@
           </p>
         </div>
 
-        <!-- <div class="col-md-6">
-          <mat-form-field [class.not-empty]="serviceForm.get('logo').value">
-            <mat-label>{{ 'ADMIN.LOGO' | translate }}</mat-label>
-            <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
-            <input formControlName="logo" hidden (change)="onFileSelected($event)" #fileInput type="file" id="file">
-          </mat-form-field>
-        </div> -->
+        <div class="col-md-6 mb-4">
+            <span *ngIf="logo" class="mx-2" style="position: relative;">
+              <img 
+                    [src]="url + 'images/' + logo" 
+                    alt="Logo" 
+                    height="50px" 
+                    width="50px"
+                    style="position: relative;"
+                >
+                <mat-icon (click)="removeLogo()" style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
+            </span>  
+            <button type="button" mat-raised-button (click)="logoFileInput.click()">{{ 'ADMIN.CHOOSELOGO' | translate }}</button>
+            <input formControlName="logo" hidden (change)="onLogoSelected($event)" #logoFileInput type="file">
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <span *ngFor="let item of media" class="mx-2" style="position: relative;">
+            <img 
+                  [src]="url + 'images/' + item" 
+                  alt="Logo" 
+                  height="50px" 
+                  width="50px"
+                  style="position: relative;"
+              >
+              <mat-icon (click)="removeMedia(item)" style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
+          </span>
+          <button type="button" mat-raised-button (click)="mediaFileInput.click()">{{ 'ADMIN.ADDMEDIA' | translate }}</button>
+          <input formControlName="media" hidden (change)="onMediaSelected($event)" #mediaFileInput multiple type="file">
+        </div>
+
 
         <div class="col-md-6">
           <mat-form-field [class.not-empty]="serviceForm.get('title_ar').value">

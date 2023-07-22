@@ -39,9 +39,10 @@
                 <table mat-table [dataSource]="dataSource">
 
                     <ng-container matColumnDef="logo">
-                        <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.logo' | translate }}</th>
+                        <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.LOGO' | translate }}</th>
                         <td mat-cell *matCellDef="let service">
-                            <img [src]="url + 'images/' + service.logo" alt="Image" height="60" width="60">
+                            <img *ngIf="service.logo" style="border-radius: '50%'" [src]="url + 'images/' + service.logo" alt="Image" height="50" width="50">
+                            <img *ngIf="!service.logo" style="border-radius: '50%'" src="../../../../../assets/images/noImage.jpg" alt="Image" height="50" width="50">
                         </td>
                     </ng-container>
 

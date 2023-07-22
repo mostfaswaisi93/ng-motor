@@ -103,6 +103,8 @@ export const locale = {
 			'ARABICDESCRIPTION': 'Arabic Description',
 			'ENGLISHDESCRIPTION': 'English Description',
 			'LOGO': "Logo",
+			'CHOOSELOGO': "Choose Logo",
+			'ADDMEDIA': "Add Media",
 			'WHATSAPPLINK': "Whatsapp Link",
 			'PHONENAME': 'Phone number',
 			'EFFECTIVE': 'Active?',
