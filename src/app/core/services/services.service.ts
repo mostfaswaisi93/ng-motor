@@ -30,4 +30,17 @@ export class ServicesService {
     return this.http.delete(`${environment.apiUrl}service/${_id}`);
   }
 
+  // questions
+  createQuestion(data) {
+    return this.http.post(`${environment.apiUrl}service/question`, data);
+  }
+
+  editQuestion(data): Observable<any> {
+    return this.http.put(`${environment.apiUrl}service/question`, data);
+  }
+
+  deleteQuestion(serviceId, questionId): any {
+    return this.http.delete(`${environment.apiUrl}service/question/${serviceId}/${questionId}`);
+  }
+
 }

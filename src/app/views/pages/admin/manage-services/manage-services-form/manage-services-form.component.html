@@ -4,61 +4,43 @@
       <div class="row">
         <div class="col-md-12">
           <p class="font-weight-bold title-info">
-            <span>{{ 'GENERAL.ADD' | translate }} </span> 
+            <span>{{ 'GENERAL.ADD' | translate }} </span>
             <span>{{ 'ADMIN.SECTION' | translate }}</span>
           </p>
         </div>
 
         <div class="col-md-6 mb-4">
-          
-            <span *ngIf="logoReader" class="mx-2" style="position: relative;">
-              <img 
-                    [src]="logoReader" 
-                    alt="Logo" 
-                    height="50px" 
-                    width="50px"
-                    style="position: relative;"
-                >
-                <mat-icon (click)="removeLogoReader()" style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
-            </span>
-          
-            <span *ngIf="logo" class="mx-2" style="position: relative;">
-              <img 
-                    [src]="url + 'images/' + logo" 
-                    alt="Logo" 
-                    height="50px" 
-                    width="50px"
-                    style="position: relative;"
-                >
-                <mat-icon (click)="removeLogo()" style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
-            </span>  
-            <button type="button" mat-raised-button (click)="logoFileInput.click()">{{ 'ADMIN.CHOOSELOGO' | translate }}</button>
-            <input formControlName="logo" hidden (change)="onLogoSelected($event)" #logoFileInput type="file">
+
+          <span *ngIf="logoReader" class="mx-2" style="position: relative;">
+            <img [src]="logoReader" alt="Logo" height="50px" width="50px" style="position: relative;">
+            <mat-icon (click)="removeLogoReader()"
+              style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
+          </span>
+
+          <span *ngIf="logo" class="mx-2" style="position: relative;">
+            <img [src]="url + 'images/' + logo" alt="Logo" height="50px" width="50px" style="position: relative;">
+            <mat-icon (click)="removeLogo()"
+              style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
+          </span>
+          <button type="button" mat-raised-button (click)="logoFileInput.click()">{{ 'ADMIN.CHOOSELOGO' | translate
+            }}</button>
+          <input formControlName="logo" hidden (change)="onLogoSelected($event)" #logoFileInput type="file">
         </div>
 
         <div class="col-md-6 mb-4">
           <span *ngFor="let item of media" class="mx-2" style="position: relative;">
-            <img 
-                  [src]="url + 'images/' + item" 
-                  alt="Logo" 
-                  height="50px" 
-                  width="50px"
-                  style="position: relative;"
-              >
-              <mat-icon (click)="removeMedia(item)" style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
+            <img [src]="url + 'images/' + item" alt="Logo" height="50px" width="50px" style="position: relative;">
+            <mat-icon (click)="removeMedia(item)"
+              style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
           </span>
 
           <span *ngFor="let item of mediaReader; let i = index" class="mx-2" style="position: relative;">
-            <img 
-                  [src]="item" 
-                  alt="Logo" 
-                  height="50px" 
-                  width="50px"
-                  style="position: relative;"
-              >
-              <mat-icon (click)="removeMediaReader(item, i)" style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
+            <img [src]="item" alt="Logo" height="50px" width="50px" style="position: relative;">
+            <mat-icon (click)="removeMediaReader(item, i)"
+              style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
           </span>
-          <button type="button" mat-raised-button (click)="mediaFileInput.click()">{{ 'ADMIN.ADDMEDIA' | translate }}</button>
+          <button type="button" mat-raised-button (click)="mediaFileInput.click()">{{ 'ADMIN.ADDMEDIA' | translate
+            }}</button>
           <input formControlName="media" hidden (change)="onMediaSelected($event)" #mediaFileInput multiple type="file">
         </div>
 
@@ -91,7 +73,8 @@
         <div class="col-md-6">
           <mat-form-field [class.not-empty]="serviceForm.get('description_ar').value">
             <mat-label>{{ 'ADMIN.ARABICDESCRIPTION' | translate }}</mat-label>
-            <textarea rows="3" matInput formControlName="description_ar" placeholder="{{'ADMIN.ARABICDESCRIPTION' | translate}}"></textarea>
+            <textarea rows="3" matInput formControlName="description_ar"
+              placeholder="{{'ADMIN.ARABICDESCRIPTION' | translate}}"></textarea>
             <mat-error *ngIf="serviceForm.get('description_ar').errors?.required">
               {{ 'ADMIN.ERRORMESSAGE' | translate }}
             </mat-error>
@@ -103,7 +86,8 @@
         <div class="col-md-6">
           <mat-form-field [class.not-empty]="serviceForm.get('description_en').value">
             <mat-label>{{ 'ADMIN.ENGLISHDESCRIPTION' | translate }}</mat-label>
-            <textarea rows="3" matInput formControlName="description_en" placeholder="{{'ADMIN.ENGLISHDESCRIPTION' | translate}}"></textarea>
+            <textarea rows="3" matInput formControlName="description_en"
+              placeholder="{{'ADMIN.ENGLISHDESCRIPTION' | translate}}"></textarea>
             <mat-error *ngIf="serviceForm.get('description_en').errors?.required">
               {{ 'ADMIN.ERRORMESSAGE' | translate }}
             </mat-error>
@@ -116,7 +100,8 @@
         <div class="col-md-6">
           <mat-form-field [class.not-empty]="serviceForm.get('whatsappLink').value">
             <mat-label>{{ 'ADMIN.WHATSAPPLINK' | translate }}</mat-label>
-            <input type="text" matInput formControlName="whatsappLink" placeholder="{{ 'ADMIN.WHATSAPPLINK' | translate }}">
+            <input type="text" matInput formControlName="whatsappLink"
+              placeholder="{{ 'ADMIN.WHATSAPPLINK' | translate }}">
             <mat-error *ngIf="serviceForm.get('whatsappLink').errors?.required">
               {{ 'ADMIN.ERRORMESSAGE' | translate }}
             </mat-error>

@@ -69,6 +69,7 @@ export class ManagementsComponent implements OnInit {
 
   onback(e) {
     this.showForm = !this.showForm;
+    this.management = null;
     if (e && e.reloadData) {
       this.getData();
     }

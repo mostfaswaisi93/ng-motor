@@ -14,6 +14,7 @@ import { HeaderComponent } from './manage-home/header/header.component';
 import { WhoWeAreComponent } from './manage-home/who-we-are/who-we-are.component';
 import { WhatDoWeApplyComponent } from './manage-home/what-do-we-apply/what-do-we-apply.component';
 import { ServicesDetailsComponent } from './manage-services/services-details/services-details.component';
+import { RandomQuestionsFormComponent } from './manage-services/services-details/random-questions-form/random-questions-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ServicesDetailsComponent } from './manage-services/services-details/ser
     HeaderComponent,
     WhoWeAreComponent,
     WhatDoWeApplyComponent,
-    ServicesDetailsComponent
+    ServicesDetailsComponent,
+    RandomQuestionsFormComponent
   ],
   imports: [
     CommonModule,

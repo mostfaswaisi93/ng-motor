@@ -33,9 +33,8 @@ export class ManagementFormComponent implements OnInit {
   ngOnInit(): void {
     this.initForm();
     if (this.management) {
-      this.patchValues()
-      this.image = this.management.image
-      console.log(this.image)
+      this.patchValues();
+      this.image = this.management.image;
     }
 
   }
@@ -94,7 +93,6 @@ export class ManagementFormComponent implements OnInit {
     formData.append('type', 'General');
     this.managementService.createManagement(formData).subscribe((data: any) => {
       if (data.success) {
-        this.managementForm.reset();
         this.onBack(true);
       }
     });
@@ -111,25 +109,25 @@ export class ManagementFormComponent implements OnInit {
 
   onBack(reloadData = false) {
     if (this.management) {
-      this.image = this.management.image
+      this.image = this.management.image;
     }
     this.back.emit({ reloadData });
   }
 
   removeImageReader() {
-    this.selectedImage = ''
-    this.image = ''
-    this.imageReader = ''
+    this.selectedImage = '';
+    this.image = '';
+    this.imageReader = '';
   }
 
   removeImage() {
-    this.selectedImage = ''
-    this.image = ''
+    this.selectedImage = '';
+    this.image = '';
   }
 
   onImageSelected(event) {
     this.selectedImage = event.target.files[0] ?? null;
-    this.readSelectedImage(event.target.files[0])
+    this.readSelectedImage(event.target.files[0]);
   }
 
   readSelectedImage(img) {
@@ -137,7 +135,7 @@ export class ManagementFormComponent implements OnInit {
     reader.readAsDataURL(img);
     reader.onload = (event) => {
       this.imageReader = event.target.result;
-      this.image = ''
+      this.image = '';
     }
   }
 
