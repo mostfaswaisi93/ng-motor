@@ -71,8 +71,8 @@ const routes: Routes = [
         component: ManageOurGoalsComponent
       },
       { path: 'error/:type', component: ErrorPageComponent },
-      // { path: '', redirectTo: USER_HOME_PAGE, pathMatch: 'full' },
-      // { path: '**', redirectTo: USER_HOME_PAGE, pathMatch: 'full' },
+      { path: '', redirectTo: USER_HOME_PAGE, pathMatch: 'full' },
+      { path: '**', redirectTo: USER_HOME_PAGE, pathMatch: 'full' },
     ]
   },
   {

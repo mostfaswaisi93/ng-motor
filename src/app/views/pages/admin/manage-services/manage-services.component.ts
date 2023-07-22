@@ -66,7 +66,7 @@ export class ManageServicesComponent implements OnInit {
   }
 
   onView() {
-    this.router.navigateByUrl('/admin/managements/managements-details');
+    this.router.navigateByUrl('/admin/services/services-details');
   }
 
   onEdit(service): any {
