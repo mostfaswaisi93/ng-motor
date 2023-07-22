@@ -61,6 +61,10 @@
                             {{ 'GENERAL.EDIT' | translate }}</th>
                         <td class="edit text-center" mat-cell *matCellDef="let service">
                             <div class="actions">
+                                <div (click)="onView()" title="{{ 'GENERAL.VIEW' | translate }}"
+                                    class="cursor-pointer green-text edit-icon">
+                                    <mat-icon>visibility</mat-icon>
+                                </div>
                                 <div (click)="onEdit(service)" title="{{ 'GENERAL.EDIT' | translate }}"
                                     class="cursor-pointer green-text edit-icon">
                                     <mat-icon>edit</mat-icon>

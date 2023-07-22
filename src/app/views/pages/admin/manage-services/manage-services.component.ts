@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { merge, Subscription } from 'rxjs';
 import { Service } from 'src/app/core/models/Service';
 import { ServicesService } from 'src/app/core/services/services.service';
@@ -29,7 +30,10 @@ export class ManageServicesComponent implements OnInit {
   effectiveFormControl = new FormControl(1);
   subscriptionList: Subscription[] = [];
 
-  constructor(private servicesService: ServicesService) {
+  constructor(
+    private router: Router,
+    private servicesService: ServicesService
+  ) {
     this.getData();
   }
 
@@ -59,6 +63,10 @@ export class ManageServicesComponent implements OnInit {
 
   onAdd() {
     this.showForm = !this.showForm;
+  }
+
+  onView() {
+    this.router.navigateByUrl('/admin/managements/managements-details');
   }
 
   onEdit(service): any {

@@ -13,6 +13,8 @@ import { ManageHomeComponent } from './manage-home/manage-home.component';
 import { HeaderComponent } from './manage-home/header/header.component';
 import { WhoWeAreComponent } from './manage-home/who-we-are/who-we-are.component';
 import { WhatDoWeApplyComponent } from './manage-home/what-do-we-apply/what-do-we-apply.component';
+import { ManagementsDetailsComponent } from './managements/managements-details/managements-details.component';
+import { RandomQuestionsFormComponent } from './managements/managements-details/random-questions-form/random-questions-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { WhatDoWeApplyComponent } from './manage-home/what-do-we-apply/what-do-w
     ManageHomeComponent,
     HeaderComponent,
     WhoWeAreComponent,
-    WhatDoWeApplyComponent
+    WhatDoWeApplyComponent,
+    ManagementsDetailsComponent,
+    RandomQuestionsFormComponent
   ],
   imports: [
     CommonModule,
@@ -68,7 +72,11 @@ import { WhatDoWeApplyComponent } from './manage-home/what-do-we-apply/what-do-w
           {
             path: 'managements',
             component: ManagementsComponent
-          }
+          },
+          {
+            path: 'managements/managements-details',
+            component: ManagementsDetailsComponent
+          },
         ]
       }
     ]),
