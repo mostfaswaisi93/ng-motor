@@ -15,7 +15,6 @@ export class LoginGuard implements CanActivate {
                     if (!isLoggedIn) {
                         reslove(true);
                     } else {
-                        // this.router.navigateByUrl(ADMIN_HOME_PAGE);
                         this.router.navigateByUrl(USER_HOME_PAGE);
                     }
                 })
@@ -23,7 +22,6 @@ export class LoginGuard implements CanActivate {
                 if (!this.authService.isLoggedIn) {
                     reslove(true);
                 } else {
-                    // this.router.navigateByUrl(ADMIN_HOME_PAGE);
                     this.router.navigateByUrl(USER_HOME_PAGE);
                 }
             }

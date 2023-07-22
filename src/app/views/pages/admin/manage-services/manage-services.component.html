@@ -15,16 +15,6 @@
                         <mat-icon matSuffix>search</mat-icon>
                     </mat-form-field>
                 </div>
-                <!-- <div class="col-md-3">
-                    <mat-form-field>
-                        <mat-label>{{ 'ADMIN.EFFECTIVE' | translate }}</mat-label>
-                        <mat-select [formControl]="effectiveFormControl" [class.not-empty]="">
-                            <mat-option [value]="0">{{ 'GENERAL.ALL' | translate }}</mat-option>
-                            <mat-option [value]="1">{{ 'GENERAL.ACTIVE' | translate }}</mat-option>
-                            <mat-option [value]="2">{{ 'GENERAL.INACTIVE' | translate }}</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div> -->
             </div>
         </div>
 
@@ -41,8 +31,10 @@
                     <ng-container matColumnDef="logo">
                         <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.LOGO' | translate }}</th>
                         <td mat-cell *matCellDef="let service">
-                            <img *ngIf="service.logo" style="border-radius: '50%'" [src]="url + 'images/' + service.logo" alt="Image" height="50" width="50">
-                            <img *ngIf="!service.logo" style="border-radius: '50%'" src="../../../../../assets/images/noImage.jpg" alt="Image" height="50" width="50">
+                            <img *ngIf="service.logo" style="border-radius: '50%'"
+                                [src]="url + 'images/' + service.logo" alt="Image" height="50" width="50">
+                            <img *ngIf="!service.logo" style="border-radius: '50%'"
+                                src="../../../../../assets/images/noImage.jpg" alt="Image" height="50" width="50">
                         </td>
                     </ng-container>
 
@@ -62,15 +54,15 @@
                         <td class="edit text-center" mat-cell *matCellDef="let service">
                             <div class="actions">
                                 <div (click)="onView()" title="{{ 'GENERAL.VIEW' | translate }}"
-                                    class="cursor-pointer green-text edit-icon">
+                                    class="cursor-pointer red-text edit-icon">
                                     <mat-icon>visibility</mat-icon>
                                 </div>
                                 <div (click)="onEdit(service)" title="{{ 'GENERAL.EDIT' | translate }}"
-                                    class="cursor-pointer green-text edit-icon">
+                                    class="cursor-pointer red-text edit-icon">
                                     <mat-icon>edit</mat-icon>
                                 </div>
                                 <div (click)="onDelete(service)" title="{{ 'GENERAL.Delete' | translate }}"
-                                    class="cursor-pointer green-text edit-icon">
+                                    class="cursor-pointer red-text edit-icon">
                                     <mat-icon>delete</mat-icon>
                                 </div>
                             </div>

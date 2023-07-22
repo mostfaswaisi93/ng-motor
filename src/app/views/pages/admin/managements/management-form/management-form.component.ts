@@ -14,31 +14,29 @@ import { environment } from 'src/environments/environment';
 export class ManagementFormComponent implements OnInit {
 
   @Output() back = new EventEmitter<any>();
-  @Input() management: any
+  @Input() management: any;
 
   managementForm: FormGroup;
-
   image: any
   imageReader: any
-  selectedImage:any
+  selectedImage: any
   url = environment.apiUrl
 
   constructor(
     private fb: FormBuilder,
     public route: ActivatedRoute,
     public translate: TranslateService,
-    private toastNotificationsService: ToastNotificationsService,
-    private managementService: ManagementService
+    private managementService: ManagementService,
+    private toastNotificationsService: ToastNotificationsService
   ) { }
 
   ngOnInit(): void {
     this.initForm();
-    console.log(this.management)
-    if(this.management){
+    if (this.management) {
       this.patchValues()
       this.image = this.management.image
       console.log(this.image)
-    } 
+    }
 
   }
 
@@ -56,7 +54,7 @@ export class ManagementFormComponent implements OnInit {
     });
   }
 
-  patchValues(){
+  patchValues() {
     this.managementForm.patchValue({
       managementId: this.management._id,
       title_ar: this.management.title.ar,
@@ -65,8 +63,8 @@ export class ManagementFormComponent implements OnInit {
       description_en: this.management.description.en,
       email: this.management.email,
       phoneNumber: this.management.phoneNumber
-  })
-}
+    })
+  }
 
   onSave() {
     if (this.managementForm.invalid) {
@@ -75,7 +73,7 @@ export class ManagementFormComponent implements OnInit {
       return;
     }
 
-    const formData = new FormData();    
+    const formData = new FormData();
     this.selectedImage ? formData.append('image', this.selectedImage) : formData.append('image', this.image);
 
     formData.append('title_ar', this.managementForm.value.title_ar);
@@ -85,63 +83,62 @@ export class ManagementFormComponent implements OnInit {
     formData.append('email', this.managementForm.value.email);
     formData.append('phoneNumber', this.managementForm.value.phoneNumber);
 
-    if(this.management){
-      this.updateManagement(formData)
-    }else{
-      this.addManagement(formData)    
+    if (this.management) {
+      this.updateManagement(formData);
+    } else {
+      this.addManagement(formData);
     }
-    // this.managementForm.reset()
   }
 
-  addManagement(formData){
+  addManagement(formData) {
     formData.append('type', 'General');
-    this.managementService.createManagement(formData).subscribe((data: any)=>{
-      if(data.success){
+    this.managementService.createManagement(formData).subscribe((data: any) => {
+      if (data.success) {
+        this.managementForm.reset();
         this.onBack(true);
       }
-    })
-
+    });
   }
 
   updateManagement(formData) {
     formData.append('managementId', this.managementForm.value.managementId);
-    this.managementService.editManagement(formData).subscribe((data: any)=>{
-      if(data.success){
+    this.managementService.editManagement(formData).subscribe((data: any) => {
+      if (data.success) {
         this.onBack(true);
       }
-    })
+    });
   }
 
   onBack(reloadData = false) {
-    if(this.management){
+    if (this.management) {
       this.image = this.management.image
     }
     this.back.emit({ reloadData });
   }
-  
-  removeImageReader(){
-    this.selectedImage = ""
-    this.image = ""
+
+  removeImageReader() {
+    this.selectedImage = ''
+    this.image = ''
     this.imageReader = ''
   }
 
-  removeImage(){
-    this.selectedImage = ""
-    this.image = ""
+  removeImage() {
+    this.selectedImage = ''
+    this.image = ''
   }
 
   onImageSelected(event) {
-    this.selectedImage = event.target.files[0] ?? null;  
+    this.selectedImage = event.target.files[0] ?? null;
     this.readSelectedImage(event.target.files[0])
   }
 
   readSelectedImage(img) {
     let reader = new FileReader();
-    reader.readAsDataURL(img); 
-    reader.onload = (event) => { 
+    reader.readAsDataURL(img);
+    reader.onload = (event) => {
       this.imageReader = event.target.result;
       this.image = ''
     }
-}
+  }
 
 }

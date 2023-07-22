@@ -14,12 +14,12 @@ export class ManagementsComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   showForm = false;
-  managementData: []
-  management: any
+  managementData: [];
+  management: any;
   totalData = 0;
   dataPerPage = 5;
   pageSizeOptions = [5, 10, 25, 100];
-  displayedColumns: string[] = [ 'title_ar', 'title_en', 'phone', 'edit'];
+  displayedColumns: string[] = ['title_ar', 'title_en', 'phone', 'edit'];
   dataSource = new MatTableDataSource();
 
   filterFormControl = new FormControl('');
@@ -35,10 +35,9 @@ export class ManagementsComponent implements OnInit {
   }
 
   subscripFilters() {
-    const subscriptionMerge = merge(this.filterFormControl.valueChanges,
-      this.effectiveFormControl.valueChanges).subscribe((val) => {
-        this.applyFilter();
-      });
+    const subscriptionMerge = merge(this.filterFormControl.valueChanges).subscribe((val) => {
+      this.applyFilter();
+    });
 
     this.subscriptionList.push(subscriptionMerge);
   }
@@ -63,10 +62,9 @@ export class ManagementsComponent implements OnInit {
     });
   }
 
-
   onEdit(management): any {
-    this.showForm = !this.showForm;
     this.management = management
+    this.showForm = !this.showForm;
   }
 
   onback(e) {
@@ -76,12 +74,12 @@ export class ManagementsComponent implements OnInit {
     }
   }
 
-  onDelete(managementId){
-    this.managementService.deleteManagement(managementId).subscribe((data)=>{
-      if(data.success){
+  onDelete(managementId) {
+    this.managementService.deleteManagement(managementId).subscribe((data) => {
+      if (data.success) {
         this.getData();
       }
-    })
+    });
   }
 
   ngOnDestroy() {
