@@ -18,7 +18,7 @@ export class ManagementsComponent implements OnInit {
   totalData = 0;
   dataPerPage = 5;
   pageSizeOptions = [5, 10, 25, 100];
-  displayedColumns: string[] = [ 'title_ar', 'title_en', 'phone', 'active', 'edit'];
+  displayedColumns: string[] = [ 'title_ar', 'title_en', 'phone', 'edit'];
   dataSource = new MatTableDataSource();
 
   filterFormControl = new FormControl('');
