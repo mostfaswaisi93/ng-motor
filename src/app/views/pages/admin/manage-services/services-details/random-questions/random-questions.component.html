@@ -1,0 +1,68 @@
+<div class="container-fluid" [hidden]="showForm">
+    <div class="section-sep">
+        <div [hidden]="showForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="font-weight-bold">{{ 'ADMIN.SECTIONDETAILS' | translate }}/ {{ titleEn }} </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <mat-form-field class="d-inline-block search-field-icon">
+                        <mat-label>{{ 'GENERAL.SEARCH' | translate }}</mat-label>
+                        <input matInput [formControl]="filterFormControl"
+                            placeholder="{{ 'GENERAL.SEARCH' | translate }} ...">
+                        <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" [hidden]="showForm">
+            <div class="col-md-12 mx-4 d-flex justify-content-between align-items-center">
+                <p class="font-weight-bold">{{ 'ADMIN.RANDOMQUESTIONS' | translate }} </p>
+                <button class="add" (click)="onAdd()">
+                    <span class="material-icons">add</span>
+                    <span>{{ 'GENERAL.ADD' | translate }}</span>
+                </button>
+            </div>
+            <div class="col-md-12 table-responsive">
+                <table mat-table [dataSource]="dataSource">
+
+                    <ng-container matColumnDef="question_ar">
+                        <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.QUESTIONAR' | translate }}</th>
+                        <td mat-cell *matCellDef="let question"> {{ question.question.ar }} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="question_en">
+                        <th mat-header-cell *matHeaderCellDef>{{ 'ADMIN.QUESTIONEN' | translate }}</th>
+                        <td mat-cell *matCellDef="let question"> {{ question.question.en }} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="edit">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef>
+                            {{ 'GENERAL.EDIT' | translate }}</th>
+                        <td class="edit text-center" mat-cell *matCellDef="let question">
+                            <div class="actions">
+                                <div (click)="onEdit(question)" title="{{ 'GENERAL.EDIT' | translate }}"
+                                    class="cursor-pointer red-text edit-icon">
+                                    <mat-icon>edit</mat-icon>
+                                </div>
+                                <div (click)="onDelete(question._id)" title="{{ 'GENERAL.Delete' | translate }}"
+                                    class="cursor-pointer red-text edit-icon">
+                                    <mat-icon>delete</mat-icon>
+                                </div>
+                            </div>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                </table>
+                <mat-paginator class="paginator-custom" [length]="totalData" [pageSize]="dataPerPage"
+                    [pageSizeOptions]="pageSizeOptions"></mat-paginator>
+            </div>
+        </div>
+    </div>
+</div>
+<app-random-questions-form (back)="onback($event)" [question]="question" *ngIf="showForm"></app-random-questions-form>

@@ -14,7 +14,9 @@ import { HeaderComponent } from './manage-home/header/header.component';
 import { WhoWeAreComponent } from './manage-home/who-we-are/who-we-are.component';
 import { WhatDoWeApplyComponent } from './manage-home/what-do-we-apply/what-do-we-apply.component';
 import { ServicesDetailsComponent } from './manage-services/services-details/services-details.component';
-import { RandomQuestionsFormComponent } from './manage-services/services-details/random-questions-form/random-questions-form.component';
+import { RandomQuestionsComponent } from './manage-services/services-details/random-questions/random-questions.component';
+import { ManagementComponent } from './manage-services/services-details/management/management.component';
+import { RandomQuestionsFormComponent } from './manage-services/services-details/random-questions/random-questions-form/random-questions-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { RandomQuestionsFormComponent } from './manage-services/services-details
     WhoWeAreComponent,
     WhatDoWeApplyComponent,
     ServicesDetailsComponent,
-    RandomQuestionsFormComponent
+    RandomQuestionsFormComponent,
+    RandomQuestionsComponent,
+    ManagementComponent
   ],
   imports: [
     CommonModule,
