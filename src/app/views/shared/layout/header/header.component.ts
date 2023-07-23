@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
   }
 
   setLang() {
-    this.translationService.set(this.translateService.currentLang === 'ar' ? 'en' : 'ar');
+    this.translationService.setLanguage(this.translateService.currentLang === 'ar' ? 'en' : 'ar');
   }
 
   toggleSideMenu() {
