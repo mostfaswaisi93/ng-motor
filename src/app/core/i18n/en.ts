@@ -90,6 +90,7 @@ export const locale = {
 			'MANAGEMENTS': 'Managements',
 			'SECTIONS': 'Sections/Services',
 			'SECTION': 'Section/Service',
+			'SECTIONDETAILS': 'Section Details',
 			'SETTINGS': 'Settings',
 			'SOCIALMEDIA': 'Social media',
 			'CONTACTUS': 'Contact us',
@@ -115,7 +116,13 @@ export const locale = {
 			'ENNAMEERROR': 'This field must accept only english letters',
 			'URLERROR': 'This field must accept only URL link',
 			'ADDED_MSG': 'Data has been added successfully',
-			'ADMIN_PROFILE': 'User profile'
+			'ADMIN_PROFILE': 'User profile',
+			'RANDOMQUESTIONS': "Random Question",
+			'QUESTIONAR': "Arabic Question",
+			'QUESTIONEN': "English Question",
+			'ANSWERAR': "Arabic Answer",
+			'ANSWEREN': "English Answer",
+	  
 		}
 	}
 };

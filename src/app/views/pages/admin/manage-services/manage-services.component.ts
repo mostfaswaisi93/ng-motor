@@ -65,8 +65,9 @@ export class ManageServicesComponent implements OnInit {
     this.showForm = !this.showForm;
   }
 
-  onView() {
-    this.router.navigateByUrl('/admin/services/services-details');
+  onView(id) {
+    this.router.navigate(['/admin/services/services-details'], { queryParams: { id } })
+    // this.router.navigateByUrl('/admin/services/services-details');
   }
 
   onEdit(service): any {

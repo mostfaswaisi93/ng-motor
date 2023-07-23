@@ -2,9 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { merge, Subscription } from 'rxjs';
-import { Service } from 'src/app/core/models/Service';
 import { ServicesService } from 'src/app/core/services/services.service';
 import { environment } from 'src/environments/environment';
 
@@ -17,32 +16,42 @@ export class ServicesDetailsComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   showForm = false;
-  service: Service = null;
+  question: any;
   totalData = 0;
-  dataPerPage = 10;
+  dataPerPage = 5;
   pageSizeOptions = [5, 10, 25, 100];
-  displayedColumns: string[] = ['title_ar', 'title_en', 'edit'];
+  displayedColumns: string[] = ['question_ar', 'question_en', 'edit'];
   dataSource = new MatTableDataSource();
   url = environment.apiUrl;
 
-  serviceData: Service[] = null;
+  titleAr: any
+  titleEn: any
+  serviceId: any
+  questionData: [] = null;
   filterFormControl = new FormControl('');
   effectiveFormControl = new FormControl(1);
   subscriptionList: Subscription[] = [];
 
   constructor(
     private router: Router,
+    public route: ActivatedRoute,
     private servicesService: ServicesService
   ) {
-    this.getData();
+ 
   }
 
   ngOnInit(): void {
-    this.dataSource.filterPredicate = function (data: Service, filter: string): boolean {
-      return data.title.ar && data.title.ar.toLowerCase().includes(filter) ||
-        data.title.en && data.title.en.toLowerCase().includes(filter);
+    this.dataSource.filterPredicate = function (data: any, filter: string): boolean {
+      return data.question.ar && data.question.ar.toLowerCase().includes(filter) ||
+        data.question.en && data.question.en.toLowerCase().includes(filter);
     };
     this.subscripFilters();
+
+    this.route.queryParams.subscribe((data) => {
+      this.serviceId = data.id
+    })
+
+    this.getData();
   }
 
   subscripFilters() {
@@ -69,32 +78,31 @@ export class ServicesDetailsComponent implements OnInit {
     this.router.navigateByUrl('/admin/services/services-details');
   }
 
-  onEdit(service): any {
-    this.service = service;
+  onEdit(question): any {
+    this.question = question;
     this.showForm = !this.showForm;
   }
 
-  onDelete(service): any {
-    this.service = service;
-    console.log(this.service);
-    this.servicesService.deleteService(this.service?._id).subscribe((data: any) => {
-      console.log(data, 'delete');
+  onDelete(questionId): any {
+    this.servicesService.deleteQuestion(this.serviceId, questionId).subscribe((data: any) => {
       this.getData();
     });
   }
 
   onback(e) {
     this.showForm = !this.showForm;
-    this.service = null;
+    this.question = null;
     if (e && e.reloadData) {
       this.getData();
     }
   }
 
   getData() {
-    this.servicesService.getServices().subscribe((data: any) => {
-      this.serviceData = data?.data;
-      this.dataSource.data = data?.data;
+    this.servicesService.getServiceQuestions(this.serviceId).subscribe((data: any) => {
+      this.questionData = data?.data.questions;
+      this.titleAr = data?.data.title.ar
+      this.titleEn = data?.data.title.en
+      this.dataSource.data = data?.data.questions;
       this.dataSource.paginator = this.paginator;
       // this.applyFilter();
     });

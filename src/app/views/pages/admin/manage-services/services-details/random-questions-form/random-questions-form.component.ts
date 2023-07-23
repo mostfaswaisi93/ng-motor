@@ -14,15 +14,10 @@ import { environment } from 'src/environments/environment';
 export class RandomQuestionsFormComponent implements OnInit {
 
   @Output() back = new EventEmitter<any>();
-  @Input() service: any;
+  @Input() question: any;
+  serviceId: any
 
-  serviceForm: FormGroup;
-  logo: any;
-  media: any;
-  selectedLogo: any;
-  selectedMedia: any[];
-  logoReader: any;
-  mediaReader: string[] = [];
+  questionsForm: FormGroup;
   url = environment.apiUrl;
 
   constructor(
@@ -35,76 +30,62 @@ export class RandomQuestionsFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
-    if (this.service) {
+    if (this.question) {
       this.patchValues();
-      this.logo = this.service.logo;
-      this.media = this.service.media;
     }
+    this.route.queryParams.subscribe((data) => {
+      this.serviceId = data.id
+    })
   }
 
   initForm() {
-    this.serviceForm = this.fb.group({
-      serviceId: new FormControl(''),
-      logo: new FormControl(''),
-      media: new FormControl(''),
-      title_ar: new FormControl('', { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
-      title_en: new FormControl('', { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
-      description_ar: new FormControl('', { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
-      description_en: new FormControl('', { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
-      whatsappLink: new FormControl('', { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] })
+    this.questionsForm = this.fb.group({
+      serviceId: this.serviceId,
+      question_ar: new FormControl('', { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      question_en: new FormControl('', { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      answer_ar: new FormControl('', { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      answer_en: new FormControl('', { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
     });
   }
 
   patchValues() {
-    this.serviceForm.patchValue({
-      serviceId: this.service._id,
-      title_ar: this.service.title.ar,
-      title_en: this.service.title.en,
-      description_ar: this.service.description.ar,
-      description_en: this.service.description.en,
-      whatsappLink: this.service.whatsappLink
+    this.questionsForm.patchValue({
+      serviceId: this.serviceId,
+      questionId: this.question._id,
+      question_ar: this.question.question.ar,
+      question_en: this.question.question.en,
+      answer_ar: this.question.answer.ar,
+      answer_en: this.question.answer.en,
     });
   }
 
   onSave() {
-    if (this.serviceForm.invalid) {
+    if (this.questionsForm.invalid) {
       let message = this.translate.instant('GENERAL.FILL_REQUIRED_FIELDS');
       this.toastNotificationsService.showError(message);
       return;
     }
+    this.questionsForm.get('serviceId').setValue(this.serviceId)
 
-    const formData = new FormData();
-    this.selectedLogo ? formData.append('logo', this.selectedLogo) : formData.append('logo', this.logo);
-    if (this.selectedMedia) {
-      for (let item of this.selectedMedia) {
-        formData.append('media', item);
-      }
-    }
-    formData.append('title_ar', this.serviceForm.value.title_ar);
-    formData.append('title_en', this.serviceForm.value.title_en);
-    formData.append('description_en', this.serviceForm.value.description_en);
-    formData.append('description_ar', this.serviceForm.value.description_ar);
-    formData.append('whatsappLink', this.serviceForm.value.whatsappLink);
-
-    if (this.service) {
-      this.updateServie(formData);
+    if (this.question) {
+      this.updateQuestion();
     } else {
-      this.addServie(formData);
+      this.addQuestion();
     }
   }
 
-  addServie(formData) {
-    this.servicesService.createService(formData).subscribe((data: any) => {
+  addQuestion() {
+    this.servicesService.createQuestion(this.questionsForm.value).subscribe((data: any) => {
       if (data.success) {
         this.onBack(true);
       }
     });
   }
 
-  updateServie(formData) {
-    formData.append('oldMedia', this.media);
-    formData.append('serviceId', this.serviceForm.value.serviceId);
-    this.servicesService.editService(formData).subscribe((data: any) => {
+  updateQuestion() {
+    this.questionsForm.value.questionId = this.question._id
+
+    this.servicesService.editQuestion(this.questionsForm.value).subscribe((data: any) => {
       if (data.success) {
         this.onBack(true);
       }
@@ -112,61 +93,6 @@ export class RandomQuestionsFormComponent implements OnInit {
   }
 
   onBack(reloadData = false) {
-    if (this.service) {
-      this.logo = this.service.logo;
-      this.media = this.service.media;
-    }
     this.back.emit({ reloadData });
   }
-
-  onLogoSelected(event) {
-    this.selectedLogo = event.target.files[0] ?? null;
-    this.readSelectedLogo(event.target.files[0]);
-  }
-
-  onMediaSelected(event) {
-    this.selectedMedia = [...event.target.files] ?? null;
-    this.readSelectedMedia(event.target.files);
-  }
-
-  readSelectedLogo(img) {
-    let reader = new FileReader();
-    reader.readAsDataURL(img);
-    reader.onload = (event) => {
-      this.logoReader = event.target.result;
-    }
-  }
-
-  readSelectedMedia(arr) {
-    for (let i = 0; i < arr.length; i++) {
-      let reader = new FileReader();
-      reader.readAsDataURL(arr[i]);
-      reader.onload = (event: any) => {
-        this.mediaReader.push(event.target.result);
-      }
-    }
-  }
-
-  removeLogo() {
-    this.selectedLogo = '';
-    this.logo = '';
-  }
-
-  removeLogoReader() {
-    this.selectedLogo = '';
-    this.logo = '';
-    this.logoReader = '';
-  }
-
-  removeMedia(img) {
-    this.media = this.media.filter((item) => {
-      return item != img;
-    });
-  }
-
-  removeMediaReader(img, i) {
-    this.mediaReader = this.mediaReader.filter((item) => item != img);
-    this.selectedMedia.splice(i, 1);
-  }
-
 }

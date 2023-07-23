@@ -43,4 +43,8 @@ export class ServicesService {
     return this.http.delete(`${environment.apiUrl}service/question/${serviceId}/${questionId}`);
   }
 
+  getServiceQuestions(serviceId): any {
+    return this.http.get(`${environment.apiUrl}service/getServiceQuestions/${serviceId}`);
+  }
+
 }

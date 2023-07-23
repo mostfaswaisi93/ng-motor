@@ -4,7 +4,8 @@
       <div class="row">
         <div class="col-md-12">
           <p class="font-weight-bold title-info">
-            <span>{{ 'GENERAL.ADD' | translate }} </span>
+            <span *ngIf="!service">{{ 'GENERAL.ADD' | translate }} </span>
+            <span *ngIf="service">{{ 'GENERAL.EDIT' | translate }} </span>
             <span>{{ 'ADMIN.SECTION' | translate }}</span>
           </p>
         </div>

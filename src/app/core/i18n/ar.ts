@@ -89,6 +89,7 @@ export const locale = {
       'MANAGEMENT': 'إدارة',
       'MANAGEMENTS': 'الإدارات',
       'SECTIONS': 'الأقسام/ الخدمات',
+      'SECTIONDETAILS': 'تفاصيل الخدمه',
       'SECTION': ' قسم/ خدمة',
       'SETTINGS': 'الإعدادات',
       'SOCIALMEDIA': 'السوشيال ميديا',
@@ -115,7 +116,12 @@ export const locale = {
       'ENNAMEERROR': 'يجب أن يقبل هذا الحقل الحروف الإنجليزية فقط',
       'URLERROR': 'يجب أن يقبل هذا الحقل رابط إلكتروني فقط',
       'ADDED_MSG': 'تم إضافة البيانات بنجاح',
-      'ADMIN_PROFILE': 'الملف الشخصي'
+      'ADMIN_PROFILE': 'الملف الشخصي',
+      'RANDOMQUESTIONS': "الاسئله الشائعه",
+      'QUESTIONAR': "السؤال بالعربي",
+      'QUESTIONEN': "السؤال بالانجليزي",
+      'ANSWERAR': "الاجابه بالعربي",
+      'ANSWEREN': "الاجابه بالانجليزي",
     }
   }
 };
