@@ -1,9 +1,15 @@
 @import "../../../../../../../../assets/scss/global/variables";
 
 .container-fluid {
-    min-height: calc(100vh - 120px);
+    // min-height: calc(100vh - 120px);
     background-color: $color-body;
     padding: 14px 50px 14px 50px;
+
+    .row {
+        .col-md-12.text-center {
+            margin-bottom: 1rem;
+        }
+    }
 }
 
 .effective {

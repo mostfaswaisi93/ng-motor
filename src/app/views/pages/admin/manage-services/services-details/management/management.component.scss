@@ -1,12 +1,16 @@
 @import "../../../../../../../assets/scss/global/variables";
 
 .container-fluid {
-    min-height: calc(100vh - 120px);
+    // min-height: calc(100vh - 120px);
     background-color: $color-body;
     padding: 14px 50px 14px 50px;
 
     .mat-form-field {
         width: 100%;
+    }
+
+    .section-sep {
+        margin-top: 0;
     }
 
     .green-background {
