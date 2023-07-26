@@ -80,6 +80,9 @@ export const locale = {
       'FILL_REQUIRED_FIELDS': 'الرجاء ملء جميع الحقول المطلوبة بشكل صحيح',
       'SEARCH': 'بحث'
     },
+    OURGOALS: {
+      'SUCCESS_MSG': 'تم تحديث بيانات اهدافنا بنجاح'
+    },
     DIALOG: {
       ERROR_MESSAGE: 'خطأ',
       INFO_MESSAGE: 'انتبه',

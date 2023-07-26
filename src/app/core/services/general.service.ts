@@ -30,6 +30,22 @@ export class GeneralService {
     return this.http.put(`${environment.apiUrl}general/contactUs`, data);
   }
 
+  generalOurCommitments(data): Observable<any> {
+    return this.http.put(`${environment.apiUrl}general/ourCommitments`, data);
+  }
+
+  generalOurGoals(data): Observable<any> {
+    return this.http.put(`${environment.apiUrl}general/ourGoals`, data);
+  }
+
+  getGeneralOurGoals(): Observable<any> {
+    return this.http.get(`${environment.apiUrl}general/ourGoals`);
+  }
+
+  getGeneralOurCommitments(): Observable<any> {
+    return this.http.get(`${environment.apiUrl}general/ourCommitments`);
+  }
+
   getGeneralHeader(): Observable<any> {
     return this.http.get(`${environment.apiUrl}general/header`);
   }
