@@ -41,7 +41,7 @@ export class ManageSocialMediaComponent implements OnInit {
 
   getData() {
     this.generalService.getGeneralSocialMedia().subscribe((data: any) => {
-      this.socialMediaData = data.data.socialMedia;
+      this.socialMediaData = data.data?.socialMedia;
       this.socialMediaForm.patchValue({
         snapChat: this.socialMediaData?.snapChat,
         instagram: this.socialMediaData?.instagram,

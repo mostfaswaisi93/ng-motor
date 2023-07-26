@@ -46,6 +46,7 @@ export class ManageContactUsComponent implements OnInit {
   getData() {
     this.generalService.getGeneralContactUs().subscribe(data => {
       this.contactUsData = data.data.contactUs;
+      console.log(data.data.contactUs)
       this.contactUsForm.patchValue({
         city_ar: this.contactUsData?.city?.ar,
         city_en: this.contactUsData?.city?.en,

@@ -1,5 +1,5 @@
 <div class="container-fluid manage-emails">
-    <form [formGroup]="contactUsForm">
+    <form [formGroup]="commitmentsForm">
         <div class="section-sep">
             <div class="row">
                 <div class="col-md-12">
@@ -7,28 +7,109 @@
                         <span>{{ 'ADMIN.OURCOMMITMENTS' | translate }}</span>
                     </p>
                 </div>
+                <div class="col-md-12 mb-4">
+          
+                    <span *ngIf="imageReader" class="mx-2" style="position: relative;">
+                      <img 
+                            [src]="imageReader" 
+                            alt="image" 
+                            height="50px" 
+                            width="50px"
+                            style="position: relative;"
+                        >
+                        <mat-icon (click)="removeImageReader()" style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
+                    </span>
+                  
+                    <span *ngIf="image" class="mx-2" style="position: relative;">
+                      <img 
+                            [src]="url + 'images/' + image" 
+                            alt="image" 
+                            height="50px" 
+                            width="50px"
+                            style="position: relative;"
+                        >
+                        <mat-icon (click)="removeImage()" style="color: red; cursor:pointer;position: absolute;z-index: 1;bottom:70%; left:70%">cancel</mat-icon>
+                    </span>  
+                    <button type="button" mat-raised-button (click)="imageFileInput.click()">{{ 'ADMIN.CHOOSEIMAGE' | translate }}</button>
+                    <input formControlName="image" hidden (change)="onImageSelected($event)" #imageFileInput type="file">
+                </div>
+
                 <div class="col-md-6">
-                    <mat-form-field [class.not-empty]="contactUsForm.get('title_ar').value">
+                    <mat-form-field [class.not-empty]="commitmentsForm.get('title_ar').value">
                         <mat-label>{{ 'ADMIN.ARABICTITLE' | translate }}</mat-label>
                         <input type="text" matInput formControlName="title_ar"
                             placeholder="{{ 'ADMIN.ARABICTITLE' | translate }}">
-                        <mat-error *ngIf="contactUsForm.get('title_ar').errors?.required">
+                        <mat-error *ngIf="commitmentsForm.get('title_ar').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>
-                        <mat-error *ngIf="contactUsForm.get('title_ar').errors?.pattern">
+                        <mat-error *ngIf="commitmentsForm.get('title_ar').errors?.pattern">
                             {{ 'ADMIN.ARNAMEERROR' | translate }}
                         </mat-error>
                     </mat-form-field>
                 </div>
                 <div class="col-md-6">
-                    <mat-form-field [class.not-empty]="contactUsForm.get('title_en').value">
+                    <mat-form-field [class.not-empty]="commitmentsForm.get('title_en').value">
                         <mat-label>{{ 'ADMIN.ENGLISHTITLE' | translate }}</mat-label>
                         <input type="text" matInput formControlName="title_en"
                             placeholder="{{ 'ADMIN.ENGLISHTITLE' | translate }}">
-                        <mat-error *ngIf="contactUsForm.get('title_en').errors?.required">
+                        <mat-error *ngIf="commitmentsForm.get('title_en').errors?.required">
                             {{ 'ADMIN.ERRORMESSAGE' | translate }}
                         </mat-error>
-                        <mat-error *ngIf="contactUsForm.get('title_en').errors?.pattern">
+                        <mat-error *ngIf="commitmentsForm.get('title_en').errors?.pattern">
+                            {{ 'ADMIN.ENNAMEERROR' | translate }}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field [class.not-empty]="commitmentsForm.get('description_ar1').value">
+                        <mat-label>{{ 'ADMIN.ARABICDESCRIPTION' | translate }}</mat-label>
+                        <input type="text" matInput formControlName="description_ar1"
+                            placeholder="{{ 'ADMIN.ARABICDESCRIPTION' | translate }}">
+                        <mat-error *ngIf="commitmentsForm.get('description_ar1').errors?.required">
+                            {{ 'ADMIN.ERRORMESSAGE' | translate }}
+                        </mat-error>
+                        <mat-error *ngIf="commitmentsForm.get('description_ar1').errors?.pattern">
+                            {{ 'ADMIN.ARNAMEERROR' | translate }}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field [class.not-empty]="commitmentsForm.get('description_en1').value">
+                        <mat-label>{{ 'ADMIN.ENGLISHDESCRIPTION' | translate }}</mat-label>
+                        <input type="text" matInput formControlName="description_en1"
+                            placeholder="{{ 'ADMIN.ENGLISHDESCRIPTION' | translate }}">
+                        <mat-error *ngIf="commitmentsForm.get('description_en1').errors?.required">
+                            {{ 'ADMIN.ERRORMESSAGE' | translate }}
+                        </mat-error>
+                        <mat-error *ngIf="commitmentsForm.get('description_en1').errors?.pattern">
+                            {{ 'ADMIN.ENNAMEERROR' | translate }}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field [class.not-empty]="commitmentsForm.get('description_ar2').value">
+                        <mat-label>{{ 'ADMIN.ARABICDESCRIPTION' | translate }}</mat-label>
+                        <input type="text" matInput formControlName="description_ar2"
+                            placeholder="{{ 'ADMIN.ARABICDESCRIPTION' | translate }}">
+                        <mat-error *ngIf="commitmentsForm.get('description_ar2').errors?.required">
+                            {{ 'ADMIN.ERRORMESSAGE' | translate }}
+                        </mat-error>
+                        <mat-error *ngIf="commitmentsForm.get('description_ar2').errors?.pattern">
+                            {{ 'ADMIN.ARNAMEERROR' | translate }}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field [class.not-empty]="commitmentsForm.get('description_en2').value">
+                        <mat-label>{{ 'ADMIN.ENGLISHDESCRIPTION' | translate }}</mat-label>
+                        <input type="text" matInput formControlName="description_en2"
+                            placeholder="{{ 'ADMIN.ENGLISHDESCRIPTION' | translate }}">
+                        <mat-error *ngIf="commitmentsForm.get('description_en2').errors?.required">
+                            {{ 'ADMIN.ERRORMESSAGE' | translate }}
+                        </mat-error>
+                        <mat-error *ngIf="commitmentsForm.get('description_en2').errors?.pattern">
                             {{ 'ADMIN.ENNAMEERROR' | translate }}
                         </mat-error>
                     </mat-form-field>

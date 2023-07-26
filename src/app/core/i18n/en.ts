@@ -83,6 +83,9 @@ export const locale = {
 		OURGOALS: {
       		'SUCCESS_MSG': 'Our Goals has been updated successfully'
 	    },
+		OURCOMMITMENTS: {
+			'SUCCESS_MSG': 'Our Commitments has been updated successfully'
+		},
 		DIALOG: {
 			ERROR_MESSAGE: 'Error',
 			INFO_MESSAGE: 'Notice',
