@@ -3,9 +3,9 @@ import { FormControl } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ServicesService } from 'src/app/core/services/services.service';
 import { environment } from 'src/environments/environment';
 import { merge, Subscription } from 'rxjs';
+import { ManagementService } from 'src/app/core/services/management.service';
 
 @Component({
   selector: 'app-management',
@@ -16,18 +16,18 @@ export class ManagementComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   showForm = false;
-  question: any;
+  management: any;
   totalData = 0;
   dataPerPage = 5;
   pageSizeOptions = [5, 10, 25, 100];
-  displayedColumns: string[] = ['question_ar', 'question_en', 'edit'];
+  displayedColumns: string[] = ['title_ar', 'title_en', 'phone', 'edit'];
   dataSource = new MatTableDataSource();
   url = environment.apiUrl;
 
   titleAr: any
   titleEn: any
   serviceId: any
-  questionData: [] = null;
+  managementsData: [] = null;
   filterFormControl = new FormControl('');
   effectiveFormControl = new FormControl(1);
   subscriptionList: Subscription[] = [];
@@ -35,15 +35,15 @@ export class ManagementComponent implements OnInit {
   constructor(
     private router: Router,
     public route: ActivatedRoute,
-    private servicesService: ServicesService
+    private managementService: ManagementService
   ) {
 
   }
 
   ngOnInit(): void {
     this.dataSource.filterPredicate = function (data: any, filter: string): boolean {
-      return data.question.ar && data.question.ar.toLowerCase().includes(filter) ||
-        data.question.en && data.question.en.toLowerCase().includes(filter);
+      return data.management.ar && data.management.ar.toLowerCase().includes(filter) ||
+        data.management.en && data.management.en.toLowerCase().includes(filter);
     };
     this.subscripFilters();
 
@@ -78,33 +78,32 @@ export class ManagementComponent implements OnInit {
     this.router.navigateByUrl('/admin/services/services-details');
   }
 
-  onEdit(question): any {
-    this.question = question;
+  onEdit(management): any {
+    this.management = management;
     this.showForm = !this.showForm;
   }
 
-  onDelete(questionId): any {
-    this.servicesService.deleteQuestion(this.serviceId, questionId).subscribe((data: any) => {
-      this.getData();
+  onDelete(managementId) {
+    this.managementService.deleteManagement(managementId).subscribe((data) => {
+      if (data.success) {
+        this.getData();
+      }
     });
   }
-
+  
   onback(e) {
     this.showForm = !this.showForm;
-    this.question = null;
+    this.management = null;
     if (e && e.reloadData) {
       this.getData();
     }
   }
 
   getData() {
-    this.servicesService.getServiceQuestions(this.serviceId).subscribe((data: any) => {
-      this.questionData = data?.data.questions;
-      this.titleAr = data?.data.title.ar
-      this.titleEn = data?.data.title.en
-      this.dataSource.data = data?.data.questions;
+    this.managementService.getManagementsForService(this.serviceId).subscribe((data: any) => {
+      this.managementsData = data?.data;
+      this.dataSource.data = data?.data;
       this.dataSource.paginator = this.paginator;
-      // this.applyFilter();
     });
   }
 

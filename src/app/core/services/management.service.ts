@@ -26,4 +26,8 @@ export class ManagementService {
     return this.http.delete(`${environment.apiUrl}management/${_id}`);
   }
 
+  getManagementsForService(serviceId): any {
+    return this.http.get(`${environment.apiUrl}management/getManagementsForService/${serviceId}`);
+  }
+
 }

@@ -19,7 +19,8 @@
         </div>
 
         <div class="row" [hidden]="showForm">
-            <div class="col-md-12">
+            <div class="col-md-12 d-flex justify-content-between">
+                <h3>Questions</h3>
                 <button class="add" (click)="onAdd()">
                     <span class="material-icons">add</span>
                     <span>{{ 'GENERAL.ADD' | translate }}</span>

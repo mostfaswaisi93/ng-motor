@@ -15,6 +15,7 @@ export class ManagementFormComponent implements OnInit {
 
   @Output() back = new EventEmitter<any>();
   @Input() management: any;
+  @Input() serviceId: any;
 
   managementForm: FormGroup;
   image: any
@@ -82,15 +83,26 @@ export class ManagementFormComponent implements OnInit {
     formData.append('email', this.managementForm.value.email);
     formData.append('phoneNumber', this.managementForm.value.phoneNumber);
 
+    // EDIT MODE IN ALL CASES
     if (this.management) {
       this.updateManagement(formData);
-    } else {
+    } 
+    
+    // CREATE MODE IN MANAGEMENTS
+    else if(!this.management && !this.serviceId) {
+      formData.append('type', 'General');
+      this.addManagement(formData);
+    }
+        
+    // CREATE MODE IN MANAGEMENT INSIDE SERVICE
+    else if(!this.management && this.serviceId){
+      formData.append('type', 'Service');
+      formData.append('serviceId', this.serviceId);
       this.addManagement(formData);
     }
   }
 
   addManagement(formData) {
-    formData.append('type', 'General');
     this.managementService.createManagement(formData).subscribe((data: any) => {
       if (data.success) {
         this.onBack(true);
