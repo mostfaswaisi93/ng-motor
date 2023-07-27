@@ -17,7 +17,7 @@ export class ManageServicesFormComponent implements OnInit {
   @Input() service: any;
 
   serviceForm: FormGroup;
-  logo: any;
+  logo: any = '';
   media: any;
   selectedLogo: any;
   selectedMedia: any[];

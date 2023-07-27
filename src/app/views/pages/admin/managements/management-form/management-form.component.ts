@@ -18,7 +18,7 @@ export class ManagementFormComponent implements OnInit {
   @Input() serviceId: any;
 
   managementForm: FormGroup;
-  image: any
+  image: any = ''
   imageReader: any
   selectedImage: any
   url = environment.apiUrl

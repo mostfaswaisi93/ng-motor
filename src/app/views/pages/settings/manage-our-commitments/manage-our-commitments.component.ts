@@ -15,7 +15,7 @@ export class ManageOurCommitmentsComponent implements OnInit {
 
   commitmentsForm: FormGroup;
   commitmentsData: any;
-  image: any
+  image: any = ''
   imageReader: any
   selectedImage: any
   url = environment.apiUrl

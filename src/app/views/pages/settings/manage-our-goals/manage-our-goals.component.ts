@@ -15,7 +15,7 @@ export class ManageOurGoalsComponent implements OnInit {
 
   ourGoalsData: any;
   ourGoalsForm: FormGroup;
-  image: any
+  image: any = ''
   imageReader: any
   selectedImage: any
   url = environment.apiUrl
