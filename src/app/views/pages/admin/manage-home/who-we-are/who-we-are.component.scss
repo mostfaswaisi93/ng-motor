@@ -1,0 +1,38 @@
+@import "../../../../../../assets/scss/global/variables";
+
+.container-fluid {
+    min-height: calc(100vh - 120px);
+    background-color: $color-body;
+    padding: 14px 50px 14px 50px;
+}
+
+.effective {
+    mat-radio-group {
+        position: relative;
+        top: 13px;
+
+        .mat-radio-button:nth-child(1) {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    }
+
+    span {
+        position: relative;
+        top: 13px;
+        font-size: 14px;
+        font-weight: bold;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    .col-md-12.text-center button {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .save-data {
+        margin-left: 0px;
+    }
+}
