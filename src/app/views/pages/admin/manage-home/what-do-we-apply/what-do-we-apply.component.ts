@@ -11,8 +11,8 @@ import { GeneralService } from 'src/app/core/services/general.service';
 })
 export class WhatDoWeApplyComponent implements OnInit {
 
-  contactUsData: any;
-  contactUsForm: FormGroup;
+  whatDoWeApplyData: any;
+  whatDoWeApplyForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -28,35 +28,24 @@ export class WhatDoWeApplyComponent implements OnInit {
   }
 
   initForm() {
-    this.contactUsForm = this.fb.group({
-      city_ar: new FormControl(null, { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
-      city_en: new FormControl(null, { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
-      country_ar: new FormControl(null, { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
-      country_en: new FormControl(null, { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
-      address_ar: new FormControl(null, { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
-      address_en: new FormControl(null, { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
-      primaryEmail: new FormControl(null, { validators: [Validators.required, Validators.pattern('^([\\w-]+(?:\\.[\\w-]+)*)@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([A-Za-z]{2,6}(?:\\.[A-Za-z]{2,6})?)$')] }),
-      secondaryEmail: new FormControl(null, { validators: [Validators.required, Validators.pattern('^([\\w-]+(?:\\.[\\w-]+)*)@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([A-Za-z]{2,6}(?:\\.[A-Za-z]{2,6})?)$')] }),
-      primaryPhoneNumber: new FormControl(null, { validators: [Validators.required, Validators.pattern('^.{8}$')] }),
-      secondaryPhoneNumber: new FormControl(null, { validators: [Validators.required, Validators.pattern('^.{8}$')] })
+    this.whatDoWeApplyForm = this.fb.group({
+      title_ar: new FormControl('', { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      title_en: new FormControl('', { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      description_ar: new FormControl('', { validators: [Validators.required, Validators.pattern("[\u0600-\u06FF 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
+      description_en: new FormControl('', { validators: [Validators.required, Validators.pattern("[a-zA-Z 0-9\.()~!@#$%^'&=+;,{}_-]+")] }),
     });
   }
 
   getData() {
-    this.generalService.getGeneralContactUs().subscribe(data => {
-      this.contactUsData = data.data.contactUs;
-      console.log(data.data.contactUs)
-      this.contactUsForm.patchValue({
-        city_ar: this.contactUsData?.city?.ar,
-        city_en: this.contactUsData?.city?.en,
-        country_ar: this.contactUsData?.country?.ar,
-        country_en: this.contactUsData?.country?.en,
-        address_ar: this.contactUsData?.address?.ar,
-        address_en: this.contactUsData?.address?.en,
-        primaryEmail: this.contactUsData?.email?.primary,
-        secondaryEmail: this.contactUsData?.email?.secondary,
-        primaryPhoneNumber: this.contactUsData?.phoneNumber?.primary,
-        secondaryPhoneNumber: this.contactUsData?.phoneNumber?.secondary
+    this.generalService.getGeneralWhatDoWeApply().subscribe(data => {
+      this.whatDoWeApplyData = data.data?.whatDoWeApply;
+
+      this.whatDoWeApplyForm.patchValue({
+        title_ar: this.whatDoWeApplyData?.title.ar,
+        title_en: this.whatDoWeApplyData?.title.en,
+        description_ar: this.whatDoWeApplyData?.description?.ar,
+        description_en: this.whatDoWeApplyData?.description?.en,
+  
       });
     }, error => {
       this.toastNotificationsService.showError(error.error.message);
@@ -64,15 +53,15 @@ export class WhatDoWeApplyComponent implements OnInit {
   }
 
   onSave() {
-    if (this.contactUsForm.invalid) {
+    if (this.whatDoWeApplyForm.invalid) {
       let message = this.translateService.instant('GENERAL.FILL_REQUIRED_FIELDS');
       this.toastNotificationsService.showError(message);
       return;
     }
-    let data = this.contactUsForm.getRawValue();
-    this.generalService.generalContactUs(data).subscribe((data: any) => {
+
+    this.generalService.generalWhatDoWeApply(this.whatDoWeApplyForm.value).subscribe((data: any) => {
       this.getData();
-      this.toastNotificationsService.showSuccess(this.translateService.instant('CONTACTUS.SUCCESS_MSG'));
+      this.toastNotificationsService.showSuccess(this.translateService.instant('WHATDOWEAPPLY.SUCCESS_MSG'));
     }, error => {
       this.toastNotificationsService.showError(error.error.message);
     });

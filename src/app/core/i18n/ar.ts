@@ -86,6 +86,18 @@ export const locale = {
     OURCOMMITMENTS: {
       'SUCCESS_MSG': 'تم تحديث بيانات التزاماتنا بنجاح'
     },
+    WHATDOWEAPPLY: {
+      "WHATDOWEAPPLY":"ماذا نقدم",
+      'SUCCESS_MSG': 'تم تحديث بيانات ماذا نقدم بنجاح'
+    },
+    WHOWEARE: {
+			"WHOWEARE":"من نكون",
+			'SUCCESS_MSG': 'تم تحديث بيانات من نكون بنجاح'
+		},
+    HEADER: {
+			"HEADER":"الهيدر",
+			'SUCCESS_MSG': 'تم تحديث بيانات الهيدر بنجاح'
+		},
     DIALOG: {
       ERROR_MESSAGE: 'خطأ',
       INFO_MESSAGE: 'انتبه',
@@ -128,6 +140,8 @@ export const locale = {
       'QUESTIONEN': "السؤال بالانجليزي",
       'ANSWERAR': "الاجابه بالعربي",
       'ANSWEREN': "الاجابه بالانجليزي",
+      "WHOWEARE":"من نحن",
+      "WHATDOWEAPPLY":"ماذا نقدم"
     }
   }
 };

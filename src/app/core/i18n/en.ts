@@ -86,6 +86,18 @@ export const locale = {
 		OURCOMMITMENTS: {
 			'SUCCESS_MSG': 'Our Commitments has been updated successfully'
 		},
+		WHATDOWEAPPLY: {
+			"WHATDOWEAPPLY":"What Do We Apply",
+			'SUCCESS_MSG': 'ًWhat Do We Apply has been updated successfully'
+		},
+		WHOWEARE: {
+			"WHOWEARE":"Who We Are",
+			'SUCCESS_MSG': 'Who We Are has been updated successfully'
+		},
+		HEADER: {
+			"HEADER":"Header",
+			'SUCCESS_MSG': 'Header Data has been updated successfully'
+		},
 		DIALOG: {
 			ERROR_MESSAGE: 'Error',
 			INFO_MESSAGE: 'Notice',
@@ -128,7 +140,8 @@ export const locale = {
 			'QUESTIONEN': "English Question",
 			'ANSWERAR': "Arabic Answer",
 			'ANSWEREN': "English Answer",
-	  
+	        "WHOWEARE": "Who We Are",
+		    "WHATDOWEAPPLY": "What Do We Apply"
 		}
 	}
 };
